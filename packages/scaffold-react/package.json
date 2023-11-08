@@ -16,7 +16,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
-    "@web3modal/scaffold": "3.2.0"
+    "@web3modal/scaffold": "https://gitpkg.now.sh/ridotto-io/web3modal/packages/scaffold?V3"
   },
   "peerDependencies": {
     "react": ">=17",
