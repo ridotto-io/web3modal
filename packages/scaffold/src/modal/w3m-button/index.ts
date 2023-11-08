@@ -42,18 +42,19 @@ export class W3mButton extends LitElement {
   public override render() {
     return this.isAccount
       ? html`
+      <div> TESTINGG:::::::
           <w3m-account-button
             .disabled=${Boolean(this.disabled)}
             balance=${ifDefined(this.balance)}
           >
-          </w3m-account-button>
+          </w3m-account-button></div>
         `
       : html`
-          <w3m-connect-button
+      <div> TESTINGG 222222 ::::::: <w3m-connect-button
             size=${ifDefined(this.size)}
             label=${ifDefined(this.label)}
             loadingLabel=${ifDefined(this.loadingLabel)}
-          ></w3m-connect-button>
+          ></w3m-connect-button></div>
         `
   }
 }
