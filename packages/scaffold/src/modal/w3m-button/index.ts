@@ -22,6 +22,8 @@ export class W3mButton extends LitElement {
 
   @property() public loadingLabel?: W3mConnectButton['loadingLabel'] = undefined
 
+  @property() public avatarSrc?: string = undefined
+
   @state() private isAccount = AccountController.state.isConnected
 
   // -- Lifecycle ----------------------------------------- //
@@ -42,19 +44,19 @@ export class W3mButton extends LitElement {
   public override render() {
     return this.isAccount
       ? html`
-      <div> TESTINGG:::::::
           <w3m-account-button
             .disabled=${Boolean(this.disabled)}
             balance=${ifDefined(this.balance)}
+            .avatarSrc=${this.avatarSrc}
           >
-          </w3m-account-button></div>
+          </w3m-account-button>
         `
       : html`
-      <div> TESTINGG 222222 ::::::: <w3m-connect-button
+        <w3m-connect-button
             size=${ifDefined(this.size)}
             label=${ifDefined(this.label)}
             loadingLabel=${ifDefined(this.loadingLabel)}
-          ></w3m-connect-button></div>
+          ></w3m-connect-button>
         `
   }
 }

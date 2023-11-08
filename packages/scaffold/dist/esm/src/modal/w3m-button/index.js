@@ -18,6 +18,7 @@ let W3mButton = class W3mButton extends LitElement {
         this.size = undefined;
         this.label = undefined;
         this.loadingLabel = undefined;
+        this.avatarSrc = undefined;
         this.isAccount = AccountController.state.isConnected;
         this.unsubscribe.push(AccountController.subscribeKey('isConnected', val => {
             this.isAccount = val;
@@ -29,19 +30,19 @@ let W3mButton = class W3mButton extends LitElement {
     render() {
         return this.isAccount
             ? html `
-      <div> TESTINGG:::::::
           <w3m-account-button
             .disabled=${Boolean(this.disabled)}
             balance=${ifDefined(this.balance)}
+            .avatarSrc=${this.avatarSrc}
           >
-          </w3m-account-button></div>
+          </w3m-account-button>
         `
             : html `
-      <div> TESTINGG 222222 ::::::: <w3m-connect-button
+        <w3m-connect-button
             size=${ifDefined(this.size)}
             label=${ifDefined(this.label)}
             loadingLabel=${ifDefined(this.loadingLabel)}
-          ></w3m-connect-button></div>
+          ></w3m-connect-button>
         `;
     }
 };
@@ -60,6 +61,9 @@ __decorate([
 __decorate([
     property()
 ], W3mButton.prototype, "loadingLabel", void 0);
+__decorate([
+    property()
+], W3mButton.prototype, "avatarSrc", void 0);
 __decorate([
     state()
 ], W3mButton.prototype, "isAccount", void 0);

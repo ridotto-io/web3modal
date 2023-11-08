@@ -16,7 +16,7 @@ let WuiImage = class WuiImage extends LitElement {
         this.alt = 'Image';
     }
     render() {
-        return html `Super Image <img width={40} src=${'https://ridotto.io/images/team/profil/mohammed.svg'} alt=${this.alt} data-another="etc" />`;
+        return html `<img src=${this.src} alt=${this.alt} />`;
     }
 };
 WuiImage.styles = [resetStyles, colorStyles, styles];

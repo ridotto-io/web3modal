@@ -8,6 +8,7 @@ export declare class W3mButton extends LitElement {
     size?: W3mConnectButton['size'];
     label?: W3mConnectButton['label'];
     loadingLabel?: W3mConnectButton['loadingLabel'];
+    avatarSrc?: string;
     private isAccount;
     constructor();
     disconnectedCallback(): void;
