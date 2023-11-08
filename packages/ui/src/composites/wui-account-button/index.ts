@@ -32,7 +32,7 @@ export class WuiAccountButton extends LitElement {
   public override render() {
     return html`
       <button ?disabled=${this.disabled}>
-        ${this.balanceTemplate()}
+        ${this.balanceTemplate()} testing - ${this.avatarSrc}
         <wui-flex
           gap="xxs"
           alignItems="center"
