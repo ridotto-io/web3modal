@@ -40,7 +40,7 @@ export declare class Web3Modal extends Web3ModalScaffold {
     getChainId(): number | undefined;
     getIsConnected(): boolean;
     getWalletProvider(): ethers.providers.Web3Provider | undefined;
-    getWalletProviderType(): "walletConnect" | "injected" | "coinbaseWallet" | "eip6963" | undefined;
+    getWalletProviderType(): "injected" | "walletConnect" | "coinbaseWallet" | "eip6963" | undefined;
     getSigner(): ethers.providers.JsonRpcSigner | undefined;
     subscribeProvider(callback: (newState: ProviderControllerState) => void): () => void;
     disconnect(): Promise<void>;

@@ -12,6 +12,8 @@ export declare class W3mAccountView extends LitElement {
     private disconecting;
     constructor();
     disconnectedCallback(): void;
+    getProfile(): string | null;
+    private onClick;
     render(): import("lit-html").TemplateResult<1>;
     private explorerBtnTemplate;
     private isAllowedNetworkSwitch;

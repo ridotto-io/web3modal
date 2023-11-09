@@ -67,6 +67,19 @@ export class W3mAccountView extends LitElement {
     this.usubscribe.forEach(unsubscribe => unsubscribe())
   }
 
+  public getProfile() { 
+    return localStorage.getItem('RDT_profile')
+  }
+
+  private onClick() {
+    const event = new CustomEvent('RDT_ON_SPAN_CLICK', {
+      detail: { data: 'some data' },
+      bubbles: true,
+      composed: true,
+    });
+    this.dispatchEvent(event);
+  }
+
   // -- Render -------------------------------------------- //
   public override render() {
     if (!this.address) {
@@ -85,7 +98,7 @@ export class W3mAccountView extends LitElement {
         <wui-avatar
           alt=${this.address}
           address=${this.address}
-          imageSrc=${ifDefined(this.profileImage)}
+          imageSrc=${this.getProfile()}
         ></wui-avatar>
 
         <wui-flex flexDirection="column" alignItems="center">
@@ -104,6 +117,10 @@ export class W3mAccountView extends LitElement {
                     charsEnd: 6,
                     truncate: 'middle'
                   })}
+
+             <hr>MY CUSTOM TEXT OR <span style="color: red">HTML ;) </span> 
+             <hr>
+             <button @click=${this.onClick}>Send event to RIDOTTO app</button>
             </wui-text>
             <wui-icon-link
               size="md"

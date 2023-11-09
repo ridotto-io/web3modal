@@ -68,7 +68,7 @@ export declare class Web3ModalScaffold {
     subscribeSIWEState(callback: (newState: SIWEControllerClientState) => void): () => void;
     protected getSIWENonce: () => string | undefined;
     protected getSIWESession: () => import("@web3modal/core").SIWESession | undefined;
-    protected getSIWEStatus: () => "error" | "success" | "ready" | "loading" | "uninitialized" | "rejected";
+    protected getSIWEStatus: () => "error" | "success" | "uninitialized" | "ready" | "loading" | "rejected";
     protected getSIWEMessage: () => string | undefined;
     private initControllers;
     private initOrContinue;

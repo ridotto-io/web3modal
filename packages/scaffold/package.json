@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@web3modal/core": "3.2.0",
-    "@web3modal/ui": "https://gitpkg.now.sh/ridotto-io/web3modal/packages/ui?V3",
+    "@web3modal/ui": "file:../ui",
     "lit": "3.0.0"
   },
   "keywords": [

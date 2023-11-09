@@ -15,6 +15,7 @@ let W3mAccountButton = class W3mAccountButton extends LitElement {
         this.unsubscribe = [];
         this.networkImages = AssetController.state.networkImages;
         this.disabled = false;
+        this.avatarSrc = undefined;
         this.balance = 'show';
         this.address = AccountController.state.address;
         this.balanceVal = AccountController.state.balance;
@@ -54,7 +55,7 @@ let W3mAccountButton = class W3mAccountButton extends LitElement {
         address=${ifDefined(this.profileName ?? this.address)}
         ?isProfileName=${Boolean(this.profileName)}
         networkSrc=${ifDefined(networkImage)}
-        avatarSrc=${ifDefined(this.profileImage)}
+        avatarSrc=${ifDefined(this.avatarSrc)}
         balance=${showBalance
             ? CoreHelperUtil.formatBalance(this.balanceVal, this.balanceSymbol)
             : ''}
@@ -70,6 +71,9 @@ let W3mAccountButton = class W3mAccountButton extends LitElement {
 __decorate([
     property({ type: Boolean })
 ], W3mAccountButton.prototype, "disabled", void 0);
+__decorate([
+    property()
+], W3mAccountButton.prototype, "avatarSrc", void 0);
 __decorate([
     property()
 ], W3mAccountButton.prototype, "balance", void 0);

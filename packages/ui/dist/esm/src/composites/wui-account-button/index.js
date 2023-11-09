@@ -29,7 +29,7 @@ let WuiAccountButton = class WuiAccountButton extends LitElement {
     render() {
         return html `
       <button ?disabled=${this.disabled}>
-        ${this.balanceTemplate()} testing - ${this.avatarSrc}
+        ${this.balanceTemplate()}
         <wui-flex
           gap="xxs"
           alignItems="center"

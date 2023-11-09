@@ -4,6 +4,7 @@ export declare class W3mAccountButton extends LitElement {
     private unsubscribe;
     private readonly networkImages;
     disabled?: WuiAccountButton['disabled'];
+    avatarSrc?: string;
     balance?: 'show' | 'hide';
     private address;
     private balanceVal;

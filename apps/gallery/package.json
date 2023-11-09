@@ -9,7 +9,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
-    "@web3modal/ui": "https://gitpkg.now.sh/ridotto-io/web3modal/packages/ui?V3",
+    "@web3modal/ui": "file:../../packages/ui",
     "lit": "3.0.0",
     "storybook": "7.5.0"
   },

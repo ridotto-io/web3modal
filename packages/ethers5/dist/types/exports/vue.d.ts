@@ -270,7 +270,7 @@ export declare function useWeb3ModalSigner(): {
         readonly removeListener: (eventName: import("@ethersproject/abstract-provider").EventType, listener: import("@ethersproject/abstract-provider").Listener) => import("@ethersproject/abstract-provider").Provider;
         readonly _isProvider: boolean;
     } | undefined;
-    walletProviderType: "walletConnect" | "injected" | "coinbaseWallet" | "eip6963" | undefined;
+    walletProviderType: "injected" | "walletConnect" | "coinbaseWallet" | "eip6963" | undefined;
     signer: import("@ethersproject/providers").JsonRpcSigner | undefined;
 };
 export declare function useDisconnect(): {

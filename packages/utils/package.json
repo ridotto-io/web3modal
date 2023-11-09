@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@web3modal/polyfills": "3.2.0",
-    "@web3modal/scaffold": "https://gitpkg.now.sh/ridotto-io/web3modal/packages/scaffold?V3"
+    "@web3modal/scaffold": "file:../scaffold"
   },
   "keywords": [
     "web3",
