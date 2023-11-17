@@ -55,7 +55,7 @@ let W3mAccountButton = class W3mAccountButton extends LitElement {
         address=${ifDefined(this.profileName ?? this.address)}
         ?isProfileName=${Boolean(this.profileName)}
         networkSrc=${ifDefined(networkImage)}
-        avatarSrc=${ifDefined(this.avatarSrc)}
+        avatarSrc=${ifDefined(this.profileImage)}
         balance=${showBalance
             ? CoreHelperUtil.formatBalance(this.balanceVal, this.balanceSymbol)
             : ''}

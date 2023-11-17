@@ -27,6 +27,7 @@ let W3mConnectButton = class W3mConnectButton extends LitElement {
       <wui-connect-button
         size=${ifDefined(this.size)}
         .loading=${this.open}
+        style="color:#fff !important"
         @click=${this.onClick.bind(this)}
       >
         ${this.open ? this.loadingLabel : this.label}

@@ -6,6 +6,7 @@ export interface AccountControllerState {
     balance?: string;
     balanceSymbol?: string;
     profileName?: string;
+    userName?: string;
     profileImage?: string;
     addressExplorerUrl?: string;
 }
@@ -17,6 +18,7 @@ export declare const AccountController: {
     setCaipAddress(caipAddress: AccountControllerState['caipAddress']): void;
     setBalance(balance: AccountControllerState['balance'], balanceSymbol: AccountControllerState['balanceSymbol']): void;
     setProfileName(profileName: AccountControllerState['profileName']): void;
+    setUserName(userName: AccountControllerState['userName']): void;
     setProfileImage(profileImage: AccountControllerState['profileImage']): void;
     setAddressExplorerUrl(explorerUrl: AccountControllerState['addressExplorerUrl']): void;
     resetAccount(): void;
