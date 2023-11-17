@@ -18,6 +18,7 @@ let W3mAccountView = class W3mAccountView extends LitElement {
         this.address = AccountController.state.address;
         this.profileImage = AccountController.state.profileImage;
         this.profileName = AccountController.state.profileName;
+        this.userName = AccountController.state.userName;
         this.balance = AccountController.state.balance;
         this.balanceSymbol = AccountController.state.balanceSymbol;
         this.network = NetworkController.state.caipNetwork;
@@ -28,6 +29,7 @@ let W3mAccountView = class W3mAccountView extends LitElement {
                     this.address = val.address;
                     this.profileImage = val.profileImage;
                     this.profileName = val.profileName;
+                    this.userName = val.userName;
                     this.balance = val.balance;
                     this.balanceSymbol = val.balanceSymbol;
                 }
@@ -70,9 +72,9 @@ let W3mAccountView = class W3mAccountView extends LitElement {
         <wui-avatar
           alt=${this.address}
           address=${this.address}
-          imageSrc=${this.getProfile()}
+          imageSrc=${this.profileImage}
         ></wui-avatar>
-
+        <wui-text variant="large-600" color="fg-100">${this.userName}</wui-text>
         <wui-flex flexDirection="column" alignItems="center">
           <wui-flex gap="3xs" alignItems="center" justifyContent="center">
             <wui-text variant="large-600" color="fg-100">
@@ -89,10 +91,6 @@ let W3mAccountView = class W3mAccountView extends LitElement {
                 charsEnd: 6,
                 truncate: 'middle'
             })}
-
-             <hr>MY CUSTOM TEXT OR <span style="color: red">HTML ;) </span> 
-             <hr>
-             <button @click=${this.onClick}>Send event to RIDOTTO app</button>
             </wui-text>
             <wui-icon-link
               size="md"
@@ -101,6 +99,7 @@ let W3mAccountView = class W3mAccountView extends LitElement {
               @click=${this.onCopyAddress}
             ></wui-icon-link>
           </wui-flex>
+          
           <wui-flex gap="s" flexDirection="column" alignItems="center">
             <wui-text variant="paragraph-500" color="fg-200">
               ${CoreHelperUtil.formatBalance(this.balance, this.balanceSymbol)}
@@ -206,7 +205,10 @@ __decorate([
 ], W3mAccountView.prototype, "profileName", void 0);
 __decorate([
     state()
-], W3mAccountView.prototype, "balance", void 0);
+],W3mAccountView.prototype, "userName", void 0);
+__decorate([
+    state()
+],W3mAccountView.prototype, "balance", void 0);
 __decorate([
     state()
 ], W3mAccountView.prototype, "balanceSymbol", void 0);

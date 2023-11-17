@@ -29,11 +29,11 @@ export default css `
 
   @media (hover: hover) and (pointer: fine) {
     button:hover:enabled {
-      background-color: var(--wui-color-accent-090);
+      background-color: #9E68FF
     }
 
     button:active:enabled {
-      background-color: var(--wui-color-accent-080);
+      background-color: #9E68FF
     }
   }
 
@@ -57,21 +57,20 @@ export default css `
   button > wui-text {
     transition: opacity 200ms ease-in-out;
     opacity: var(--local-opacity-100);
-    color: var(--wui-color-inverse-100);
   }
 
   button[data-size='md'] {
+    border-radius:12px;
+    background:rgb(102, 0, 255);
     padding: 9px var(--wui-spacing-l) 9px var(--wui-spacing-l);
+    color:#fff !important
   }
 
   button[data-size='md'] + wui-text {
     padding-left: var(--wui-spacing-3xs);
+    color:#fff !important
   }
 
-  wui-loading-spinner {
-    width: 14px;
-    height: 14px;
-  }
 
   wui-loading-spinner::slotted(svg) {
     width: 10px !important;

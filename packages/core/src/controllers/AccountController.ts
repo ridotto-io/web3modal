@@ -11,6 +11,7 @@ export interface AccountControllerState {
   balance?: string
   balanceSymbol?: string
   profileName?: string
+  userName?:string
   profileImage?: string
   addressExplorerUrl?: string
 }
@@ -53,6 +54,10 @@ export const AccountController = {
 
   setProfileName(profileName: AccountControllerState['profileName']) {
     state.profileName = profileName
+  },
+
+  setUserName(userName: AccountControllerState['userName']) {
+    state.userName = userName
   },
 
   setProfileImage(profileImage: AccountControllerState['profileImage']) {

@@ -26,6 +26,9 @@ export const AccountController = {
     setProfileName(profileName) {
         state.profileName = profileName;
     },
+    setUserName(userName) {
+        state.userName = userName;
+    },
     setProfileImage(profileImage) {
         state.profileImage = profileImage;
     },
