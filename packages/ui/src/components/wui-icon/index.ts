@@ -42,6 +42,7 @@ import { infoCircleSvg } from '../../assets/svg/info-circle.js'
 import { mailSvg } from '../../assets/svg/mail.js'
 import { mobileSvg } from '../../assets/svg/mobile.js'
 import { networkPlaceholderSvg } from '../../assets/svg/network-placeholder.js'
+import { profileImageSvg } from '../../assets/svg/profile.js'
 import { nftPlaceholderSvg } from '../../assets/svg/nftPlaceholder.js'
 import { offSvg } from '../../assets/svg/off.js'
 import { playStoreSvg } from '../../assets/svg/play-store.js'
@@ -95,6 +96,7 @@ const svgOptions: Record<IconType, TemplateResult<2>> = {
   mail: mailSvg,
   mobile: mobileSvg,
   networkPlaceholder: networkPlaceholderSvg,
+  profileImage: profileImageSvg,
   nftPlaceholder: nftPlaceholderSvg,
   off: offSvg,
   playStore: playStoreSvg,

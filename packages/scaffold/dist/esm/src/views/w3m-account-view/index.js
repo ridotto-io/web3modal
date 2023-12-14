@@ -111,6 +111,20 @@ let W3mAccountView = class W3mAccountView extends LitElement {
       </wui-flex>
 
       <wui-flex flexDirection="column" gap="xs" .padding=${['0', 's', 's', 's']}>
+      <a
+      href="/profile"
+      style="text-decoration: none;"
+    >
+      <wui-list-item
+      .variant=image
+      iconVariant="overlay"
+      icon="profileImage"
+    >
+      <wui-text variant="paragraph-500" color="fg-100">
+      Profile
+    </wui-text>
+    </wui-list-item>
+    </a>
         <wui-list-item
           .variant=${networkImage ? 'image' : 'icon'}
           iconVariant="overlay"
@@ -169,6 +183,11 @@ let W3mAccountView = class W3mAccountView extends LitElement {
     onNetworks() {
         if (this.isAllowedNetworkSwitch()) {
             RouterController.push('Networks');
+        }
+    }
+    onProfile() {
+        if (this.isAllowedNetworkSwitch()) {
+            RouterController.push('/profile');
         }
     }
     async onDisconnect() {
