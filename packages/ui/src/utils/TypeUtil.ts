@@ -120,6 +120,7 @@ export type IconType =
   | 'mail'
   | 'mobile'
   | 'networkPlaceholder'
+  | 'profileImage'
   | 'nftPlaceholder'
   | 'off'
   | 'playStore'
