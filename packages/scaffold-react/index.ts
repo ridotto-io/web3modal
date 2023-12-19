@@ -1,11 +1,11 @@
-import type { Web3ModalScaffold } from '@web3modal/scaffold'
+import type { Web3ModalScaffold } from '@ridotto-io/w3-scaffold'
 import { useEffect, useState } from 'react'
 import type {
   W3mAccountButton,
   W3mButton,
   W3mConnectButton,
   W3mNetworkButton
-} from '@web3modal/scaffold'
+} from '@ridotto-io/w3-scaffold'
 
 type OpenOptions = Parameters<Web3ModalScaffold['open']>[0]
 

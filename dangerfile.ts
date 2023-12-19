@@ -1,7 +1,7 @@
 /* eslint-disable no-await-in-loop */
 import { danger, fail, message, warn } from 'danger'
 import corePackageJson from './packages/core/package.json' assert { type: 'json' }
-import { ConstantsUtil } from './packages/utils/src/ConstantsUtil'
+import { ConstantsUtil } from './packages/scaffold-utils/src/ConstantsUtil'
 
 // -- Constants ---------------------------------------------------------------
 const TYPE_COMMENT = `// -- Types --------------------------------------------- //`
@@ -14,8 +14,10 @@ const PACKAGE_VERSION = ConstantsUtil.VERSION
 
 // -- Data --------------------------------------------------------------------
 const { modified_files, created_files, deleted_files, diffForFile } = danger.git
-const updated_files = [...modified_files, ...created_files]
-const all_files = [...updated_files, ...created_files, ...deleted_files]
+const updated_files = [...modified_files, ...created_files].filter(f => !f.includes('dangerfile'))
+const all_files = [...updated_files, ...created_files, ...deleted_files].filter(
+  f => !f.includes('dangerfile')
+)
 
 // -- Dependency Checks -------------------------------------------------------
 async function checkPackageJsons() {
@@ -65,8 +67,8 @@ async function checkUiPackage() {
       fail(`${f} is using @state decorator, which is not allowed in ui package`)
     }
 
-    if (diff?.added.includes('import @web3modal/core')) {
-      fail(`${f} is importing @web3modal/core, which is not allowed in ui package`)
+    if (diff?.added.includes('import @ridotto-io/w3-core')) {
+      fail(`${f} is importing @ridotto-io/w3-core, which is not allowed in ui package`)
     }
 
     if (!diff?.added.includes(RENDER_COMMENT) && diff?.added.includes('render()')) {
@@ -87,7 +89,7 @@ async function checkUiPackage() {
       fail(`${f} is a ui element, but does not define wui- prefix`)
     }
 
-    if (diff?.added.includes('@web3modal/ui/')) {
+    if (diff?.added.includes('@ridotto-io/w3-ui/')) {
       fail(`${f} should use relative imports instead of direct package access`)
     }
   }
@@ -110,17 +112,34 @@ async function checkUiPackage() {
 
   const ui_index = modified_files.find(f => f.includes('ui/index.ts'))
   const ui_index_diff = ui_index ? await diffForFile(ui_index) : undefined
+  const jsx_index = modified_files.find(f => f.includes('ui/utils/JSXTypesUtil.ts'))
+  const jsx_index_diff = jsx_index ? await diffForFile(jsx_index) : undefined
+  const created_ui_components_index_ts = created_ui_components.filter(f => f.endsWith('index.ts'))
+  const created_ui_composites_index_ts = created_ui_composites.filter(f => f.endsWith('index.ts'))
+  const created_ui_layout_index_ts = created_ui_layout.filter(f => f.endsWith('index.ts'))
 
-  if (created_ui_components.length && !ui_index_diff?.added.includes('src/components')) {
+  if (created_ui_components_index_ts.length && !ui_index_diff?.added.includes('src/components')) {
     fail('New components were added, but not exported in ui/index.ts')
   }
 
-  if (created_ui_composites.length && !ui_index_diff?.added.includes('src/composites')) {
+  if (created_ui_composites_index_ts.length && !ui_index_diff?.added.includes('src/composites')) {
     fail('New composites were added, but not exported in ui/index.ts')
   }
 
-  if (created_ui_layout.length && !ui_index_diff?.added.includes('src/layout')) {
+  if (created_ui_layout_index_ts.length && !ui_index_diff?.added.includes('src/layout')) {
     fail('New layout components were added, but not exported in ui/index.ts')
+  }
+
+  if (created_ui_components_index_ts.length && !jsx_index_diff?.added.includes('../components')) {
+    fail('New components were added, but not exported in ui/utils/JSXTypeUtil.ts')
+  }
+
+  if (created_ui_composites_index_ts.length && !jsx_index_diff?.added.includes('../composites')) {
+    fail('New composites were added, but not exported in ui/utils/JSXTypeUtil.ts')
+  }
+
+  if (created_ui_layout_index_ts.length && !jsx_index_diff?.added.includes('../layout')) {
+    fail('New layout components were added, but not exported in ui/utils/JSXTypeUtil.ts')
   }
 
   if (created_ui_components.length && !created_ui_components_stories.length) {
@@ -147,8 +166,8 @@ async function checkCorePackage() {
   for (const f of created_core_controllers) {
     const diff = await diffForFile(f)
 
-    if (diff?.added.includes('import @web3modal/ui')) {
-      fail(`${f} is importing @web3modal/ui, which is not allowed in core package`)
+    if (diff?.added.includes('import @ridotto-io/w3-ui')) {
+      fail(`${f} is importing @ridotto-io/w3-ui, which is not allowed in core package`)
     }
 
     if (!diff?.added.includes(TYPE_COMMENT)) {
@@ -167,7 +186,7 @@ async function checkCorePackage() {
       fail(`${f} is using this.state, use just state`)
     }
 
-    if (diff?.added.includes('@web3modal/core/')) {
+    if (diff?.added.includes('@ridotto-io/w3-core/')) {
       fail(`${f} should use relative imports instead of direct package access`)
     }
 
@@ -219,9 +238,9 @@ async function checkScaffoldHtmlPackage() {
     }
 
     if (
-      diff?.added.includes('@web3modal/core/') ||
-      diff?.added.includes('@web3modal/ui/') ||
-      diff?.added.includes('@web3modal/scaffold/')
+      diff?.added.includes('@ridotto-io/w3-core/') ||
+      diff?.added.includes('@ridotto-io/w3-ui/') ||
+      diff?.added.includes('@ridotto-io/w3-scaffold/')
     ) {
       fail(`${f} should use relative imports instead of direct package access`)
     }
@@ -236,12 +255,12 @@ async function checkClientPackages() {
   for (const f of wagmi_files) {
     const diff = await diffForFile(f)
 
-    if (diff?.added.includes('@web3modal/core')) {
-      fail(`${f} is not allowed to import from @web3modal/core`)
+    if (diff?.added.includes('@ridotto-io/w3-core')) {
+      fail(`${f} is not allowed to import from @ridotto-io/w3-core`)
     }
 
-    if (diff?.added.includes('@web3modal/ui')) {
-      fail(`${f} is not allowed to import from @web3modal/ui`)
+    if (diff?.added.includes('@ridotto-io/w3-ui')) {
+      fail(`${f} is not allowed to import from @ridotto-io/w3-ui`)
     }
   }
 }
@@ -254,3 +273,15 @@ function checkSdkVersion() {
   }
 }
 checkSdkVersion()
+
+// -- Check left over development constants ---------------------------------------
+async function checkDevelopmentConstants() {
+  for (const f of updated_files) {
+    const diff = await diffForFile(f)
+
+    if (diff?.added.includes('localhost:') && !diff?.added.includes('// Allow localhost')) {
+      fail(`${f} uses localhost: which is likely a mistake`)
+    }
+  }
+}
+checkDevelopmentConstants()

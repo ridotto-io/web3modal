@@ -1,6 +1,6 @@
 {
-  "name": "@web3modal/scaffold-vue",
-  "version": "3.2.0",
+  "name": "@ridotto-io/w3-scaffold-vue",
+  "version": "3.6.0-alpha.0",
   "type": "module",
   "main": "./dist/esm/index.js",
   "types": "./dist/types/index.d.ts",
@@ -10,13 +10,13 @@
   ],
   "scripts": {
     "build:clean": "rm -rf dist",
-    "build": "npm run build:clean; tsc --build",
-    "watch": "npm run build:clean; tsc --watch",
+    "build:scaffold-vue": "tsc --build",
+    "watch": "tsc --watch",
     "typecheck": "tsc --noEmit",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
-    "@web3modal/scaffold": "file:../scaffold"
+    "@ridotto-io/w3-scaffold": "3.6.0-alpha.0"
   },
   "peerDependencies": {
     "vue": ">=3"

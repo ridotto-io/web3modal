@@ -50,11 +50,13 @@ import { qrCodeIcon } from '../../assets/svg/qr-code.js'
 import { refreshSvg } from '../../assets/svg/refresh.js'
 import { searchSvg } from '../../assets/svg/search.js'
 import { swapHorizontalSvg } from '../../assets/svg/swapHorizontal.js'
+import { swapHorizontalBoldSvg } from '../../assets/svg/swapHorizontalBold.js'
 import { swapVerticalSvg } from '../../assets/svg/swapVertical.js'
 import { telegramSvg } from '../../assets/svg/telegram.js'
 import { twitchSvg } from '../../assets/svg/twitch.js'
 import { twitterSvg } from '../../assets/svg/twitter.js'
 import { twitterIconSvg } from '../../assets/svg/twitterIcon.js'
+import { verifySvg } from '../../assets/svg/verify.js'
 import { walletPlaceholderSvg } from '../../assets/svg/wallet-placeholder.js'
 import { walletSvg } from '../../assets/svg/wallet.js'
 import { walletConnectSvg } from '../../assets/svg/walletconnect.js'
@@ -104,11 +106,13 @@ const svgOptions: Record<IconType, TemplateResult<2>> = {
   refresh: refreshSvg,
   search: searchSvg,
   swapHorizontal: swapHorizontalSvg,
+  swapHorizontalBold: swapHorizontalBoldSvg,
   swapVertical: swapVerticalSvg,
   telegram: telegramSvg,
   twitch: twitchSvg,
   twitter: twitterSvg,
   twitterIcon: twitterIconSvg,
+  verify: verifySvg,
   wallet: walletSvg,
   walletConnect: walletConnectSvg,
   walletPlaceholder: walletPlaceholderSvg,

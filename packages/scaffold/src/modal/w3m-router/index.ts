@@ -1,6 +1,6 @@
-import type { RouterControllerState } from '@web3modal/core'
-import { RouterController } from '@web3modal/core'
-import { customElement } from '@web3modal/ui'
+import type { RouterControllerState } from '@ridotto-io/w3-core'
+import { RouterController } from '@ridotto-io/w3-core'
+import { customElement } from '@ridotto-io/w3-ui'
 import { LitElement, html } from 'lit'
 import { state } from 'lit/decorators.js'
 import styles from './styles.js'
@@ -79,6 +79,16 @@ export class W3mRouter extends LitElement {
         return html`<w3m-get-wallet-view></w3m-get-wallet-view>`
       case 'Downloads':
         return html`<w3m-downloads-view></w3m-downloads-view>`
+      case 'EmailVerifyOtp':
+        return html`<w3m-email-verify-otp-view></w3m-email-verify-otp-view>`
+      case 'EmailVerifyDevice':
+        return html`<w3m-email-verify-device-view></w3m-email-verify-device-view>`
+      case 'ApproveTransaction':
+        return html`<w3m-approve-transaction-view></w3m-approve-transaction-view>`
+      case 'Transactions':
+        return html`<w3m-transactions-view></w3m-transactions-view>`
+      case 'UpgradeWallet':
+        return html`<w3m-upgrade-wallet-view></w3m-upgrade-wallet-view>`
       default:
         return html`<w3m-connect-view></w3m-connect-view>`
     }

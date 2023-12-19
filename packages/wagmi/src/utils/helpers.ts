@@ -1,6 +1,6 @@
-import type { CaipNetwork } from '@web3modal/scaffold'
+import type { CaipNetwork } from '@ridotto-io/w3-scaffold'
 import type { Chain } from '@wagmi/core'
-import { ConstantsUtil, PresetsUtil } from '@web3modal/utils'
+import { ConstantsUtil, PresetsUtil } from '@ridotto-io/w3-scaffold-utils'
 
 export function getCaipDefaultChain(chain?: Chain) {
   if (!chain) {

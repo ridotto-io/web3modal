@@ -1,10 +1,11 @@
-import type { WcWallet } from '@web3modal/core'
-import { ApiController, AssetUtil, ConnectorController, RouterController } from '@web3modal/core'
-import { customElement } from '@web3modal/ui'
+import type { WcWallet } from '@ridotto-io/w3-core'
+import { ApiController, AssetUtil, ConnectorController, RouterController } from '@ridotto-io/w3-core'
+import { customElement } from '@ridotto-io/w3-ui'
 import { LitElement, html } from 'lit'
 import { property, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import styles from './styles.js'
+import { markWalletsAsInstalled } from '../../utils/markWalletsAsInstalled.js'
 
 @customElement('w3m-all-wallets-search')
 export class W3mAllWalletsSearch extends LitElement {
@@ -39,14 +40,15 @@ export class W3mAllWalletsSearch extends LitElement {
 
   private walletsTemplate() {
     const { search } = ApiController.state
+    const wallets = markWalletsAsInstalled(search)
 
     if (!search.length) {
       return html`
         <wui-flex justifyContent="center" alignItems="center" gap="s" flexDirection="column">
           <wui-icon-box
             size="lg"
-            iconcolor="fg-200"
-            backgroundcolor="fg-300"
+            iconColor="fg-200"
+            backgroundColor="fg-300"
             icon="wallet"
             background="transparent"
           ></wui-icon-box>
@@ -62,16 +64,17 @@ export class W3mAllWalletsSearch extends LitElement {
         rowGap="l"
         columnGap="xs"
       >
-        ${search.map(
-          wallet => html`
+        ${wallets.map(
+      wallet => html`
             <wui-card-select
               imageSrc=${ifDefined(AssetUtil.getWalletImage(wallet))}
               type="wallet"
               name=${wallet.name}
               @click=${() => this.onConnectWallet(wallet)}
+              .installed=${wallet.installed}
             ></wui-card-select>
           `
-        )}
+    )}
       </wui-grid>
     `
   }

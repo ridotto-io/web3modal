@@ -9,6 +9,7 @@ export type ColorType =
   | 'inverse-000'
   | 'inverse-100'
   | 'success-100'
+  | 'glass-005'
 
 export type TextType =
   | 'large-500'
@@ -16,6 +17,7 @@ export type TextType =
   | 'large-700'
   | 'micro-600'
   | 'micro-700'
+  | 'paragraph-400'
   | 'paragraph-500'
   | 'paragraph-600'
   | 'paragraph-700'
@@ -27,7 +29,7 @@ export type TextType =
 
 export type TextAlign = 'center' | 'left' | 'right'
 
-export type SizeType = 'inherit' | 'lg' | 'md' | 'mdl' | 'sm' | 'xs' | 'xxs'
+export type SizeType = 'inherit' | 'xl' | 'lg' | 'md' | 'mdl' | 'sm' | 'xs' | 'xxs'
 
 export type SpacingType =
   | '0'
@@ -128,11 +130,13 @@ export type IconType =
   | 'refresh'
   | 'search'
   | 'swapHorizontal'
+  | 'swapHorizontalBold'
   | 'swapVertical'
   | 'telegram'
   | 'twitch'
   | 'twitter'
   | 'twitterIcon'
+  | 'verify'
   | 'wallet'
   | 'walletConnect'
   | 'walletPlaceholder'
@@ -170,21 +174,57 @@ export type ChipType = 'fill' | 'shade' | 'transparent'
 export type ButtonType = 'accent' | 'fill' | 'shade' | 'fullWidth' | 'accentBg'
 
 export type TransactionType =
+  | 'approve'
   | 'bought'
-  | 'buy'
-  | 'cryptoSent'
-  | 'deposited'
-  | 'minted'
-  | 'nftSent'
-  | 'received'
-  | 'swapped'
-  | 'withdrawed'
+  | 'borrow'
+  | 'burn'
+  | 'cancel'
+  | 'claim'
+  | 'deploy'
+  | 'deposit'
+  | 'execute'
+  | 'mint'
+  | 'receive'
+  | 'repay'
+  | 'send'
+  | 'stake'
+  | 'trade'
+  | 'unstake'
+  | 'withdraw'
 
-export type TransactionIconType = 'arrowBottom' | 'arrowTop' | 'swapVertical' | 'swapHorizontal'
+// eslint-disable-next-line no-shadow
+export enum TransactionTypePastTense {
+  'approve' = 'approved',
+  'bought' = 'bought',
+  'borrow' = 'borrowed',
+  'burn' = 'burnt',
+  'cancel' = 'canceled',
+  'claim' = 'claimed',
+  'deploy' = 'deployed',
+  'deposit' = 'deposited',
+  'execute' = 'executed',
+  'mint' = 'minted',
+  'receive' = 'received',
+  'repay' = 'repaid',
+  'send' = 'sent',
+  'sell' = 'sold',
+  'stake' = 'staked',
+  'trade' = 'swapped',
+  'unstake' = 'unstaked',
+  'withdraw' = 'withdrawn'
+}
+
+export type TransactionIconType =
+  | 'arrowBottom'
+  | 'arrowTop'
+  | 'swapVertical'
+  | 'swapHorizontalBold'
+  | 'checkmark'
+  | 'close'
 
 export type CardSelectType = 'network' | 'wallet'
 
-export type BackgroundType = 'opaque' | 'transparent'
+export type BackgroundType = 'opaque' | 'gray' | 'transparent'
 
 export type TagType = 'main' | 'shade' | 'error' | 'success'
 

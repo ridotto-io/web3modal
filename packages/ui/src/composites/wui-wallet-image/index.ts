@@ -5,6 +5,7 @@ import '../../components/wui-image/index.js'
 import { resetStyles } from '../../utils/ThemeUtil.js'
 import type { BorderRadiusType, IconType, SizeType } from '../../utils/TypeUtil.js'
 import { customElement } from '../../utils/WebComponentsUtil.js'
+import '../wui-icon-box/index.js'
 import styles from './styles.js'
 
 @customElement('wui-wallet-image')
@@ -12,13 +13,17 @@ export class WuiWalletImage extends LitElement {
   public static override styles = [resetStyles, styles]
 
   // -- State & Properties -------------------------------- //
-  @property() public size: Exclude<SizeType, 'xs' | 'xxs'> = 'md'
+  @property() public size: Exclude<SizeType, 'xl' | 'xs' | 'xxs'> = 'md'
 
   @property() public name = ''
 
   @property() public imageSrc?: string
 
   @property() public walletIcon?: IconType
+
+  @property({ type: Boolean }) public installed = false
+
+  @property() public badgeSize: SizeType = 'xs'
 
   // -- Render -------------------------------------------- //
   public override render() {
@@ -39,7 +44,10 @@ export class WuiWalletImage extends LitElement {
       this.dataset['walletIcon'] = this.walletIcon
     }
 
-    return html` ${this.templateVisual()}`
+    return html`
+      <wui-flex justifyContent="center" alignItems="center"> ${this.templateVisual()} </wui-flex>
+      ${this.templateInstalledBadge()}
+    `
   }
 
   // -- Private ------------------------------------------- //
@@ -61,6 +69,22 @@ export class WuiWalletImage extends LitElement {
       color="inherit"
       name="walletPlaceholder"
     ></wui-icon>`
+  }
+  private templateInstalledBadge() {
+    if (this.installed) {
+      return html`
+        <wui-icon-box
+          size=${this.badgeSize}
+          iconSize=${this.badgeSize}
+          iconcolor="success-100"
+          backgroundcolor="success-100"
+          icon="checkmark"
+          background="opaque"
+        ></wui-icon-box>
+      `
+    }
+
+    return null
   }
 }
 

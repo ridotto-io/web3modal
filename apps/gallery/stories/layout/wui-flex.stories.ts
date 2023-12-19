@@ -1,6 +1,6 @@
 import type { Meta } from '@storybook/web-components'
-import '@web3modal/ui/src/layout/wui-flex'
-import type { WuiFlex } from '@web3modal/ui/src/layout/wui-flex'
+import '@ridotto-io/w3-ui/src/layout/wui-flex'
+import type { WuiFlex } from '@ridotto-io/w3-ui/src/layout/wui-flex'
 import { html } from 'lit'
 import '../../components/gallery-placeholder'
 import {

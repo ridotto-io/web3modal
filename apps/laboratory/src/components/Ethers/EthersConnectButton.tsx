@@ -1,14 +1,20 @@
 import { Button, useToast } from '@chakra-ui/react'
-import { useWeb3ModalAccount, useWeb3ModalSigner } from '@web3modal/ethers5/react'
-
+import { useWeb3ModalAccount, useWeb3ModalProvider } from '@ridotto-io/w3-ethers/react'
+import { BrowserProvider, JsonRpcSigner } from 'ethers'
 export function EthersConnectButton() {
   const toast = useToast()
-  const { isConnected } = useWeb3ModalAccount()
-  const { signer } = useWeb3ModalSigner()
+  const { isConnected, address } = useWeb3ModalAccount()
+  const { walletProvider } = useWeb3ModalProvider()
 
   async function onSignMessage() {
     try {
+      if (!walletProvider || !address) {
+        throw Error('user is disconnected')
+      }
+      const provider = new BrowserProvider(walletProvider)
+      const signer = new JsonRpcSigner(provider, address)
       const signature = await signer?.signMessage('Hello Web3Modal Ethers')
+
       toast({ title: 'Succcess', description: signature, status: 'success', isClosable: true })
     } catch {
       toast({

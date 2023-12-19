@@ -1,4 +1,4 @@
-import { createWeb3Modal, defaultConfig } from '@web3modal/ethers5'
+import { createWeb3Modal, defaultConfig } from '@ridotto-io/w3-ethers5'
 
 // @ts-expect-error 1. Get projectId
 const projectId = import.meta.env.VITE_PROJECT_ID
@@ -7,7 +7,22 @@ if (!projectId) {
 }
 
 // 2. Create wagmiConfig
-const chains = [1, 42161]
+const chains = [
+  {
+    chainId: 1,
+    name: 'Ethereum',
+    currency: 'ETH',
+    explorerUrl: 'https://etherscan.io',
+    rpcUrl: 'https://cloudflare-eth.com'
+  },
+  {
+    chainId: 42161,
+    name: 'Arbitrum',
+    currency: 'ETH',
+    explorerUrl: 'https://arbiscan.io',
+    rpcUrl: 'https://arb1.arbitrum.io/rpc'
+  }
+]
 
 const ethersConfig = defaultConfig({
   metadata: {

@@ -1,5 +1,5 @@
-import { ApiController, AssetUtil, CoreHelperUtil, OptionsController } from '@web3modal/core'
-import { customElement } from '@web3modal/ui'
+import { ApiController, AssetUtil, CoreHelperUtil, OptionsController } from '@ridotto-io/w3-core'
+import { customElement } from '@ridotto-io/w3-ui'
 import { LitElement, html } from 'lit'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
@@ -18,8 +18,8 @@ export class W3mGetWalletView extends LitElement {
           walletIcon="allWallets"
           icon="externalLink"
           @click=${() => {
-            CoreHelperUtil.openHref('https://walletconnect.com/explorer?type=wallet', '_blank')
-          }}
+        CoreHelperUtil.openHref('https://walletconnect.com/explorer?type=wallet', '_blank')
+      }}
         ></wui-list-wallet>
       </wui-flex>
     `
@@ -38,8 +38,8 @@ export class W3mGetWalletView extends LitElement {
           tagVariant="main"
           imageSrc=${ifDefined(AssetUtil.getWalletImage(wallet))}
           @click=${() => {
-            CoreHelperUtil.openHref(wallet.homepage ?? EXPLORER, '_blank')
-          }}
+          CoreHelperUtil.openHref(wallet.homepage ?? EXPLORER, '_blank')
+        }}
         ></wui-list-wallet>
       `
     )

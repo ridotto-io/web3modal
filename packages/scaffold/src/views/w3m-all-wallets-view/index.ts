@@ -1,5 +1,5 @@
-import { CoreHelperUtil, RouterController } from '@web3modal/core'
-import { customElement } from '@web3modal/ui'
+import { CoreHelperUtil, RouterController } from '@ridotto-io/w3-core'
+import { customElement } from '@ridotto-io/w3-ui'
 import { LitElement, html } from 'lit'
 import { state } from 'lit/decorators.js'
 
@@ -24,7 +24,7 @@ export class W3mAllWalletsView extends LitElement {
   }
 
   // -- Private ------------------------------------------- //
-  private onInputChange(event: CustomEvent) {
+  private onInputChange(event: CustomEvent<string>) {
     this.onDebouncedSearch(event.detail)
   }
 
@@ -37,8 +37,9 @@ export class W3mAllWalletsView extends LitElement {
       return html`
         <wui-icon-box
           size="lg"
-          iconcolor="accent-100"
-          backgroundcolor="accent-100"
+          iconSize="xl"
+          iconColor="accent-100"
+          backgroundColor="accent-100"
           icon="qrCode"
           background="transparent"
           border

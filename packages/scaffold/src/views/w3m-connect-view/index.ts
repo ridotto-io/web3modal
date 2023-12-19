@@ -1,4 +1,4 @@
-import type { Connector, WcWallet } from '@web3modal/core'
+import type { Connector, WcWallet } from '@ridotto-io/w3-core'
 import {
   ApiController,
   AssetUtil,
@@ -9,8 +9,8 @@ import {
   OptionsController,
   RouterController,
   StorageUtil
-} from '@web3modal/core'
-import { customElement } from '@web3modal/ui'
+} from '@ridotto-io/w3-core'
+import { customElement } from '@ridotto-io/w3-ui'
 import { LitElement, html } from 'lit'
 import { state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
@@ -41,6 +41,8 @@ export class W3mConnectView extends LitElement {
   public override render() {
     return html`
       <wui-flex flexDirection="column" padding="s" gap="xs">
+        <w3m-email-login-widget></w3m-email-login-widget>
+
         ${this.walletConnectConnectorTemplate()} ${this.recentTemplate()}
         ${this.announcedTemplate()} ${this.injectedTemplate()} ${this.featuredTemplate()}
         ${this.customTemplate()} ${this.recommendedTemplate()} ${this.connectorsTemplate()}
@@ -57,7 +59,6 @@ export class W3mConnectView extends LitElement {
     }
 
     const connector = this.connectors.find(c => c.type === 'WALLET_CONNECT')
-
     if (!connector) {
       return null
     }
@@ -94,6 +95,10 @@ export class W3mConnectView extends LitElement {
   }
 
   private featuredTemplate() {
+    const connector = this.connectors.find(c => c.type === 'WALLET_CONNECT')
+    if (!connector) {
+      return null
+    }
     const { featured } = ApiController.state
     if (!featured.length) {
       return null
@@ -140,8 +145,8 @@ export class W3mConnectView extends LitElement {
           imageSrc=${ifDefined(AssetUtil.getConnectorImage(connector))}
           name=${connector.name ?? 'Unknown'}
           @click=${() => this.onConnector(connector)}
-          tagLabel="installed"
           tagVariant="success"
+          installed=${true}
         >
         </wui-list-wallet>
       `
@@ -155,6 +160,7 @@ export class W3mConnectView extends LitElement {
       if (connector.type !== 'INJECTED') {
         return null
       }
+
       if (!ConnectionController.checkInstalled()) {
         return null
       }
@@ -162,10 +168,9 @@ export class W3mConnectView extends LitElement {
       return html`
         <wui-list-wallet
           imageSrc=${ifDefined(AssetUtil.getConnectorImage(connector))}
+          installed=${Boolean(announced)}
           name=${connector.name ?? 'Unknown'}
           @click=${() => this.onConnector(connector)}
-          tagLabel=${ifDefined(announced ? undefined : 'installed')}
-          tagVariant=${ifDefined(announced ? undefined : 'success')}
         >
         </wui-list-wallet>
       `
@@ -174,7 +179,7 @@ export class W3mConnectView extends LitElement {
 
   private connectorsTemplate() {
     return this.connectors.map(connector => {
-      if (['WALLET_CONNECT', 'INJECTED', 'ANNOUNCED'].includes(connector.type)) {
+      if (['WALLET_CONNECT', 'INJECTED', 'ANNOUNCED', 'EMAIL'].includes(connector.type)) {
         return null
       }
 
@@ -190,7 +195,16 @@ export class W3mConnectView extends LitElement {
   }
 
   private allWalletsTemplate() {
-    const roundedCount = Math.floor(ApiController.state.count / 10) * 10
+    const connector = this.connectors.find(c => c.type === 'WALLET_CONNECT')
+    if (!connector) {
+      return null
+    }
+
+    const count = ApiController.state.count
+    const featuredCount = ApiController.state.featured.length
+    const rawCount = count + featuredCount
+    const roundedCount = rawCount < 10 ? rawCount : Math.floor(rawCount / 10) * 10
+    const tagLabel = roundedCount < rawCount ? `${roundedCount}+` : `${roundedCount}`
 
     return html`
       <wui-list-wallet
@@ -198,13 +212,17 @@ export class W3mConnectView extends LitElement {
         walletIcon="allWallets"
         showAllWallets
         @click=${this.onAllWallets.bind(this)}
-        tagLabel=${`${roundedCount}+`}
+        tagLabel=${tagLabel}
         tagVariant="shade"
       ></wui-list-wallet>
     `
   }
 
   private recommendedTemplate() {
+    const connector = this.connectors.find(c => c.type === 'WALLET_CONNECT')
+    if (!connector) {
+      return null
+    }
     const { recommended } = ApiController.state
     const { customWallets, featuredWalletIds } = OptionsController.state
     const { connectors } = ConnectorController.state
@@ -230,6 +248,7 @@ export class W3mConnectView extends LitElement {
     )
   }
 
+  // -- Private Methods ----------------------------------- //
   private onConnector(connector: Connector) {
     if (connector.type === 'WALLET_CONNECT') {
       if (CoreHelperUtil.isMobile()) {

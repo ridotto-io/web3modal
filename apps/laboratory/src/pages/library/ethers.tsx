@@ -1,7 +1,7 @@
 import { Center, Text, VStack } from '@chakra-ui/react'
 import { NetworksButton } from '../../components/NetworksButton'
 import { EthersConnectButton } from '../../components/Ethers/EthersConnectButton'
-import { createWeb3Modal, defaultConfig } from '@web3modal/ethers5/react'
+import { createWeb3Modal, defaultConfig } from '@ridotto-io/w3-ethers/react'
 import { ThemeStore } from '../../utils/StoreUtil'
 import {
   arbitrum,
@@ -53,7 +53,9 @@ const modal = createWeb3Modal({
   chains,
   projectId,
   enableAnalytics: true,
-  metadata
+  metadata,
+  termsConditionsUrl: 'https://walletconnect.com/terms',
+  privacyPolicyUrl: 'https://walletconnect.com/privacy'
 })
 
 ThemeStore.setModal(modal)
@@ -63,7 +65,7 @@ export default function Ethers() {
     <>
       <Center paddingTop={10}>
         <Text fontSize="xl" fontWeight={700}>
-          V3 with Ethers
+          Ethers default
         </Text>
       </Center>
       <Center h="65vh">

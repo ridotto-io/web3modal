@@ -43,6 +43,7 @@ export function setThemeVariables(themeVariables: ThemeVariables) {
 function createRootStyles(themeVariables?: ThemeVariables) {
   return {
     core: css`
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
       :root {
         --w3m-color-mix-strength: ${unsafeCSS(
           themeVariables?.['--w3m-color-mix-strength']
@@ -51,7 +52,7 @@ function createRootStyles(themeVariables?: ThemeVariables) {
         )};
         --w3m-font-family: ${unsafeCSS(
           themeVariables?.['--w3m-font-family'] ||
-            '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif'
+            'Inter, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;'
         )};
         --w3m-font-size-master: ${unsafeCSS(themeVariables?.['--w3m-font-size-master'] || '10px')};
         --w3m-border-radius-master: ${unsafeCSS(
@@ -105,10 +106,12 @@ function createRootStyles(themeVariables?: ThemeVariables) {
         --wui-spacing-3xl: 40px;
         --wui-spacing-4xl: 90px;
 
+        --wui-icon-box-size-xxs: 14px;
         --wui-icon-box-size-xs: 20px;
         --wui-icon-box-size-sm: 24px;
         --wui-icon-box-size-md: 32px;
         --wui-icon-box-size-lg: 40px;
+        --wui-icon-box-size-xl: 64px;
 
         --wui-icon-size-inherit: inherit;
         --wui-icon-size-xxs: 10px;
@@ -117,6 +120,7 @@ function createRootStyles(themeVariables?: ThemeVariables) {
         --wui-icon-size-md: 16px;
         --wui-icon-size-mdl: 18px;
         --wui-icon-size-lg: 20px;
+        --wui-icon-size-xl: 24px;
 
         --wui-wallet-image-size-inherit: inherit;
         --wui-wallet-image-size-sm: 40px;
@@ -157,7 +161,6 @@ function createRootStyles(themeVariables?: ThemeVariables) {
         --wui-color-modal-bg: var(--wui-color-modal-bg-base);
 
         --wui-color-blue-100: var(--wui-color-blue-base-100);
-        --wui-color-blue-015: var(--wui-color-accent-base-015);
 
         --wui-color-accent-100: var(--wui-color-accent-base-100);
         --wui-color-accent-090: var(--wui-color-accent-base-090);

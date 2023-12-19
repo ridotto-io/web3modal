@@ -5,8 +5,8 @@ import {
   RouterController,
   SnackController,
   ThemeController
-} from '@web3modal/core'
-import type { IconType } from '@web3modal/ui'
+} from '@ridotto-io/w3-core'
+import type { IconType } from '@ridotto-io/w3-ui'
 import { LitElement, html } from 'lit'
 import { property, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
@@ -152,8 +152,8 @@ export class W3mConnectingWidget extends LitElement {
         ? html`
             <wui-flex .padding=${['0', 'xl', 'xl', 'xl'] as const} justifyContent="center">
               <wui-link @click=${this.onCopyUri} color="fg-200">
-                <wui-icon size="sm" color="fg-200" slot="iconLeft" name="copy"></wui-icon>
-                Copy Link
+                <wui-icon size="xs" color="fg-200" slot="iconLeft" name="copy"></wui-icon>
+                Copy link
               </wui-link>
             </wui-flex>
           `

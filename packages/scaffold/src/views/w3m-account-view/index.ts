@@ -1,15 +1,17 @@
 import {
   AccountController,
-  AssetController,
   ConnectionController,
   CoreHelperUtil,
   EventsController,
   ModalController,
   NetworkController,
   RouterController,
-  SnackController
-} from '@web3modal/core'
-import { UiHelperUtil, customElement } from '@web3modal/ui'
+  SnackController,
+  ConnectorController,
+  StorageUtil,
+  AssetUtil
+} from '@ridotto-io/w3-core'
+import { UiHelperUtil, customElement } from '@ridotto-io/w3-ui'
 import { LitElement, html } from 'lit'
 import { state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
@@ -22,7 +24,7 @@ export class W3mAccountView extends LitElement {
   // -- Members -------------------------------------------- //
   private usubscribe: (() => void)[] = []
 
-  private readonly networkImages = AssetController.state.networkImages
+  private readonly connectors = ConnectorController.state.connectors
 
   // -- State & Properties --------------------------------- //
   @state() private address = AccountController.state.address
@@ -67,7 +69,7 @@ export class W3mAccountView extends LitElement {
     this.usubscribe.forEach(unsubscribe => unsubscribe())
   }
 
-  public getProfile() { 
+  public getProfile() {
     return localStorage.getItem('RDT_profile')
   }
 
@@ -86,7 +88,7 @@ export class W3mAccountView extends LitElement {
       throw new Error('w3m-account-view: No account provided')
     }
 
-    const networkImage = this.networkImages[this.network?.imageId ?? '']
+    const networkImage = AssetUtil.getNetworkImage(this.network)
 
     return html`
       <wui-flex
@@ -105,18 +107,18 @@ export class W3mAccountView extends LitElement {
           <wui-flex gap="3xs" alignItems="center" justifyContent="center">
             <wui-text variant="large-600" color="fg-100">
               ${this.profileName
-                ? UiHelperUtil.getTruncateString({
-                    string: this.profileName,
-                    charsStart: 20,
-                    charsEnd: 0,
-                    truncate: 'end'
-                  })
-                : UiHelperUtil.getTruncateString({
-                    string: this.address,
-                    charsStart: 4,
-                    charsEnd: 6,
-                    truncate: 'middle'
-                  })}
+        ? UiHelperUtil.getTruncateString({
+          string: this.profileName,
+          charsStart: 20,
+          charsEnd: 0,
+          truncate: 'end'
+        })
+        : UiHelperUtil.getTruncateString({
+          string: this.address,
+          charsStart: 4,
+          charsEnd: 6,
+          truncate: 'middle'
+        })}
 
              <hr>MY CUSTOM TEXT OR <span style="color: red">HTML ;) </span> 
              <hr>
@@ -140,6 +142,8 @@ export class W3mAccountView extends LitElement {
       </wui-flex>
 
       <wui-flex flexDirection="column" gap="xs" .padding=${['0', 's', 's', 's'] as const}>
+        ${this.emailCardTemplate()}
+
         <wui-list-item
           .variant=${networkImage ? 'image' : 'icon'}
           iconVariant="overlay"
@@ -151,6 +155,15 @@ export class W3mAccountView extends LitElement {
           <wui-text variant="paragraph-500" color="fg-100">
             ${this.network?.name ?? 'Unknown'}
           </wui-text>
+        </wui-list-item>
+        <wui-list-item
+          iconVariant="blue"
+          icon="swapHorizontalBold"
+          iconSize="sm"
+          ?chevron=${true}
+          @click=${this.onTransactions.bind(this)}
+        >
+          <wui-text variant="paragraph-500" color="fg-100">Activity</wui-text>
         </wui-list-item>
         <wui-list-item
           variant="icon"
@@ -167,6 +180,23 @@ export class W3mAccountView extends LitElement {
   }
 
   // -- Private ------------------------------------------- //
+  private emailCardTemplate() {
+    const type = StorageUtil.getConnectedConnector()
+    const isEmail = this.connectors.find(c => c.type === 'EMAIL')
+    if (!isEmail || type !== 'EMAIL') {
+      return null
+    }
+
+    return html`
+      <wui-notice-card
+        @click=${this.onGoToUpgradeView.bind(this)}
+        label="Upgrade your wallet"
+        description="Transition to a non-custodial wallet"
+        icon="wallet"
+      ></wui-notice-card>
+    `
+  }
+
   private explorerBtnTemplate() {
     const { addressExplorerUrl } = AccountController.state
 
@@ -208,6 +238,11 @@ export class W3mAccountView extends LitElement {
     }
   }
 
+  private onTransactions() {
+    EventsController.sendEvent({ type: 'track', event: 'CLICK_TRANSACTIONS' })
+    RouterController.push('Transactions')
+  }
+
   private async onDisconnect() {
     try {
       this.disconecting = true
@@ -227,6 +262,10 @@ export class W3mAccountView extends LitElement {
     if (addressExplorerUrl) {
       CoreHelperUtil.openHref(addressExplorerUrl, '_blank')
     }
+  }
+
+  private onGoToUpgradeView() {
+    RouterController.push('UpgradeWallet')
   }
 }
 

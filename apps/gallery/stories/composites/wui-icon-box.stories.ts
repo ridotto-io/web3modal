@@ -1,6 +1,6 @@
 import type { Meta } from '@storybook/web-components'
-import '@web3modal/ui/src/composites/wui-icon-box'
-import type { WuiIconBox } from '@web3modal/ui/src/composites/wui-icon-box'
+import '@ridotto-io/w3-ui/src/composites/wui-icon-box'
+import type { WuiIconBox } from '@ridotto-io/w3-ui/src/composites/wui-icon-box'
 import { html } from 'lit'
 
 import {

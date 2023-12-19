@@ -1,5 +1,5 @@
-import { CoreHelperUtil, RouterController } from '@web3modal/core'
-import { customElement } from '@web3modal/ui'
+import { CoreHelperUtil, RouterController } from '@ridotto-io/w3-core'
+import { customElement } from '@ridotto-io/w3-ui'
 import { LitElement, html } from 'lit'
 
 @customElement('w3m-downloads-view')

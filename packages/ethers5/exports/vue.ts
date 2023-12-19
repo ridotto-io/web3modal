@@ -1,9 +1,9 @@
 import type { Web3ModalOptions } from '../src/client.js'
 import { Web3Modal } from '../src/client.js'
-import { ConstantsUtil } from '@web3modal/utils'
-import { getWeb3Modal } from '@web3modal/scaffold-vue'
-import { useSnapshot } from 'valtio'
-import { ProviderController } from '../src/controllers/ProviderController.js'
+import { ConstantsUtil } from '@ridotto-io/w3-scaffold-utils'
+import { getWeb3Modal } from '@ridotto-io/w3-scaffold-vue'
+import type { ethers } from 'ethers'
+import { onUnmounted, ref } from 'vue'
 // -- Types -------------------------------------------------------------------
 export type { Web3ModalOptions } from '../src/client.js'
 
@@ -23,17 +23,28 @@ export function createWeb3Modal(options: Web3ModalOptions) {
 }
 
 // -- Composites --------------------------------------------------------------
-export function useWeb3ModalSigner() {
-  const state = useSnapshot(ProviderController.state)
+export function useWeb3ModalProvider() {
+  if (!modal) {
+    throw new Error('Please call "createWeb3Modal" before using "useWeb3ModalProvider" composition')
+  }
 
-  const walletProvider = state.provider
-  const walletProviderType = state.providerType
-  const signer = walletProvider?.getSigner()
+  const walletProvider = ref(
+    modal.getWalletProvider() as ethers.providers.ExternalProvider | undefined
+  )
+  const walletProviderType = ref(modal.getWalletProviderType())
+
+  const unsubscribe = modal.subscribeProvider(state => {
+    walletProvider.value = state.provider as ethers.providers.ExternalProvider | undefined
+    walletProviderType.value = state.providerType
+  })
+
+  onUnmounted(() => {
+    unsubscribe?.()
+  })
 
   return {
     walletProvider,
-    walletProviderType,
-    signer
+    walletProviderType
   }
 }
 
@@ -48,11 +59,23 @@ export function useDisconnect() {
 }
 
 export function useWeb3ModalAccount() {
-  const state = useSnapshot(ProviderController.state)
+  if (!modal) {
+    throw new Error('Please call "createWeb3Modal" before using "useWeb3ModalAccount" composition')
+  }
 
-  const address = state.address
-  const isConnected = state.isConnected
-  const chainId = state.chainId
+  const address = ref(modal.getAddress())
+  const isConnected = ref(modal.getIsConnected())
+  const chainId = ref(modal.getChainId())
+
+  const unsubscribe = modal.subscribeProvider(state => {
+    address.value = state.address as string
+    isConnected.value = state.isConnected
+    chainId.value = state.chainId
+  })
+
+  onUnmounted(() => {
+    unsubscribe?.()
+  })
 
   return {
     address,
@@ -61,12 +84,32 @@ export function useWeb3ModalAccount() {
   }
 }
 
+export function useWeb3ModalError() {
+  if (!modal) {
+    throw new Error('Please call "createWeb3Modal" before using "useWeb3ModalError" composition')
+  }
+
+  const error = ref(modal.getError())
+
+  const unsubscribe = modal.subscribeProvider(state => {
+    error.value = state.error
+  })
+
+  onUnmounted(() => {
+    unsubscribe?.()
+  })
+
+  return {
+    error
+  }
+}
+
 export {
   useWeb3ModalTheme,
   useWeb3Modal,
   useWeb3ModalState,
   useWeb3ModalEvents
-} from '@web3modal/scaffold-vue'
+} from '@ridotto-io/w3-scaffold-vue'
 
 // -- Universal Exports -------------------------------------------------------
 export { defaultConfig } from '../src/utils/defaultConfig.js'

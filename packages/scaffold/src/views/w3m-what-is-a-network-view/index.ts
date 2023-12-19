@@ -1,5 +1,5 @@
-import { CoreHelperUtil } from '@web3modal/core'
-import { customElement } from '@web3modal/ui'
+import { CoreHelperUtil } from '@ridotto-io/w3-core'
+import { customElement } from '@ridotto-io/w3-ui'
 import { LitElement, html } from 'lit'
 
 const data = [
@@ -31,8 +31,8 @@ export class W3mWhatIsANetworkView extends LitElement {
           variant="fill"
           size="sm"
           @click=${() => {
-            CoreHelperUtil.openHref('https://ethereum.org/en/developers/docs/networks/', '_blank')
-          }}
+        CoreHelperUtil.openHref('https://ethereum.org/en/developers/docs/networks/', '_blank')
+      }}
         >
           Learn more
           <wui-icon color="inherit" slot="iconRight" name="externalLink"></wui-icon>

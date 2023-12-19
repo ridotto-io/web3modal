@@ -1,6 +1,6 @@
 import type { Meta } from '@storybook/web-components'
-import '@web3modal/ui/src/composites/wui-list-wallet'
-import type { WuiListWallet } from '@web3modal/ui/src/composites/wui-list-wallet'
+import '@ridotto-io/w3-ui/src/composites/wui-list-wallet'
+import type { WuiListWallet } from '@ridotto-io/w3-ui/src/composites/wui-list-wallet'
 import { html } from 'lit'
 import '../../components/gallery-container'
 import {

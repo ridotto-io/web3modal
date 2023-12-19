@@ -1,4 +1,4 @@
-import type { BaseError, Platform } from '@web3modal/core'
+import type { BaseError, Platform } from '@ridotto-io/w3-core'
 import {
   AssetUtil,
   ConnectionController,
@@ -8,10 +8,11 @@ import {
   EventsController,
   ModalController,
   RouterController,
+  SIWEController,
   SnackController,
   StorageUtil
-} from '@web3modal/core'
-import { customElement } from '@web3modal/ui'
+} from '@ridotto-io/w3-core'
+import { customElement } from '@ridotto-io/w3-ui'
 import { LitElement, html } from 'lit'
 import { state } from 'lit/decorators.js'
 
@@ -75,7 +76,11 @@ export class W3mConnectingWcView extends LitElement {
 
         await ConnectionController.state.wcPromise
         this.finalizeConnection()
-        ModalController.close()
+        if (SIWEController.state.isSiweEnabled) {
+          RouterController.push('ConnectingSiwe')
+        } else {
+          ModalController.close()
+        }
       }
     } catch (error) {
       EventsController.sendEvent({
@@ -101,6 +106,7 @@ export class W3mConnectingWcView extends LitElement {
     if (recentWallet) {
       StorageUtil.setWeb3ModalRecent(recentWallet)
     }
+
     EventsController.sendEvent({
       type: 'track',
       event: 'CONNECT_SUCCESS',

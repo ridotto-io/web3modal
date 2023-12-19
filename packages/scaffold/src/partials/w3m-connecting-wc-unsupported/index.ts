@@ -1,5 +1,5 @@
-import { AssetUtil, EventsController, RouterController } from '@web3modal/core'
-import { customElement } from '@web3modal/ui'
+import { AssetUtil, EventsController, RouterController } from '@ridotto-io/w3-core'
+import { customElement } from '@ridotto-io/w3-ui'
 import { LitElement, html } from 'lit'
 import { ifDefined } from 'lit/directives/if-defined.js'
 

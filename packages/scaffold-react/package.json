@@ -1,6 +1,6 @@
 {
-  "name": "@web3modal/scaffold-react",
-  "version": "3.2.0",
+  "name": "@ridotto-io/w3-scaffold-react",
+  "version": "3.6.0-alpha.0",
   "type": "module",
   "main": "./dist/esm/index.js",
   "types": "./dist/types/index.d.ts",
@@ -10,13 +10,17 @@
   ],
   "scripts": {
     "build:clean": "rm -rf dist",
-    "build": "npm run build:clean; tsc --build",
-    "watch": "npm run build:clean; tsc --watch",
+    "build:scaffold-react": "tsc --build",
+    "watch": "tsc --watch",
     "typecheck": "tsc --noEmit",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
-    "@web3modal/scaffold": "file:../scaffold"
+<<<<<<< HEAD
+    "@ridotto-io/w3-scaffold": "file:../scaffold"
+=======
+    "@ridotto-io/w3-scaffold": "3.6.0-alpha.0"
+>>>>>>> upstream/V3
   },
   "peerDependencies": {
     "react": ">=17",
