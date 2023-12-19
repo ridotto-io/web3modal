@@ -19,6 +19,7 @@ jobs:
           node-version: 16
           registry-url: https://npm.pkg.github.com/
           scope: '@ridotto-io'
+      - name: Install npm packages
         run: |
           cd packages/common/
           npm install --legacy-peer-deps
