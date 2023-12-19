@@ -14,11 +14,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: check user permission
-        uses: 74th/workflow-permission-action@1.0.0
-        with:
-          users: ${{ vars.PROD_ALLOWED_USERS }}
-
       - uses: actions/setup-node@v3
         with:
           node-version: 16
