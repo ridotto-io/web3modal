@@ -1,11 +1,13 @@
-import type { BaseError, ConnectorType, Platform } from '@web3modal/core'
+import type { BaseError, ConnectorType, Platform } from '@ridotto-io/w3-core'
 import {
   ConnectionController,
   EventsController,
   ModalController,
+  RouterController,
+  SIWEController,
   StorageUtil
-} from '@web3modal/core'
-import { customElement } from '@web3modal/ui'
+} from '@ridotto-io/w3-core'
+import { customElement } from '@ridotto-io/w3-ui'
 import { W3mConnectingWidget } from '../../utils/w3m-connecting-widget/index.js'
 
 const platformMap = {
@@ -42,7 +44,12 @@ export class W3mConnectingExternalView extends W3mConnectingWidget {
           StorageUtil.setConnectedWalletImageUrl(this.connector.imageUrl)
         }
         await ConnectionController.connectExternal(this.connector)
-        ModalController.close()
+
+        if (SIWEController.state.isSiweEnabled) {
+          RouterController.push('ConnectingSiwe')
+        } else {
+          ModalController.close()
+        }
 
         EventsController.sendEvent({
           type: 'track',

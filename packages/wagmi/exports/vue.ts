@@ -1,7 +1,7 @@
-import { getWeb3Modal } from '@web3modal/scaffold-vue'
+import { getWeb3Modal } from '@ridotto-io/w3-scaffold-vue'
 import type { Web3ModalOptions } from '../src/client.js'
 import { Web3Modal } from '../src/client.js'
-import { ConstantsUtil } from '@web3modal/utils'
+import { ConstantsUtil } from '@ridotto-io/w3-scaffold-utils'
 
 // -- Types -------------------------------------------------------------------
 export type { Web3ModalOptions } from '../src/client.js'
@@ -27,7 +27,7 @@ export {
   useWeb3Modal,
   useWeb3ModalState,
   useWeb3ModalEvents
-} from '@web3modal/scaffold-vue'
+} from '@ridotto-io/w3-scaffold-vue'
 
 // -- Universal Exports -------------------------------------------------------
 export { EIP6963Connector } from '../src/connectors/EIP6963Connector.js'

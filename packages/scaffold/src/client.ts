@@ -9,8 +9,9 @@ import type {
   ThemeControllerState,
   ThemeMode,
   ThemeVariables,
-  SIWEControllerClientState
-} from '@web3modal/core'
+  SIWEControllerClientState,
+  ModalControllerState
+} from '@ridotto-io/w3-core'
 import {
   AccountController,
   BlockchainApiController,
@@ -24,8 +25,8 @@ import {
   PublicStateController,
   ThemeController,
   SIWEController
-} from '@web3modal/core'
-import { setColorTheme, setThemeVariables } from '@web3modal/ui'
+} from '@ridotto-io/w3-core'
+import { setColorTheme, setThemeVariables } from '@ridotto-io/w3-ui'
 
 // -- Helpers -------------------------------------------------------------------
 let isInitialized = false
@@ -55,7 +56,7 @@ export interface ScaffoldOptions extends LibraryOptions {
 }
 
 export interface OpenOptions {
-  view: 'Account' | 'Connect' | 'Networks'
+  view: 'Account' | 'Connect' | 'Networks' | 'ApproveTransaction'
 }
 
 // -- Client --------------------------------------------------------------------
@@ -76,6 +77,10 @@ export class Web3ModalScaffold {
   public async close() {
     await this.initOrContinue()
     ModalController.close()
+  }
+
+  public setLoading(loading: ModalControllerState['loading']) {
+    ModalController.setLoading(loading)
   }
 
   public getThemeMode() {
@@ -202,14 +207,6 @@ export class Web3ModalScaffold {
     return SIWEController.subscribe(callback)
   }
 
-  protected getSIWENonce = () => SIWEController.state.nonce
-
-  protected getSIWESession = () => SIWEController.state.session
-
-  protected getSIWEStatus = () => SIWEController.state.status
-
-  protected getSIWEMessage = () => SIWEController.state.message
-
   // -- Private ------------------------------------------------------------------
   private initControllers(options: ScaffoldOptions) {
     NetworkController.setClient(options.networkControllerClient)
@@ -229,8 +226,10 @@ export class Web3ModalScaffold {
     ConnectionController.setClient(options.connectionControllerClient)
 
     if (options.siweControllerClient) {
-      SIWEController.setSIWEClient(options.siweControllerClient)
+      const siweClient = options.siweControllerClient
+      SIWEController.setSIWEClient(siweClient)
     }
+
     if (options.metadata) {
       OptionsController.setMetadata(options.metadata)
     }
@@ -247,7 +246,7 @@ export class Web3ModalScaffold {
     if (!this.initPromise && !isInitialized && CoreHelperUtil.isClient()) {
       isInitialized = true
       this.initPromise = new Promise<void>(async resolve => {
-        await Promise.all([import('@web3modal/ui'), import('./modal/w3m-modal/index.js')])
+        await Promise.all([import('@ridotto-io/w3-ui'), import('./modal/w3m-modal/index.js')])
         const modal = document.createElement('w3m-modal')
         document.body.insertAdjacentElement('beforeend', modal)
         resolve()

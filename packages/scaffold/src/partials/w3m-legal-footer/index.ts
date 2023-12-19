@@ -1,5 +1,5 @@
-import { OptionsController } from '@web3modal/core'
-import { customElement } from '@web3modal/ui'
+import { OptionsController } from '@ridotto-io/w3-core'
+import { customElement } from '@ridotto-io/w3-ui'
 import { LitElement, html } from 'lit'
 import styles from './styles.js'
 
@@ -17,7 +17,7 @@ export class W3mLegalFooter extends LitElement {
 
     return html`
       <wui-flex .padding=${['m', 's', 's', 's'] as const} justifyContent="center">
-        <wui-text color="fg-250" variant="small-500" align="center">
+        <wui-text color="fg-250" variant="small-400" align="center">
           By connecting your wallet, you agree to our <br />
           ${this.termsTemplate()} ${this.andTemplate()} ${this.privacyTemplate()}
         </wui-text>

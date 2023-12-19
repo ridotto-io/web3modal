@@ -1,5 +1,5 @@
-import { ConnectionController, CoreHelperUtil, EventsController } from '@web3modal/core'
-import { customElement } from '@web3modal/ui'
+import { ConnectionController, CoreHelperUtil, EventsController } from '@ridotto-io/w3-core'
+import { customElement } from '@ridotto-io/w3-ui'
 import { W3mConnectingWidget } from '../../utils/w3m-connecting-widget/index.js'
 
 @customElement('w3m-connecting-wc-mobile')

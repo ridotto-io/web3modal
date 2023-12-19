@@ -1,6 +1,6 @@
 import type { Meta } from '@storybook/web-components'
-import '@web3modal/ui/src/composites/wui-email-input'
-import type { WuiEmailInput } from '@web3modal/ui/src/composites/wui-email-input'
+import '@ridotto-io/w3-ui/src/composites/wui-email-input'
+import type { WuiEmailInput } from '@ridotto-io/w3-ui/src/composites/wui-email-input'
 import { html } from 'lit'
 import '../../components/gallery-container'
 

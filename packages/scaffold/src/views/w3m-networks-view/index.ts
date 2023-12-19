@@ -1,12 +1,13 @@
-import type { CaipNetwork } from '@web3modal/core'
+import type { CaipNetwork } from '@ridotto-io/w3-core'
 import {
   AccountController,
   AssetUtil,
   EventsController,
   NetworkController,
-  RouterController
-} from '@web3modal/core'
-import { customElement } from '@web3modal/ui'
+  RouterController,
+  RouterUtil
+} from '@ridotto-io/w3-core'
+import { customElement } from '@ridotto-io/w3-ui'
 import { LitElement, html } from 'lit'
 import { state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
@@ -40,7 +41,7 @@ export class W3mNetworksView extends LitElement {
       <wui-separator></wui-separator>
 
       <wui-flex padding="s" flexDirection="column" gap="m" alignItems="center">
-        <wui-text variant="small-500" color="fg-300" align="center">
+        <wui-text variant="small-400" color="fg-300" align="center">
           Your connected wallet may not support some of the networks available for this dApp
         </wui-text>
         <wui-link @click=${this.onNetworkHelp.bind(this)}>
@@ -61,13 +62,30 @@ export class W3mNetworksView extends LitElement {
     const { approvedCaipNetworkIds, requestedCaipNetworks, supportsAllNetworks } =
       NetworkController.state
     const approvedIds = approvedCaipNetworkIds
-    const requested = requestedCaipNetworks
+    const requestedNetworks = requestedCaipNetworks
+    const approvedIndexMap: Record<string, number> = {}
+    if (requestedNetworks && approvedIds) {
+      approvedIds.forEach((id, index) => {
+        approvedIndexMap[id] = index
+      })
 
-    if (approvedIds?.length) {
-      requested?.sort((a, b) => approvedIds.indexOf(b.id) - approvedIds.indexOf(a.id))
+      requestedNetworks.sort((a, b) => {
+        const indexA = approvedIndexMap[a.id]
+        const indexB = approvedIndexMap[b.id]
+
+        if (indexA !== undefined && indexB !== undefined) {
+          return indexA - indexB
+        } else if (indexA !== undefined) {
+          return -1
+        } else if (indexB !== undefined) {
+          return 1
+        }
+
+        return 0
+      })
     }
 
-    return requested?.map(
+    return requestedNetworks?.map(
       network => html`
         <wui-card-select
           .selected=${this.caipNetwork?.id === network.id}
@@ -84,12 +102,13 @@ export class W3mNetworksView extends LitElement {
   private async onSwitchNetwork(network: CaipNetwork) {
     const { isConnected } = AccountController.state
     const { approvedCaipNetworkIds, supportsAllNetworks, caipNetwork } = NetworkController.state
-
+    const { data } = RouterController.state
     if (isConnected && caipNetwork?.id !== network.id) {
       if (approvedCaipNetworkIds?.includes(network.id)) {
         await NetworkController.switchActiveNetwork(network)
+        RouterUtil.navigateAfterNetworkSwitch()
       } else if (supportsAllNetworks) {
-        RouterController.push('SwitchNetwork', { network })
+        RouterController.push('SwitchNetwork', { ...data, network })
       }
     } else if (!isConnected) {
       NetworkController.setCaipNetwork(network)

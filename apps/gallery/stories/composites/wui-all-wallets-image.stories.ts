@@ -1,6 +1,6 @@
 import type { Meta } from '@storybook/web-components'
-import '@web3modal/ui/src/composites/wui-all-wallets-image'
-import type { WuiAllWalletsImage } from '@web3modal/ui/src/composites/wui-all-wallets-image'
+import '@ridotto-io/w3-ui/src/composites/wui-all-wallets-image'
+import type { WuiAllWalletsImage } from '@ridotto-io/w3-ui/src/composites/wui-all-wallets-image'
 import { html } from 'lit'
 import { walletImagesOptions } from '../../utils/PresetUtils'
 

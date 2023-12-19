@@ -14,13 +14,13 @@ export const CoreHelperUtil = {
   },
 
   isAndroid() {
-    const ua = navigator.userAgent.toLowerCase()
+    const ua = window.navigator.userAgent.toLowerCase()
 
     return CoreHelperUtil.isMobile() && ua.includes('android')
   },
 
   isIos() {
-    const ua = navigator.userAgent.toLowerCase()
+    const ua = window.navigator.userAgent.toLowerCase()
 
     return CoreHelperUtil.isMobile() && (ua.includes('iphone') || ua.includes('ipad'))
   },
@@ -138,7 +138,7 @@ export const CoreHelperUtil = {
       }
     }
 
-    return formattedBalance ? `${formattedBalance} ${symbol}` : '0.000'
+    return formattedBalance ? `${formattedBalance} ${symbol}` : `0.000 ${symbol}`
   },
 
   isRestrictedRegion() {
@@ -181,5 +181,18 @@ export const CoreHelperUtil = {
 
       return v.toString(16)
     })
+  },
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  parseError(error: any): string {
+    if (typeof error === 'string') {
+      return error
+    } else if (typeof error?.issues?.[0]?.message === 'string') {
+      return error.issues[0].message
+    } else if (error instanceof Error) {
+      return error.message
+    }
+
+    return 'Unknown error'
   }
 }

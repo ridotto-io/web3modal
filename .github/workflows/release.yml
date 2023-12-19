@@ -1,0 +1,44 @@
+name: Realease NPM packages
+
+on:
+  workflow_dispatch:
+
+  push:
+    branches:
+      - V3
+
+jobs:
+  release-package:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: check user permission
+        uses: 74th/workflow-permission-action@1.0.0
+        with:
+          users: ${{ vars.PROD_ALLOWED_USERS }}
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: https://npm.pkg.github.com/
+          scope: '@ridotto-io'
+
+      - name: Find and publish packages
+        run: |
+          for dir in packages/*; do
+            if [ -d "$dir" ]; then
+              cd "$dir"
+              if [ -f "package.json" ]; then
+                echo "Publishing package in $dir"
+                npm ci
+                npm publish
+              else
+                echo "No package.json found in $dir - Skipping"
+              fi
+              cd ../..
+            fi
+          done
+        env:
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}

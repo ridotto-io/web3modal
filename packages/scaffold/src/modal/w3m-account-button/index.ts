@@ -1,12 +1,12 @@
 import {
   AccountController,
-  AssetController,
+  AssetUtil,
   CoreHelperUtil,
   ModalController,
   NetworkController
-} from '@web3modal/core'
-import type { WuiAccountButton } from '@web3modal/ui'
-import { customElement } from '@web3modal/ui'
+} from '@ridotto-io/w3-core'
+import type { WuiAccountButton } from '@ridotto-io/w3-ui'
+import { customElement } from '@ridotto-io/w3-ui'
 import { LitElement, html } from 'lit'
 import { property, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
@@ -15,8 +15,6 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 export class W3mAccountButton extends LitElement {
   // -- Members ------------------------------------------- //
   private unsubscribe: (() => void)[] = []
-
-  private readonly networkImages = AssetController.state.networkImages
 
   // -- State & Properties -------------------------------- //
   @property({ type: Boolean }) public disabled?: WuiAccountButton['disabled'] = false
@@ -68,7 +66,7 @@ export class W3mAccountButton extends LitElement {
 
   // -- Render -------------------------------------------- //
   public override render() {
-    const networkImage = this.networkImages[this.network?.imageId ?? '']
+    const networkImage = AssetUtil.getNetworkImage(this.network)
     const showBalance = this.balance === 'show'
 
     return html`
@@ -79,8 +77,8 @@ export class W3mAccountButton extends LitElement {
         networkSrc=${ifDefined(networkImage)}
         avatarSrc=${ifDefined(this.avatarSrc)}
         balance=${showBalance
-          ? CoreHelperUtil.formatBalance(this.balanceVal, this.balanceSymbol)
-          : ''}
+        ? CoreHelperUtil.formatBalance(this.balanceVal, this.balanceSymbol)
+        : ''}
         @click=${this.onClick.bind(this)}
       >
       </wui-account-button>

@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/web-components'
-import '@web3modal/ui/src/composites/wui-button'
-import type { WuiButton } from '@web3modal/ui/src/composites/wui-button'
-import type { IconType } from '@web3modal/ui/src/utils/TypesUtil'
+import '@ridotto-io/w3-ui/src/composites/wui-button'
+import type { WuiButton } from '@ridotto-io/w3-ui/src/composites/wui-button'
+import type { IconType } from '@ridotto-io/w3-ui/src/utils/TypesUtil'
 import { html } from 'lit'
 import { buttonOptions, iconOptions } from '../../utils/PresetUtils'
 

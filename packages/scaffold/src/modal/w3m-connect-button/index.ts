@@ -1,6 +1,6 @@
-import { ModalController } from '@web3modal/core'
-import type { WuiConnectButton } from '@web3modal/ui'
-import { customElement } from '@web3modal/ui'
+import { ModalController } from '@ridotto-io/w3-core'
+import type { WuiConnectButton } from '@ridotto-io/w3-ui'
+import { customElement } from '@ridotto-io/w3-ui'
 import { LitElement, html } from 'lit'
 import { property, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
@@ -19,10 +19,17 @@ export class W3mConnectButton extends LitElement {
 
   @state() private open = ModalController.state.open
 
+  @state() private loading = ModalController.state.loading
+
   // -- Lifecycle ----------------------------------------- //
   public constructor() {
     super()
-    this.unsubscribe.push(ModalController.subscribeKey('open', val => (this.open = val)))
+    this.unsubscribe.push(
+      ModalController.subscribe(val => {
+        this.open = val.open
+        this.loading = val.loading
+      })
+    )
   }
 
   public override disconnectedCallback() {
@@ -31,13 +38,15 @@ export class W3mConnectButton extends LitElement {
 
   // -- Render -------------------------------------------- //
   public override render() {
+    const isLoading = this.loading || this.open
+
     return html`
       <wui-connect-button
         size=${ifDefined(this.size)}
-        .loading=${this.open}
+        .loading=${isLoading}
         @click=${this.onClick.bind(this)}
       >
-        ${this.open ? this.loadingLabel : this.label}
+        ${isLoading ? this.loadingLabel : this.label}
       </wui-connect-button>
     `
   }

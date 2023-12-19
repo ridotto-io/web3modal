@@ -5,6 +5,10 @@ export const ConstantsUtil = {
 
   ONE_SEC_MS: 1_000,
 
+  SECURE_SITE_DASHBOARD: 'https://secure.web3modal.com/dashboard',
+
+  SECURE_SITE_FAVICON: 'https://secure.web3modal.com/images/favicon.png',
+
   RESTRICTED_TIMEZONES: [
     'ASIA/SHANGHAI',
     'ASIA/URUMQI',

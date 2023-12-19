@@ -1,7 +1,7 @@
-import { customElement } from '@web3modal/ui'
+import { customElement } from '@ridotto-io/w3-ui'
 import { LitElement, html } from 'lit'
 import styles from './styles.js'
-import { OptionsController, StorageUtil } from '@web3modal/core'
+import { OptionsController, StorageUtil } from '@ridotto-io/w3-core'
 
 @customElement('w3m-connecting-siwe')
 export class W3mConnectingSiwe extends LitElement {

@@ -55,7 +55,7 @@
           {
             "name": "lit/decorators.js",
             "importNames": ["customElement"],
-            "message": "Use import 'customElement' from '@web3modal/ui' instead."
+            "message": "Use import 'customElement' from '@ridotto-io/w3-ui' instead."
           }
         ]
       }

@@ -1,11 +1,11 @@
-import type { Web3ModalScaffold } from '@web3modal/scaffold'
+import type { Web3ModalScaffold } from '@ridotto-io/w3-scaffold'
 import { onUnmounted, reactive, ref } from 'vue'
 import type {
   W3mAccountButton,
   W3mButton,
   W3mConnectButton,
   W3mNetworkButton
-} from '@web3modal/scaffold'
+} from '@ridotto-io/w3-scaffold'
 
 type OpenOptions = Parameters<Web3ModalScaffold['open']>[0]
 
@@ -56,12 +56,12 @@ export function useWeb3ModalTheme() {
     unsubscribe?.()
   })
 
-  return reactive({
+  return {
     setThemeMode,
     setThemeVariables,
     themeMode,
     themeVariables
-  })
+  }
 }
 
 export function useWeb3Modal() {

@@ -2,10 +2,11 @@
 
 import type { Web3ModalOptions } from '../src/client.js'
 import { Web3Modal } from '../src/client.js'
-import { ConstantsUtil } from '@web3modal/utils'
-import { ProviderController } from '../src/controllers/ProviderController.js'
-import { getWeb3Modal } from '@web3modal/scaffold-react'
+import { ConstantsUtil } from '@ridotto-io/w3-scaffold-utils'
+import { EthersStoreUtil } from '@ridotto-io/w3-scaffold-utils/ethers'
+import { getWeb3Modal } from '@ridotto-io/w3-scaffold-react'
 import { useSnapshot } from 'valtio'
+import { ethers } from 'ethers'
 
 // -- Types -------------------------------------------------------------------
 export type { Web3ModalOptions } from '../src/client.js'
@@ -26,17 +27,15 @@ export function createWeb3Modal(options: Web3ModalOptions) {
 }
 
 // -- Hooks -------------------------------------------------------------------
-export function useWeb3ModalSigner() {
-  const state = useSnapshot(ProviderController.state)
+export function useWeb3ModalProvider() {
+  const { provider, providerType } = useSnapshot(EthersStoreUtil.state)
 
-  const walletProvider = state.provider
-  const walletProviderType = state.providerType
-  const signer = walletProvider?.getSigner()
+  const walletProvider = provider as ethers.providers.ExternalProvider | undefined
+  const walletProviderType = providerType
 
   return {
     walletProvider,
-    walletProviderType,
-    signer
+    walletProviderType
   }
 }
 
@@ -51,11 +50,7 @@ export function useDisconnect() {
 }
 
 export function useWeb3ModalAccount() {
-  const state = useSnapshot(ProviderController.state)
-
-  const address = state.address
-  const isConnected = state.isConnected
-  const chainId = state.chainId
+  const { address, isConnected, chainId } = useSnapshot(EthersStoreUtil.state)
 
   return {
     address,
@@ -64,12 +59,20 @@ export function useWeb3ModalAccount() {
   }
 }
 
+export function useWeb3ModalError() {
+  const { error } = useSnapshot(EthersStoreUtil.state)
+
+  return {
+    error
+  }
+}
+
 export {
   useWeb3ModalTheme,
   useWeb3Modal,
   useWeb3ModalState,
   useWeb3ModalEvents
-} from '@web3modal/scaffold-react'
+} from '@ridotto-io/w3-scaffold-react'
 
 // -- Universal Exports -------------------------------------------------------
 export { defaultConfig } from '../src/utils/defaultConfig.js'

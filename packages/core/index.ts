@@ -55,10 +55,14 @@ export type { PublicStateControllerState } from './src/controllers/PublicStateCo
 export { EventsController } from './src/controllers/EventsController.js'
 export type { EventsControllerState } from './src/controllers/EventsController.js'
 
+export { TransactionsController } from './src/controllers/TransactionsController.js'
+export type { TransactionsControllerState } from './src/controllers/TransactionsController.js'
+
 // -- Utils -------------------------------------------------------------------
 export { AssetUtil } from './src/utils/AssetUtil.js'
 export { ConstantsUtil } from './src/utils/ConstantsUtil.js'
 export { CoreHelperUtil } from './src/utils/CoreHelperUtil.js'
 export { StorageUtil } from './src/utils/StorageUtil.js'
+export { RouterUtil } from './src/utils/RouterUtil.js'
 
 export type * from './src/utils/TypeUtil.js'

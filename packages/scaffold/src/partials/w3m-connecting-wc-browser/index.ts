@@ -1,11 +1,11 @@
-import type { BaseError } from '@web3modal/core'
+import type { BaseError } from '@ridotto-io/w3-core'
 import {
   ConnectionController,
   ConnectorController,
   EventsController,
   ModalController
-} from '@web3modal/core'
-import { customElement } from '@web3modal/ui'
+} from '@ridotto-io/w3-core'
+import { customElement } from '@ridotto-io/w3-ui'
 import { W3mConnectingWidget } from '../../utils/w3m-connecting-widget/index.js'
 
 @customElement('w3m-connecting-wc-browser')
@@ -39,6 +39,7 @@ export class W3mConnectingWcBrowser extends W3mConnectingWidget {
         await ConnectionController.connectExternal(injectedConnector)
       }
       ModalController.close()
+
       EventsController.sendEvent({
         type: 'track',
         event: 'CONNECT_SUCCESS',

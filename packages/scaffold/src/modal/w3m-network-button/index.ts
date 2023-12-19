@@ -1,6 +1,6 @@
-import { AccountController, AssetUtil, ModalController, NetworkController } from '@web3modal/core'
-import type { WuiNetworkButton } from '@web3modal/ui'
-import { customElement } from '@web3modal/ui'
+import { AccountController, AssetUtil, ModalController, NetworkController } from '@ridotto-io/w3-core'
+import type { WuiNetworkButton } from '@ridotto-io/w3-ui'
+import { customElement } from '@ridotto-io/w3-ui'
 import { LitElement, html } from 'lit'
 import { property, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
@@ -17,13 +17,16 @@ export class W3mNetworkButton extends LitElement {
 
   @state() private connected = AccountController.state.isConnected
 
+  @state() private loading = ModalController.state.loading
+
   // -- Lifecycle ----------------------------------------- //
   public constructor() {
     super()
     this.unsubscribe.push(
       ...[
         NetworkController.subscribeKey('caipNetwork', val => (this.network = val)),
-        AccountController.subscribeKey('isConnected', val => (this.connected = val))
+        AccountController.subscribeKey('isConnected', val => (this.connected = val)),
+        ModalController.subscribeKey('loading', val => (this.loading = val))
       ]
     )
   }
@@ -36,7 +39,7 @@ export class W3mNetworkButton extends LitElement {
   public override render() {
     return html`
       <wui-network-button
-        .disabled=${Boolean(this.disabled)}
+        .disabled=${Boolean(this.disabled || this.loading)}
         imageSrc=${ifDefined(AssetUtil.getNetworkImage(this.network))}
         @click=${this.onClick.bind(this)}
       >

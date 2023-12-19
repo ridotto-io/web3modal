@@ -1,5 +1,11 @@
-import { AssetUtil, NetworkController, RouterController } from '@web3modal/core'
-import { customElement } from '@web3modal/ui'
+import {
+  AssetUtil,
+  NetworkController,
+  RouterController,
+  SIWEController,
+  RouterUtil
+} from '@ridotto-io/w3-core'
+import { customElement } from '@ridotto-io/w3-ui'
 import { LitElement, html } from 'lit'
 import { state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
@@ -19,17 +25,8 @@ export class W3mNetworkSwitchView extends LitElement {
 
   @state() public error = false
 
-  @state() private currentNetwork = NetworkController.state.caipNetwork
-
   public constructor() {
     super()
-    this.unsubscribe.push(
-      NetworkController.subscribeKey('caipNetwork', val => {
-        if (val?.id !== this.currentNetwork?.id) {
-          RouterController.goBack()
-        }
-      })
-    )
   }
 
   public override disconnectedCallback() {
@@ -114,7 +111,9 @@ export class W3mNetworkSwitchView extends LitElement {
       this.error = false
       if (this.network) {
         await NetworkController.switchActiveNetwork(this.network)
-        RouterController.goBack()
+        if (!SIWEController.state.isSiweEnabled) {
+          RouterUtil.navigateAfterNetworkSwitch()
+        }
       }
     } catch {
       this.error = true
