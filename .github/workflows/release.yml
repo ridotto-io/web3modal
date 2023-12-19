@@ -27,7 +27,7 @@ jobs:
               cd "$dir"
               if [ -f "package.json" ]; then
                 echo "Publishing package in $dir"
-                npm ci
+                npm ci --legacy-peer-deps
                 npm publish
               else
                 echo "No package.json found in $dir - Skipping"
