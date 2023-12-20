@@ -59,6 +59,10 @@ jobs:
           npm publish
       - name: Publish
         run: |
+          cd packages/scaffold-react/
+          npm publish
+      - name: Publish
+        run: |
           cd packages/siwe/
           npm publish
       - name: Publish
