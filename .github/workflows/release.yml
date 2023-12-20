@@ -20,78 +20,58 @@ jobs:
           node-version: 16
           registry-url: https://npm.pkg.github.com/
           scope: '@ridotto-io'
-
-      - name: Install npm packages - 1
+      - name: PRE Publish
+        run: |
+          npm i
+          npm run build:clean
+          npm run build
+      - name: Publish
         run: |
           cd packages/common/
-          npm install
-          npm run build:common
           npm publish
-      - name: Install npm packages - 2
+      - name: Publish
         run: |
           cd packages/core/
-          npm install
-          npm run build:core
           npm publish
-      - name: Install npm packages - 3
+      - name: Publish
         run: |
           cd packages/polyfills/
-          npm install
-          npm run build:polyfills
           npm publish
-      - name: Install npm packages - 8
+      - name: Publish
         run: |
           cd packages/wallet/
-          npm install
-          npm run build:wallet
           npm publish
-      - name: Install npm packages - 7
+      - name: Publish
         run: |
           cd packages/ui/
-          npm install 
-          npm run build:ui
           npm publish
-      - name: Install npm packages - 4
+      - name: Publish
         run: |
           cd packages/scaffold/
-          npm install 
-          npm run build:scaffold
           npm publish
-      - name: Install npm packages - 6
+      - name: Publish
         run: |
           cd packages/scaffold-utils/
-          npm install 
-          npm run build:scaffold-utils
           npm publish
-      - name: Install npm packages - 9
+      - name: Publish
         run: |
           cd packages/scaffold-vue/
-          npm install
-          npm run build:scaffold-vue
           npm publish
-      - name: Install npm packages - 10
+      - name: Publish
         run: |
           cd packages/siwe/
-          npm install 
-          npm run build:siwe
           npm publish
-      - name: Install npm packages - 11
+      - name: Publish
         run: |
           cd packages/wagmi/
-          npm install 
-          npm run build
           npm publish
-      - name: Install npm packages - 12
+      - name: Publish
         run: |
           cd packages/ethers/
-          npm install 
-          npm run build:ethers
           npm publish
-      - name: Install npm packages - 13
+      - name: Publish
         run: |
           cd packages/ethers5/
-          npm install
-          npm run build:ethers5
           npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}

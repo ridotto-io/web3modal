@@ -1,0 +1,24 @@
+import { CoreHelperUtil } from '@ridotto-io/w3-scaffold';
+import { ConstantsUtil, PresetsUtil } from '@ridotto-io/w3-scaffold-utils';
+const RPC_URL = CoreHelperUtil.getBlockchainApiUrl();
+export function walletConnectProvider({ projectId }) {
+    return function provider(chain) {
+        if (!PresetsUtil.WalletConnectRpcChainIds.includes(chain.id)) {
+            return null;
+        }
+        const baseHttpUrl = `${RPC_URL}/v1/?chainId=${ConstantsUtil.EIP155}:${chain.id}&projectId=${projectId}`;
+        return {
+            chain: {
+                ...chain,
+                rpcUrls: {
+                    ...chain.rpcUrls,
+                    default: { http: [baseHttpUrl] }
+                }
+            },
+            rpcUrls: {
+                http: [baseHttpUrl]
+            }
+        };
+    };
+}
+//# sourceMappingURL=provider.js.map
