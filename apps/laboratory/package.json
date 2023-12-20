@@ -1,6 +1,6 @@
 {
   "name": "@apps/laboratory",
-  "version": "3.6.0-alpha.0",
+  "version": "3.6.0-alpha.17",
   "private": true,
   "scripts": {
     "dev:laboratory": "next dev",
@@ -17,9 +17,9 @@
     "@emotion/styled": "11.11.0",
     "@sentry/browser": "7.88.0",
     "@sentry/react": "7.88.0",
-    "@ridotto-io/w3-ethers": "3.6.0-alpha.0",
-    "@ridotto-io/w3-ethers5": "3.6.0-alpha.0",
-    "@ridotto-io/w3-wagmi": "3.6.0-alpha.0",
+    "@ridotto-io/w3-ethers": "3.6.0-alpha.17",
+    "@ridotto-io/w3-ethers5": "3.6.0-alpha.17",
+    "@ridotto-io/w3-wagmi": "3.6.0-alpha.17",
     "framer-motion": "10.16.16",
     "next": "14.0.4",
     "next-auth": "4.24.5",

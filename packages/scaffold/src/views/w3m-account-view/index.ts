@@ -29,8 +29,6 @@ export class W3mAccountView extends LitElement {
   // -- State & Properties --------------------------------- //
   @state() private address = AccountController.state.address
 
-  @state() private profileImage = AccountController.state.profileImage
-
   @state() private profileName = AccountController.state.profileName
 
   @state() private balance = AccountController.state.balance
@@ -48,7 +46,6 @@ export class W3mAccountView extends LitElement {
         AccountController.subscribe(val => {
           if (val.address) {
             this.address = val.address
-            this.profileImage = val.profileImage
             this.profileName = val.profileName
             this.balance = val.balance
             this.balanceSymbol = val.balanceSymbol

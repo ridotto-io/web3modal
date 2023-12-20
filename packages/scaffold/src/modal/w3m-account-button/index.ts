@@ -31,8 +31,6 @@ export class W3mAccountButton extends LitElement {
 
   @state() private profileName = AccountController.state.profileName
 
-  @state() private profileImage = AccountController.state.profileImage
-
   @state() private network = NetworkController.state.caipNetwork
 
   // -- Lifecycle ----------------------------------------- //
@@ -45,13 +43,11 @@ export class W3mAccountButton extends LitElement {
             this.address = val.address
             this.balanceVal = val.balance
             this.profileName = val.profileName
-            this.profileImage = val.profileImage
             this.balanceSymbol = val.balanceSymbol
           } else {
             this.address = ''
             this.balanceVal = ''
             this.profileName = ''
-            this.profileImage = ''
             this.balanceSymbol = ''
           }
         }),

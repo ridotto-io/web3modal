@@ -5,12 +5,13 @@ on:
 
   push:
     branches:
-      - V3-temporal
+      - V3
 
 jobs:
   release-package:
     runs-on: ubuntu-latest
-
+    env:
+      NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
     steps:
       - uses: actions/checkout@v2
 
@@ -20,20 +21,77 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           scope: '@ridotto-io'
 
-      - name: Find and publish packages
+      - name: Install npm packages - 1
         run: |
-          for dir in packages/*; do
-            if [ -d "$dir" ]; then
-              cd "$dir"
-              if [ -f "package.json" ]; then
-                echo "Publishing package in $dir"
-                npm i --legacy-peer-deps
-                npm publish
-              else
-                echo "No package.json found in $dir - Skipping"
-              fi
-              cd ../..
-            fi
-          done
+          cd packages/common/
+          npm install
+          npm run build:common
+          npm publish
+      - name: Install npm packages - 2
+        run: |
+          cd packages/core/
+          npm install
+          npm run build:core
+          npm publish
+      - name: Install npm packages - 3
+        run: |
+          cd packages/polyfills/
+          npm install
+          npm run build:polyfills
+          npm publish
+      - name: Install npm packages - 8
+        run: |
+          cd packages/wallet/
+          npm install
+          npm run build:wallet
+          npm publish
+      - name: Install npm packages - 7
+        run: |
+          cd packages/ui/
+          npm install 
+          npm run build:ui
+          npm publish
+      - name: Install npm packages - 4
+        run: |
+          cd packages/scaffold/
+          npm install 
+          npm run build:scaffold
+          npm publish
+      - name: Install npm packages - 6
+        run: |
+          cd packages/scaffold-utils/
+          npm install 
+          npm run build:scaffold-utils
+          npm publish
+      - name: Install npm packages - 9
+        run: |
+          cd packages/scaffold-vue/
+          npm install
+          npm run build:scaffold-vue
+          npm publish
+      - name: Install npm packages - 10
+        run: |
+          cd packages/siwe/
+          npm install 
+          npm run build:siwe
+          npm publish
+      - name: Install npm packages - 11
+        run: |
+          cd packages/wagmi/
+          npm install 
+          npm run build
+          npm publish
+      - name: Install npm packages - 12
+        run: |
+          cd packages/ethers/
+          npm install 
+          npm run build:ethers
+          npm publish
+      - name: Install npm packages - 13
+        run: |
+          cd packages/ethers5/
+          npm install
+          npm run build:ethers5
+          npm publish
         env:
-          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}

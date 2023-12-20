@@ -1,6 +1,6 @@
 {
   "name": "@ridotto-io/w3-siwe",
-  "version": "3.6.0-alpha.0",
+  "version": "3.6.0-alpha.17",
   "type": "module",
   "main": "./dist/esm/exports/index.js",
   "types": "./dist/types/exports/index.d.ts",
@@ -16,8 +16,8 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
-    "@ridotto-io/w3-core": "3.6.0-alpha.0",
-    "@ridotto-io/w3-scaffold-utils": "3.6.0-alpha.0"
+    "@ridotto-io/w3-core": "3.6.0-alpha.17",
+    "@ridotto-io/w3-scaffold-utils": "3.6.0-alpha.17"
   },
   "peerDependencies": {
     "react": ">=17",

@@ -1,18 +1,18 @@
 import { Buffer } from 'buffer'
 
 if (typeof window !== 'undefined') {
-  if (!window.Buffer) {
-    window.Buffer = Buffer
+  if (!(window as any).Buffer) {
+    (window as any).Buffer = Buffer;
   }
-  if (!window.global) {
-    window.global = window
+  if (!(window as any).global) {
+    (window as any).global = (window as any);
   }
-  if (!window.process) {
+  if (!(window as any).process) {
     // @ts-expect-error minimal process
-    window.process = {}
+    window.process = {};
   }
-  if (!window.process?.env) {
+  if (!(window as any).process?.env) {
     // @ts-expect-error minimal process
-    window.process = { env: {} }
+    window.process = { env: {} };
   }
 }

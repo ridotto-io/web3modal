@@ -1,12 +1,12 @@
 {
   "name": "@examples/html-wagmi",
   "private": true,
-  "version": "3.6.0-alpha.0",
+  "version": "3.6.0-alpha.17",
   "scripts": {
     "dev:example": "vite --port 3001",
     "build:examples": "vite build"
   },
   "dependencies": {
-    "@ridotto-io/w3-wagmi": "3.6.0-alpha.0"
+    "@ridotto-io/w3-wagmi": "3.6.0-alpha.17"
   }
 }
