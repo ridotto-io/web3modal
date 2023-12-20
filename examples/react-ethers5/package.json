@@ -1,13 +1,13 @@
 {
   "name": "@examples/react-ethers5",
   "private": true,
-  "version": "3.6.0-alpha.17",
+  "version": "3.6.2-alpha.0",
   "scripts": {
     "dev:example": "vite --port 3012",
     "build:examples": "vite build"
   },
   "dependencies": {
-    "@ridotto-io/w3-ethers5": "3.6.0-alpha.17",
+    "@ridotto-io/w3-ethers5": "3.6.2-alpha.0",
     "ethers": "5.7.2"
   },
   "devDependencies": {

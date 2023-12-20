@@ -62,7 +62,7 @@ export declare function useWeb3ModalEvents(): {
         type: "track";
         event: "CONNECT_SUCCESS";
         properties: {
-            method: "email" | "mobile" | "browser" | "qrcode" | "external";
+            method: "mobile" | "browser" | "qrcode" | "external" | "email";
         };
     } | {
         type: "track";
