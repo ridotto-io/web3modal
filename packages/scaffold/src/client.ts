@@ -138,6 +138,10 @@ export class Web3ModalScaffold {
     AccountController.setProfileName(profileName)
   }
 
+  protected setUserName: (typeof AccountController)['setUserName'] = userName => {
+    AccountController.setUserName(userName)
+  }
+
   protected setProfileImage: (typeof AccountController)['setProfileImage'] = profileImage => {
     AccountController.setProfileImage(profileImage)
   }
