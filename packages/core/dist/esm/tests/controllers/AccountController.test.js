@@ -4,6 +4,7 @@ const caipAddress = 'eip155:1:0x123';
 const balance = '0.100';
 const balanceSymbol = 'ETH';
 const profileName = 'john.eth';
+const userName = 'john.eth';
 const profileImage = 'https://ipfs.com/0x123.png';
 describe('AccountController', () => {
     it('should have valid default state', () => {
@@ -26,6 +27,10 @@ describe('AccountController', () => {
     it('should update state correctly on setProfileName()', () => {
         AccountController.setProfileName(profileName);
         expect(AccountController.state.profileName).toEqual(profileName);
+    });
+    it('should update state correctly on setUserName()', () => {
+        AccountController.setUserName(userName);
+        expect(AccountController.state.userName).toEqual(userName);
     });
     it('should update state correctly on setProfileImage()', () => {
         AccountController.setProfileImage(profileImage);

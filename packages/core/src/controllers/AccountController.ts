@@ -74,6 +74,7 @@ export const AccountController = {
     state.address = undefined
     state.balance = undefined
     state.balanceSymbol = undefined
+    state.userName = undefined
     state.profileName = undefined
     state.profileImage = undefined
     state.addressExplorerUrl = undefined

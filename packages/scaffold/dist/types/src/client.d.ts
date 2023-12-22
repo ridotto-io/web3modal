@@ -22,7 +22,7 @@ export interface ScaffoldOptions extends LibraryOptions {
     siweControllerClient?: SIWEControllerClient;
 }
 export interface OpenOptions {
-    view: 'Account' | 'Connect' | 'Networks' | 'ApproveTransaction';
+    view: 'Account' | 'Connect' | 'Networks' | 'ApproveTransaction' | '/profile';
 }
 export declare class Web3ModalScaffold {
     private initPromise?;
@@ -49,6 +49,7 @@ export declare class Web3ModalScaffold {
     protected setCaipAddress: (typeof AccountController)['setCaipAddress'];
     protected setBalance: (typeof AccountController)['setBalance'];
     protected setProfileName: (typeof AccountController)['setProfileName'];
+    protected setUserName: (typeof AccountController)['setUserName'];
     protected setProfileImage: (typeof AccountController)['setProfileImage'];
     protected resetAccount: (typeof AccountController)['resetAccount'];
     protected setCaipNetwork: (typeof NetworkController)['setCaipNetwork'];

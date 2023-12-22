@@ -31,9 +31,13 @@ export class W3mAccountView extends LitElement {
 
   @state() private profileName = AccountController.state.profileName
 
+  @state() private userName = AccountController.state.userName
+
   @state() private balance = AccountController.state.balance
 
   @state() private balanceSymbol = AccountController.state.balanceSymbol
+
+  @state() private profileImage = AccountController.state.profileImage
 
   @state() private network = NetworkController.state.caipNetwork
 
@@ -49,6 +53,8 @@ export class W3mAccountView extends LitElement {
             this.profileName = val.profileName
             this.balance = val.balance
             this.balanceSymbol = val.balanceSymbol
+            this.userName = val.userName
+            this.profileImage = val.profileImage
           } else {
             ModalController.close()
           }
@@ -74,9 +80,9 @@ export class W3mAccountView extends LitElement {
     const event = new CustomEvent('RDT_ON_SPAN_CLICK', {
       detail: { data: 'some data' },
       bubbles: true,
-      composed: true,
-    });
-    this.dispatchEvent(event);
+      composed: true
+    })
+    this.dispatchEvent(event)
   }
 
   // -- Render -------------------------------------------- //
@@ -97,29 +103,25 @@ export class W3mAccountView extends LitElement {
         <wui-avatar
           alt=${this.address}
           address=${this.address}
-          imageSrc=${this.getProfile()}
+          imageSrc=${this.profileImage}
         ></wui-avatar>
-
+        <wui-text variant="large-600" color="fg-100">${this.userName}</wui-text>
         <wui-flex flexDirection="column" alignItems="center">
           <wui-flex gap="3xs" alignItems="center" justifyContent="center">
             <wui-text variant="large-600" color="fg-100">
               ${this.profileName
-        ? UiHelperUtil.getTruncateString({
-          string: this.profileName,
-          charsStart: 20,
-          charsEnd: 0,
-          truncate: 'end'
-        })
-        : UiHelperUtil.getTruncateString({
-          string: this.address,
-          charsStart: 4,
-          charsEnd: 6,
-          truncate: 'middle'
-        })}
-
-             <hr>MY CUSTOM TEXT OR <span style="color: red">HTML ;) </span> 
-             <hr>
-             <button @click=${this.onClick}>Send event to RIDOTTO app</button>
+                ? UiHelperUtil.getTruncateString({
+                    string: this.profileName,
+                    charsStart: 20,
+                    charsEnd: 0,
+                    truncate: 'end'
+                  })
+                : UiHelperUtil.getTruncateString({
+                    string: this.address,
+                    charsStart: 4,
+                    charsEnd: 6,
+                    truncate: 'middle'
+                  })}
             </wui-text>
             <wui-icon-link
               size="md"
@@ -140,7 +142,11 @@ export class W3mAccountView extends LitElement {
 
       <wui-flex flexDirection="column" gap="xs" .padding=${['0', 's', 's', 's'] as const}>
         ${this.emailCardTemplate()}
-
+        <a href="/profile" style="text-decoration: none;">
+          <wui-list-item .variant="image" iconVariant="overlay" icon="profileImage">
+            <wui-text variant="paragraph-500" color="fg-100"> Profile </wui-text>
+          </wui-list-item>
+        </a>
         <wui-list-item
           .variant=${networkImage ? 'image' : 'icon'}
           iconVariant="overlay"
@@ -238,6 +244,12 @@ export class W3mAccountView extends LitElement {
   private onTransactions() {
     EventsController.sendEvent({ type: 'track', event: 'CLICK_TRANSACTIONS' })
     RouterController.push('Transactions')
+  }
+
+  onProfile() {
+    if (this.isAllowedNetworkSwitch()) {
+      RouterController.push('/profile')
+    }
   }
 
   private async onDisconnect() {

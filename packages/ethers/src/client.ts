@@ -418,10 +418,10 @@ export class Web3Modal extends Web3ModalScaffold {
       showQrModal: false,
       rpcMap: this.chains
         ? this.chains.reduce<Record<number, string>>((map, chain) => {
-          map[chain.chainId] = chain.rpcUrl
+            map[chain.chainId] = chain.rpcUrl
 
-          return map
-        }, {})
+            return map
+          }, {})
         : ({} as Record<number, string>),
       optionalChains: [...this.chains.map(chain => chain.chainId)] as [number],
       metadata: {
@@ -878,7 +878,7 @@ export class Web3Modal extends Web3ModalScaffold {
               switchError.code === EthersConstantsUtil.ERROR_CODE_UNRECOGNIZED_CHAIN_ID ||
               switchError.code === EthersConstantsUtil.ERROR_CODE_DEFAULT ||
               switchError?.data?.originalError?.code ===
-              EthersConstantsUtil.ERROR_CODE_UNRECOGNIZED_CHAIN_ID
+                EthersConstantsUtil.ERROR_CODE_UNRECOGNIZED_CHAIN_ID
             ) {
               await EthersHelpersUtil.addEthereumChain(
                 WalletConnectProvider as unknown as Provider,
@@ -904,7 +904,7 @@ export class Web3Modal extends Web3ModalScaffold {
               switchError.code === EthersConstantsUtil.ERROR_CODE_UNRECOGNIZED_CHAIN_ID ||
               switchError.code === EthersConstantsUtil.ERROR_CODE_DEFAULT ||
               switchError?.data?.originalError?.code ===
-              EthersConstantsUtil.ERROR_CODE_UNRECOGNIZED_CHAIN_ID
+                EthersConstantsUtil.ERROR_CODE_UNRECOGNIZED_CHAIN_ID
             ) {
               await EthersHelpersUtil.addEthereumChain(InjectedProvider, chain)
             } else {
@@ -928,7 +928,7 @@ export class Web3Modal extends Web3ModalScaffold {
               switchError.code === EthersConstantsUtil.ERROR_CODE_UNRECOGNIZED_CHAIN_ID ||
               switchError.code === EthersConstantsUtil.ERROR_CODE_DEFAULT ||
               switchError?.data?.originalError?.code ===
-              EthersConstantsUtil.ERROR_CODE_UNRECOGNIZED_CHAIN_ID
+                EthersConstantsUtil.ERROR_CODE_UNRECOGNIZED_CHAIN_ID
             ) {
               await EthersHelpersUtil.addEthereumChain(EIP6963Provider, chain)
             } else {
@@ -951,7 +951,7 @@ export class Web3Modal extends Web3ModalScaffold {
               switchError.code === EthersConstantsUtil.ERROR_CODE_UNRECOGNIZED_CHAIN_ID ||
               switchError.code === EthersConstantsUtil.ERROR_CODE_DEFAULT ||
               switchError?.data?.originalError?.code ===
-              EthersConstantsUtil.ERROR_CODE_UNRECOGNIZED_CHAIN_ID
+                EthersConstantsUtil.ERROR_CODE_UNRECOGNIZED_CHAIN_ID
             ) {
               await EthersHelpersUtil.addEthereumChain(CoinbaseProvider, chain)
             }

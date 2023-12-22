@@ -5,8 +5,10 @@ export declare class W3mAccountView extends LitElement {
     private readonly connectors;
     private address;
     private profileName;
+    private userName;
     private balance;
     private balanceSymbol;
+    private profileImage;
     private network;
     private disconecting;
     constructor();
@@ -20,6 +22,7 @@ export declare class W3mAccountView extends LitElement {
     private onCopyAddress;
     private onNetworks;
     private onTransactions;
+    onProfile(): void;
     private onDisconnect;
     private onExplorer;
     private onGoToUpgradeView;

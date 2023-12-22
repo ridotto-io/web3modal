@@ -10,6 +10,7 @@ export declare class W3mAccountButton extends LitElement {
     private balanceSymbol;
     private profileName;
     private network;
+    private profileImage;
     constructor();
     disconnectedCallback(): void;
     render(): import("lit-html").TemplateResult<1>;

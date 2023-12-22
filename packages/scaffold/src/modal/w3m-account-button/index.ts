@@ -33,6 +33,8 @@ export class W3mAccountButton extends LitElement {
 
   @state() private network = NetworkController.state.caipNetwork
 
+  @state() private profileImage = AccountController.state.profileImage
+
   // -- Lifecycle ----------------------------------------- //
   public constructor() {
     super()
@@ -44,6 +46,7 @@ export class W3mAccountButton extends LitElement {
             this.balanceVal = val.balance
             this.profileName = val.profileName
             this.balanceSymbol = val.balanceSymbol
+            this.profileImage = val.profileImage
           } else {
             this.address = ''
             this.balanceVal = ''
@@ -71,10 +74,10 @@ export class W3mAccountButton extends LitElement {
         address=${ifDefined(this.profileName ?? this.address)}
         ?isProfileName=${Boolean(this.profileName)}
         networkSrc=${ifDefined(networkImage)}
-        avatarSrc=${ifDefined(this.avatarSrc)}
+        avatarSrc=${ifDefined(this.profileImage)}
         balance=${showBalance
-        ? CoreHelperUtil.formatBalance(this.balanceVal, this.balanceSymbol)
-        : ''}
+          ? CoreHelperUtil.formatBalance(this.balanceVal, this.balanceSymbol)
+          : ''}
         @click=${this.onClick.bind(this)}
       >
       </wui-account-button>

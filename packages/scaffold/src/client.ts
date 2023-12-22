@@ -56,7 +56,7 @@ export interface ScaffoldOptions extends LibraryOptions {
 }
 
 export interface OpenOptions {
-  view: 'Account' | 'Connect' | 'Networks' | 'ApproveTransaction'
+  view: 'Account' | 'Connect' | 'Networks' | 'ApproveTransaction' | '/profile'
 }
 
 // -- Client --------------------------------------------------------------------
@@ -136,6 +136,10 @@ export class Web3ModalScaffold {
 
   protected setProfileName: (typeof AccountController)['setProfileName'] = profileName => {
     AccountController.setProfileName(profileName)
+  }
+
+  protected setUserName: (typeof AccountController)['setUserName'] = userName => {
+    AccountController.setUserName(userName)
   }
 
   protected setProfileImage: (typeof AccountController)['setProfileImage'] = profileImage => {

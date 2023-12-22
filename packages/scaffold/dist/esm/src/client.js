@@ -16,6 +16,9 @@ export class Web3ModalScaffold {
         this.setProfileName = profileName => {
             AccountController.setProfileName(profileName);
         };
+        this.setUserName = userName => {
+            AccountController.setUserName(userName);
+        };
         this.setProfileImage = profileImage => {
             AccountController.setProfileImage(profileImage);
         };

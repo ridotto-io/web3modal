@@ -21,6 +21,7 @@ let W3mAccountButton = class W3mAccountButton extends LitElement {
         this.balanceSymbol = AccountController.state.balanceSymbol;
         this.profileName = AccountController.state.profileName;
         this.network = NetworkController.state.caipNetwork;
+        this.profileImage = AccountController.state.profileImage;
         this.unsubscribe.push(...[
             AccountController.subscribe(val => {
                 if (val.isConnected) {
@@ -28,6 +29,7 @@ let W3mAccountButton = class W3mAccountButton extends LitElement {
                     this.balanceVal = val.balance;
                     this.profileName = val.profileName;
                     this.balanceSymbol = val.balanceSymbol;
+                    this.profileImage = val.profileImage;
                 }
                 else {
                     this.address = '';
@@ -51,7 +53,7 @@ let W3mAccountButton = class W3mAccountButton extends LitElement {
         address=${ifDefined(this.profileName ?? this.address)}
         ?isProfileName=${Boolean(this.profileName)}
         networkSrc=${ifDefined(networkImage)}
-        avatarSrc=${ifDefined(this.avatarSrc)}
+        avatarSrc=${ifDefined(this.profileImage)}
         balance=${showBalance
             ? CoreHelperUtil.formatBalance(this.balanceVal, this.balanceSymbol)
             : ''}
@@ -88,6 +90,9 @@ __decorate([
 __decorate([
     state()
 ], W3mAccountButton.prototype, "network", void 0);
+__decorate([
+    state()
+], W3mAccountButton.prototype, "profileImage", void 0);
 W3mAccountButton = __decorate([
     customElement('w3m-account-button')
 ], W3mAccountButton);
