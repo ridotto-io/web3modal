@@ -36,7 +36,6 @@ export class W3mAccountView extends LitElement {
   @state() private userName = AccountController.state.userName
 
   @state() private profileImage = AccountController.state.profileImage
-  
 
   @state() private balanceSymbol = AccountController.state.balanceSymbol
 
@@ -81,9 +80,9 @@ export class W3mAccountView extends LitElement {
     const event = new CustomEvent('RDT_ON_SPAN_CLICK', {
       detail: { data: 'some data' },
       bubbles: true,
-      composed: true,
-    });
-    this.dispatchEvent(event);
+      composed: true
+    })
+    this.dispatchEvent(event)
   }
 
   // -- Render -------------------------------------------- //
@@ -111,19 +110,18 @@ export class W3mAccountView extends LitElement {
           <wui-flex gap="3xs" alignItems="center" justifyContent="center">
             <wui-text variant="large-600" color="fg-100">
               ${this.profileName
-        ? UiHelperUtil.getTruncateString({
-          string: this.profileName,
-          charsStart: 20,
-          charsEnd: 0,
-          truncate: 'end'
-        })
-        : UiHelperUtil.getTruncateString({
-          string: this.address,
-          charsStart: 4,
-          charsEnd: 6,
-          truncate: 'middle'
-        })}
-
+                ? UiHelperUtil.getTruncateString({
+                    string: this.profileName,
+                    charsStart: 20,
+                    charsEnd: 0,
+                    truncate: 'end'
+                  })
+                : UiHelperUtil.getTruncateString({
+                    string: this.address,
+                    charsStart: 4,
+                    charsEnd: 6,
+                    truncate: 'middle'
+                  })}
             </wui-text>
             <wui-icon-link
               size="md"
@@ -144,20 +142,11 @@ export class W3mAccountView extends LitElement {
 
       <wui-flex flexDirection="column" gap="xs" .padding=${['0', 's', 's', 's'] as const}>
         ${this.emailCardTemplate()}
-        <a
-        href="/profile"
-        style="text-decoration: none;"
-      >
-        <wui-list-item
-        .variant=image
-        iconVariant="overlay"
-        icon="profileImage"
-      >
-        <wui-text variant="paragraph-500" color="fg-100">
-        Profile
-      </wui-text>
-      </wui-list-item>
-      </a>
+        <a href="/profile" style="text-decoration: none;">
+          <wui-list-item .variant="image" iconVariant="overlay" icon="profileImage">
+            <wui-text variant="paragraph-500" color="fg-100"> Profile </wui-text>
+          </wui-list-item>
+        </a>
         <wui-list-item
           .variant=${networkImage ? 'image' : 'icon'}
           iconVariant="overlay"
@@ -246,11 +235,6 @@ export class W3mAccountView extends LitElement {
     }
   }
 
-  onProfile() {
-    if (this.isAllowedNetworkSwitch()) {
-        RouterController.push('/profile');
-    }
-}
   private onNetworks() {
     if (this.isAllowedNetworkSwitch()) {
       RouterController.push('Networks')
