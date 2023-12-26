@@ -76,7 +76,6 @@ export class W3mAccountView extends LitElement {
     return localStorage.getItem('RDT_profile')
   }
 
-
   // -- Render -------------------------------------------- //
   public override render() {
     if (!this.address) {

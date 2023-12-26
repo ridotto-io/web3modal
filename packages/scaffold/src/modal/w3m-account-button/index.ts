@@ -76,8 +76,8 @@ export class W3mAccountButton extends LitElement {
         networkSrc=${ifDefined(networkImage)}
         avatarSrc=${ifDefined(this.profileImage)}
         balance=${showBalance
-        ? CoreHelperUtil.formatBalance(this.balanceVal, this.balanceSymbol)
-        : ''}
+          ? CoreHelperUtil.formatBalance(this.balanceVal, this.balanceSymbol)
+          : ''}
         @click=${this.onClick.bind(this)}
       >
       </wui-account-button>

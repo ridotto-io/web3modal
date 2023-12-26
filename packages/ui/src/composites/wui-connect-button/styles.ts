@@ -30,11 +30,11 @@ export default css`
 
   @media (hover: hover) and (pointer: fine) {
     button:hover:enabled {
-      background-color: #9E68FF
+      background-color: #9e68ff;
     }
 
     button:active:enabled {
-      background-color: #9E68FF
+      background-color: #9e68ff;
     }
   }
 
@@ -61,15 +61,15 @@ export default css`
   }
 
   button[data-size='md'] {
-    border-radius:12px;
-    background:rgb(102, 0, 255);
+    border-radius: 12px;
+    background: rgb(102, 0, 255);
     padding: 9px var(--wui-spacing-l) 9px var(--wui-spacing-l);
-    color:#fff !important
+    color: #fff !important;
   }
 
   button[data-size='md'] + wui-text {
     padding-left: var(--wui-spacing-3xs);
-    color:#fff !important
+    color: #fff !important;
   }
 
   wui-loading-spinner::slotted(svg) {

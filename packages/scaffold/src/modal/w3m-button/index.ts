@@ -52,7 +52,7 @@ export class W3mButton extends LitElement {
           </w3m-account-button>
         `
       : html`
-        <w3m-connect-button
+          <w3m-connect-button
             size=${ifDefined(this.size)}
             label=${ifDefined(this.label)}
             loadingLabel=${ifDefined(this.loadingLabel)}

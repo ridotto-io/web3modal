@@ -1,4 +1,9 @@
-import { AssetUtil, ConnectionController, EventsController, ThemeController } from '@ridotto-io/w3-core'
+import {
+  AssetUtil,
+  ConnectionController,
+  EventsController,
+  ThemeController
+} from '@ridotto-io/w3-core'
 import { customElement } from '@ridotto-io/w3-ui'
 import { html } from 'lit'
 import { ifDefined } from 'lit/directives/if-defined.js'

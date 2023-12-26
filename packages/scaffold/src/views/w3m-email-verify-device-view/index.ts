@@ -57,8 +57,8 @@ export class W3mEmailVerifyDeviceView extends LitElement {
 
         <wui-flex alignItems="center" id="w3m-resend-section">
           ${this.loading
-        ? html`<wui-loading-spinner size="xl" color="accent-100"></wui-loading-spinner>`
-        : html` <wui-link @click=${this.onResendCode.bind(this)}>Resend email</wui-link>`}
+            ? html`<wui-loading-spinner size="xl" color="accent-100"></wui-loading-spinner>`
+            : html` <wui-link @click=${this.onResendCode.bind(this)}>Resend email</wui-link>`}
         </wui-flex>
 
         <wui-flex alignItems="center">
