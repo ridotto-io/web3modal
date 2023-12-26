@@ -1,4 +1,9 @@
-import { AccountController, AssetUtil, ModalController, NetworkController } from '@ridotto-io/w3-core'
+import {
+  AccountController,
+  AssetUtil,
+  ModalController,
+  NetworkController
+} from '@ridotto-io/w3-core'
 import type { WuiNetworkButton } from '@ridotto-io/w3-ui'
 import { customElement } from '@ridotto-io/w3-ui'
 import { LitElement, html } from 'lit'

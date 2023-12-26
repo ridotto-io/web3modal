@@ -19,7 +19,7 @@ export class W3mHelpWidget extends LitElement {
     return html`
       <wui-flex flexDirection="column" alignItems="center" gap="l">
         ${this.data.map(
-      item => html`
+          item => html`
             <wui-flex flexDirection="column" alignItems="center" gap="xl">
               <wui-flex flexDirection="row" justifyContent="center" gap="1xs">
                 ${item.images.map(image => html`<wui-visual name=${image}></wui-visual>`)}
@@ -32,7 +32,7 @@ export class W3mHelpWidget extends LitElement {
               <wui-text variant="small-500" color="fg-200" align="center">${item.text}</wui-text>
             </wui-flex>
           `
-    )}
+        )}
       </wui-flex>
     `
   }

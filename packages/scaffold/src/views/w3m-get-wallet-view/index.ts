@@ -18,8 +18,8 @@ export class W3mGetWalletView extends LitElement {
           walletIcon="allWallets"
           icon="externalLink"
           @click=${() => {
-        CoreHelperUtil.openHref('https://walletconnect.com/explorer?type=wallet', '_blank')
-      }}
+            CoreHelperUtil.openHref('https://walletconnect.com/explorer?type=wallet', '_blank')
+          }}
         ></wui-list-wallet>
       </wui-flex>
     `
@@ -38,8 +38,8 @@ export class W3mGetWalletView extends LitElement {
           tagVariant="main"
           imageSrc=${ifDefined(AssetUtil.getWalletImage(wallet))}
           @click=${() => {
-          CoreHelperUtil.openHref(wallet.homepage ?? EXPLORER, '_blank')
-        }}
+            CoreHelperUtil.openHref(wallet.homepage ?? EXPLORER, '_blank')
+          }}
         ></wui-list-wallet>
       `
     )

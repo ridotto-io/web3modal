@@ -31,8 +31,8 @@ export class W3mWhatIsANetworkView extends LitElement {
           variant="fill"
           size="sm"
           @click=${() => {
-        CoreHelperUtil.openHref('https://ethereum.org/en/developers/docs/networks/', '_blank')
-      }}
+            CoreHelperUtil.openHref('https://ethereum.org/en/developers/docs/networks/', '_blank')
+          }}
         >
           Learn more
           <wui-icon color="inherit" slot="iconRight" name="externalLink"></wui-icon>

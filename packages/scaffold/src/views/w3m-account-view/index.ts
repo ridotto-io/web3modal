@@ -76,15 +76,6 @@ export class W3mAccountView extends LitElement {
     return localStorage.getItem('RDT_profile')
   }
 
-  private onClick() {
-    const event = new CustomEvent('RDT_ON_SPAN_CLICK', {
-      detail: { data: 'some data' },
-      bubbles: true,
-      composed: true
-    })
-    this.dispatchEvent(event)
-  }
-
   // -- Render -------------------------------------------- //
   public override render() {
     if (!this.address) {

@@ -1,6 +1,10 @@
 import { html, LitElement } from 'lit'
 import { property } from 'lit/decorators.js'
-import type { TransactionDirection, TransactionImage, TransactionStatus } from '@ridotto-io/w3-common'
+import type {
+  TransactionDirection,
+  TransactionImage,
+  TransactionStatus
+} from '@ridotto-io/w3-common'
 import type { TransactionIconType, TransactionType } from '../../utils/TypeUtil.js'
 import { customElement } from '../../utils/WebComponentsUtil.js'
 import '../../components/wui-image/index.js'

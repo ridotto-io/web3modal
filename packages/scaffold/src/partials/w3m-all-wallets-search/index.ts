@@ -1,5 +1,10 @@
 import type { WcWallet } from '@ridotto-io/w3-core'
-import { ApiController, AssetUtil, ConnectorController, RouterController } from '@ridotto-io/w3-core'
+import {
+  ApiController,
+  AssetUtil,
+  ConnectorController,
+  RouterController
+} from '@ridotto-io/w3-core'
 import { customElement } from '@ridotto-io/w3-ui'
 import { LitElement, html } from 'lit'
 import { property, state } from 'lit/decorators.js'
@@ -65,7 +70,7 @@ export class W3mAllWalletsSearch extends LitElement {
         columnGap="xs"
       >
         ${wallets.map(
-      wallet => html`
+          wallet => html`
             <wui-card-select
               imageSrc=${ifDefined(AssetUtil.getWalletImage(wallet))}
               type="wallet"
@@ -74,7 +79,7 @@ export class W3mAllWalletsSearch extends LitElement {
               .installed=${wallet.installed}
             ></wui-card-select>
           `
-    )}
+        )}
       </wui-grid>
     `
   }
