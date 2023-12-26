@@ -1,6 +1,8 @@
 > [!NOTE]
 > Looking for v2? [switch the branch](https://github.com/WalletConnect/web3modal/tree/V2).
 
+How to work with v1.0
+
 #### 📚 [Documentation](https://docs.walletconnect.com/web3modal/about)
 
 #### 🧪 [Laboratory](https://lab.web3modal.com)
