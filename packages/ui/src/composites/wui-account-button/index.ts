@@ -28,6 +28,8 @@ export class WuiAccountButton extends LitElement {
 
   @property() public address = ''
 
+  @property() public unsupported?: string = undefined
+
   // -- Render -------------------------------------------- //
   public override render() {
     return html`
@@ -45,11 +47,11 @@ export class WuiAccountButton extends LitElement {
           ></wui-avatar>
           <wui-text variant="paragraph-600" color="inherit">
             ${UiHelperUtil.getTruncateString({
-              string: this.address,
-              charsStart: this.isProfileName ? 18 : 4,
-              charsEnd: this.isProfileName ? 0 : 6,
-              truncate: this.isProfileName ? 'end' : 'middle'
-            })}
+      string: this.address,
+      charsStart: this.isProfileName ? 18 : 4,
+      charsEnd: this.isProfileName ? 0 : 6,
+      truncate: this.isProfileName ? 'end' : 'middle'
+    })}
           </wui-text>
         </wui-flex>
       </button>
@@ -72,8 +74,11 @@ export class WuiAccountButton extends LitElement {
 
       return html`
         ${networkElement}
-        <wui-text variant="paragraph-600" color="inherit"> ${this.balance} </wui-text>
-      `
+        ${this.unsupported ?
+          html`<wui-text variant="paragraph-600" color="error-100"> Wrong Network </wui-text>` :
+          html`<wui-text variant="paragraph-600" color="inherit"> ${this.balance} </wui-text>`
+        }
+    `
     }
 
     return null

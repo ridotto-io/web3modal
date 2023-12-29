@@ -35,6 +35,10 @@ export default css`
     box-shadow: 0 0 0 2px var(--wui-accent-glass-005);
   }
 
+  button > wui-icon-box[data-variant='red'] {
+    box-shadow: 0 0 0 2px var(--wui-color-error-100);
+  }
+
   button > wui-icon-box[data-variant='overlay'] {
     box-shadow: 0 0 0 2px var(--wui-gray-glass-005);
   }
