@@ -101,18 +101,18 @@ export class W3mAccountView extends LitElement {
           <wui-flex gap="3xs" alignItems="center" justifyContent="center">
             <wui-text variant="large-600" color="fg-100">
               ${this.profileName
-                ? UiHelperUtil.getTruncateString({
-                    string: this.profileName,
-                    charsStart: 20,
-                    charsEnd: 0,
-                    truncate: 'end'
-                  })
-                : UiHelperUtil.getTruncateString({
-                    string: this.address,
-                    charsStart: 4,
-                    charsEnd: 6,
-                    truncate: 'middle'
-                  })}
+        ? UiHelperUtil.getTruncateString({
+          string: this.profileName,
+          charsStart: 20,
+          charsEnd: 0,
+          truncate: 'end'
+        })
+        : UiHelperUtil.getTruncateString({
+          string: this.address,
+          charsStart: 4,
+          charsEnd: 6,
+          truncate: 'middle'
+        })}
             </wui-text>
             <wui-icon-link
               size="md"
@@ -140,15 +140,15 @@ export class W3mAccountView extends LitElement {
         </a>
         <wui-list-item
           .variant=${networkImage ? 'image' : 'icon'}
-          iconVariant="overlay"
+          iconVariant=${this.network?.name?.startsWith('Chain') ? 'red' : 'overlay'}
           icon="networkPlaceholder"
           imageSrc=${ifDefined(networkImage)}
           ?chevron=${this.isAllowedNetworkSwitch()}
           @click=${this.onNetworks.bind(this)}
         >
-          <wui-text variant="paragraph-500" color="fg-100">
-            ${this.network?.name ?? 'Unknown'}
-          </wui-text>
+        ${this.network?.name?.startsWith('Chain') ?
+        html`<wui-text variant="paragraph-500" color="error-100"> Wrong Network </wui-text>` :
+        html`<wui-text variant="paragraph-500" color="fg-100"> ${this.network?.name} </wui-text>`}
         </wui-list-item>
         <wui-list-item
           iconVariant="blue"

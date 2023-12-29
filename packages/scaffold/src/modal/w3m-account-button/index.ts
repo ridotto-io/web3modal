@@ -21,6 +21,8 @@ export class W3mAccountButton extends LitElement {
 
   @property() public avatarSrc?: string = undefined
 
+  @property() public unsupported?: boolean = undefined
+
   @property() public balance?: 'show' | 'hide' = 'show'
 
   @state() private address = AccountController.state.address
@@ -74,10 +76,11 @@ export class W3mAccountButton extends LitElement {
         address=${ifDefined(this.profileName ?? this.address)}
         ?isProfileName=${Boolean(this.profileName)}
         networkSrc=${ifDefined(networkImage)}
+        .unsupported=${Boolean(this.unsupported)}
         avatarSrc=${ifDefined(this.profileImage)}
         balance=${showBalance
-          ? CoreHelperUtil.formatBalance(this.balanceVal, this.balanceSymbol)
-          : ''}
+        ? CoreHelperUtil.formatBalance(this.balanceVal, this.balanceSymbol)
+        : ''}
         @click=${this.onClick.bind(this)}
       >
       </wui-account-button>
