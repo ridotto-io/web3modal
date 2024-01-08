@@ -10,6 +10,6 @@
     "@ridotto-io/w3-wagmi": "3.6.5-alpha.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "4.5.2"
+    "@vitejs/plugin-vue": "5.0.2"
   }
 }

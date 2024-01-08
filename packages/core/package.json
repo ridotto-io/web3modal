@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "@ridotto-io/w3-common": "3.6.5-alpha.0",
+    "@ridotto-io/w3-wallet": "3.6.5-alpha.0",
     "valtio": "1.11.2"
   },
   "keywords": [

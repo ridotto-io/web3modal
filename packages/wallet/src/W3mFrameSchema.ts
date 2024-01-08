@@ -13,15 +13,22 @@ export const AppSwitchNetworkRequest = z.object({ chainId: z.number() })
 export const AppConnectEmailRequest = z.object({ email: z.string().email() })
 export const AppConnectOtpRequest = z.object({ otp: z.string() })
 export const AppGetUserRequest = z.object({ chainId: z.optional(z.number()) })
+export const AppUpdateEmailRequest = z.object({ email: z.string().email() })
+export const AppSyncThemeRequest = z.object({
+  themeMode: z.optional(z.enum(['light', 'dark'])),
+  themeVariables: z.optional(z.record(z.string(), z.string().or(z.number())))
+})
 export const FrameConnectEmailResponse = z.object({
   action: z.enum(['VERIFY_DEVICE', 'VERIFY_OTP'])
 })
 export const FrameGetUserResponse = z.object({
+  email: z.string().email(),
   address: z.string(),
   chainId: z.number()
 })
 export const FrameIsConnectedResponse = z.object({ isConnected: z.boolean() })
 export const FrameGetChainIdResponse = z.object({ chainId: z.number() })
+export const FrameAwaitUpdateEmailResponse = z.object({ email: z.string().email() })
 export const RpcResponse = z.string()
 export const RpcPersonalSignRequest = z.object({
   method: z.literal('personal_sign'),
@@ -49,6 +56,14 @@ export const RpcEthSignTypedDataV4 = z.object({
   method: z.literal('eth_signTypedData_v4'),
   params: z.array(z.any())
 })
+export const RpcEthBlockNumber = z.object({
+  method: z.literal('eth_blockNumber')
+})
+
+export const RpcEthChainId = z.object({
+  method: z.literal('eth_chainId')
+})
+
 export const FrameSession = z.object({
   token: z.string()
 })
@@ -82,8 +97,16 @@ export const W3mFrameSchema = {
           .or(RpcEthEstimateGas)
           .or(RpcEthGasPrice)
           .or(RpcEthSignTypedDataV4)
+          .or(RpcEthBlockNumber)
+          .or(RpcEthChainId)
       })
-    ),
+    )
+
+    .or(z.object({ type: zType('APP_UPDATE_EMAIL'), payload: AppUpdateEmailRequest }))
+
+    .or(z.object({ type: zType('APP_AWAIT_UPDATE_EMAIL') }))
+
+    .or(z.object({ type: zType('APP_SYNC_THEME'), payload: AppSyncThemeRequest })),
 
   // -- Frame Events ---------------------------------------------------------
   frameEvent: z
@@ -126,4 +149,21 @@ export const W3mFrameSchema = {
     .or(z.object({ type: zType('FRAME_RPC_REQUEST_SUCCESS'), payload: RpcResponse }))
 
     .or(z.object({ type: zType('FRAME_SESSION_UPDATE'), payload: FrameSession }))
+
+    .or(z.object({ type: zType('FRAME_UPDATE_EMAIL_ERROR'), payload: zError }))
+
+    .or(z.object({ type: zType('FRAME_UPDATE_EMAIL_SUCCESS') }))
+
+    .or(z.object({ type: zType('FRAME_AWAIT_UPDATE_EMAIL_ERROR'), payload: zError }))
+
+    .or(
+      z.object({
+        type: zType('FRAME_AWAIT_UPDATE_EMAIL_SUCCESS'),
+        payload: FrameAwaitUpdateEmailResponse
+      })
+    )
+
+    .or(z.object({ type: zType('FRAME_SYNC_THEME_ERROR'), payload: zError }))
+
+    .or(z.object({ type: zType('FRAME_SYNC_THEME_SUCCESS') }))
 }
