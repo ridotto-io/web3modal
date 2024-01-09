@@ -46,6 +46,7 @@ export class W3mConnectButton extends LitElement {
         .loading=${isLoading}
         style="color:#fff !important"
         @click=${this.onClick.bind(this)}
+        data-testid="connect-button"
       >
         ${isLoading ? this.loadingLabel : this.label}
       </wui-connect-button>

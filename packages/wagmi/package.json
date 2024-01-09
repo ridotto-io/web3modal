@@ -1,6 +1,6 @@
 {
   "name": "@ridotto-io/w3-wagmi",
-  "version": "3.6.5-alpha.0",
+  "version": "3.6.6-alpha.0",
   "type": "module",
   "main": "./dist/esm/exports/index.js",
   "types": "./dist/types/exports/index.d.ts",
@@ -43,12 +43,12 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
-    "@ridotto-io/w3-polyfills": "3.6.5-alpha.0",
-    "@ridotto-io/w3-scaffold": "3.6.5-alpha.0",
-    "@ridotto-io/w3-scaffold-react": "3.6.5-alpha.0",
-    "@ridotto-io/w3-scaffold-utils": "3.6.5-alpha.0",
-    "@ridotto-io/w3-scaffold-vue": "3.6.5-alpha.0",
-    "@ridotto-io/w3-wallet": "3.6.5-alpha.0"
+    "@ridotto-io/w3-polyfills": "3.6.6-alpha.0",
+    "@ridotto-io/w3-scaffold": "3.6.6-alpha.0",
+    "@ridotto-io/w3-scaffold-react": "3.6.6-alpha.0",
+    "@ridotto-io/w3-scaffold-utils": "3.6.6-alpha.0",
+    "@ridotto-io/w3-scaffold-vue": "3.6.6-alpha.0",
+    "@ridotto-io/w3-wallet": "3.6.6-alpha.0"
   },
   "devDependencies": {
     "@ridotto-io/w3-siwe": "*"
@@ -58,7 +58,7 @@
     "@wagmi/core": ">=1",
     "react": ">=17",
     "react-dom": ">=17",
-    "viem": ">=1",
+    "viem": ">=1 <2",
     "vue": ">=3"
   },
   "peerDependenciesMeta": {

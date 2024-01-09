@@ -1,6 +1,6 @@
 {
   "name": "@ridotto-io/w3-ethers5",
-  "version": "3.6.5-alpha.0",
+  "version": "3.6.6-alpha.0",
   "type": "module",
   "main": "./dist/esm/exports/index.js",
   "types": "./dist/types/exports/index.d.ts",
@@ -44,12 +44,12 @@
   },
   "dependencies": {
     "@coinbase/wallet-sdk": "3.7.2",
-    "@ridotto-io/w3-polyfills": "3.6.5-alpha.0",
-    "@ridotto-io/w3-scaffold": "3.6.5-alpha.0",
-    "@ridotto-io/w3-scaffold-react": "3.6.5-alpha.0",
-    "@ridotto-io/w3-scaffold-utils": "3.6.5-alpha.0",
-    "@ridotto-io/w3-scaffold-vue": "3.6.5-alpha.0",
-    "@walletconnect/ethereum-provider": "2.10.6",
+    "@ridotto-io/w3-polyfills": "3.6.6-alpha.0",
+    "@ridotto-io/w3-scaffold": "3.6.6-alpha.0",
+    "@ridotto-io/w3-scaffold-react": "3.6.6-alpha.0",
+    "@ridotto-io/w3-scaffold-utils": "3.6.6-alpha.0",
+    "@ridotto-io/w3-scaffold-vue": "3.6.6-alpha.0",
+    "@walletconnect/ethereum-provider": "2.11.0",
     "valtio": "1.11.2"
   },
   "devDependencies": {

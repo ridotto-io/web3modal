@@ -26,6 +26,10 @@ export class W3mButton extends LitElement {
 
   @property() public unsupported?: boolean = undefined
 
+  @property() public charsStart?: W3mAccountButton['charsStart'] = 4
+
+  @property() public charsEnd?: W3mAccountButton['charsEnd'] = 6
+
   @state() private isAccount = AccountController.state.isConnected
 
   // -- Lifecycle ----------------------------------------- //
@@ -51,6 +55,8 @@ export class W3mButton extends LitElement {
             .unsupported=${Boolean(this.unsupported)}
             balance=${ifDefined(this.balance)}
             .avatarSrc=${this.avatarSrc}
+            .charsStart=${ifDefined(this.charsStart)}
+            .charsEnd=${ifDefined(this.charsEnd)}
           >
           </w3m-account-button>
         `

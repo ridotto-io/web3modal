@@ -62,7 +62,7 @@ export default css`
     padding: 4px var(--wui-spacing-m) 4px var(--wui-spacing-xxs);
   }
 
-  wui-flex.local-no-balance {
+  button.local-no-balance {
     border-radius: 0px;
     border: none;
     background: transparent;
@@ -72,6 +72,27 @@ export default css`
     width: 20px;
     height: 20px;
     box-shadow: 0 0 0 2px var(--wui-accent-glass-010);
+  }
+
+  @media (max-width: 500px) {
+    button {
+      gap: 0px;
+      padding: var(--wui-spacing-3xs) var(--wui-spacing-xs) !important;
+      height: 32px;
+    }
+    wui-image,
+    wui-icon-box,
+    button > wui-text {
+      visibility: hidden;
+      width: 0px;
+      height: 0px;
+    }
+    button {
+      border-radius: 0px;
+      border: none;
+      background: transparent;
+      padding: 0px;
+    }
   }
 
   @media (hover: hover) and (pointer: fine) {

@@ -137,6 +137,7 @@ export type IconType =
   | 'twitter'
   | 'twitterIcon'
   | 'verify'
+  | 'verifyFilled'
   | 'wallet'
   | 'walletConnect'
   | 'walletPlaceholder'
@@ -169,7 +170,7 @@ export type LogoType =
 
 export type PlacementType = 'bottom' | 'left' | 'right' | 'top'
 
-export type ChipType = 'fill' | 'shade' | 'transparent'
+export type ChipType = 'fill' | 'shade' | 'shadeSmall' | 'transparent' | 'success'
 
 export type ButtonType = 'accent' | 'fill' | 'shade' | 'fullWidth' | 'accentBg'
 

@@ -72,6 +72,22 @@ export default css`
     color: #fff !important;
   }
 
+  @media (max-width: 500px) {
+    button[data-size='md'] {
+      height: 32px;
+      padding: 5px 12px;
+    }
+
+    button[data-size='md'] > wui-text > slot {
+      font-size: 14px !important;
+    }
+  }
+
+  wui-loading-spinner {
+    width: 14px;
+    height: 14px;
+  }
+
   wui-loading-spinner::slotted(svg) {
     width: 10px !important;
     height: 10px !important;
