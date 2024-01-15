@@ -60,6 +60,10 @@ export const NetworkController = {
     state.isDefaultCaipNetwork = true
   },
 
+  getRequestedCaipNetworks() {
+    return state.requestedCaipNetworks
+  },
+
   setRequestedCaipNetworks(requestedNetworks: NetworkControllerState['requestedCaipNetworks']) {
     state.requestedCaipNetworks = requestedNetworks
   },

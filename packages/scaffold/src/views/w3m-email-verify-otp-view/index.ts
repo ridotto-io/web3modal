@@ -65,18 +65,18 @@ export class W3mEmailVerifyOtpView extends LitElement {
         <wui-text variant="small-400" color="fg-200">The code expires in 20 minutes</wui-text>
 
         ${this.loading
-        ? html`<wui-loading-spinner size="xl" color="accent-100"></wui-loading-spinner>`
-        : html` <wui-flex flexDirection="column" alignItems="center" gap="xs">
+          ? html`<wui-loading-spinner size="xl" color="accent-100"></wui-loading-spinner>`
+          : html` <wui-flex flexDirection="column" alignItems="center" gap="xs">
               <wui-otp
                 dissabled
                 length="6"
                 @inputChange=${this.onOtpInputChange.bind(this)}
               ></wui-otp>
               ${this.error
-            ? html`<wui-text variant="small-400" color="error-100"
+                ? html`<wui-text variant="small-400" color="error-100"
                     >${this.error}. Try Again</wui-text
                   >`
-            : null}
+                : null}
             </wui-flex>`}
 
         <wui-flex alignItems="center">

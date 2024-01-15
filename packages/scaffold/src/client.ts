@@ -178,6 +178,9 @@ export class Web3ModalScaffold {
 
   protected getCaipNetwork = () => NetworkController.state.caipNetwork
 
+  protected getRequestedCaipNetworks: (typeof NetworkController)['getRequestedCaipNetworks'] = () =>
+    NetworkController.getRequestedCaipNetworks()
+
   protected setRequestedCaipNetworks: (typeof NetworkController)['setRequestedCaipNetworks'] =
     requestedCaipNetworks => {
       NetworkController.setRequestedCaipNetworks(requestedCaipNetworks)
