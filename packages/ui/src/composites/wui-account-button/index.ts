@@ -50,11 +50,11 @@ export class WuiAccountButton extends LitElement {
           ></wui-avatar>
           <wui-text variant="paragraph-600" color="inherit">
             ${UiHelperUtil.getTruncateString({
-      string: this.address,
-      charsStart: this.isProfileName ? 18 : this.charsStart,
-      charsEnd: this.isProfileName ? 0 : this.charsEnd,
-      truncate: this.isProfileName ? 'end' : 'middle'
-    })}
+              string: this.address,
+              charsStart: this.isProfileName ? 18 : this.charsStart,
+              charsEnd: this.isProfileName ? 0 : this.charsEnd,
+              truncate: this.isProfileName ? 'end' : 'middle'
+            })}
           </wui-text>
         </wui-flex>
       </button>
@@ -77,11 +77,10 @@ export class WuiAccountButton extends LitElement {
 
       return html`
         ${networkElement}
-        ${this.unsupported ?
-          html`<wui-text variant="paragraph-600" color="error-100"> Wrong Network </wui-text>` :
-          html`<wui-text variant="paragraph-600" color="inherit"> ${this.balance} </wui-text>`
-        }
-    `
+        ${this.unsupported
+          ? html`<wui-text variant="paragraph-600" color="error-100"> Wrong Network </wui-text>`
+          : html`<wui-text variant="paragraph-600" color="inherit"> ${this.balance} </wui-text>`}
+      `
     }
 
     return null

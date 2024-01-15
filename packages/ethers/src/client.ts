@@ -452,15 +452,22 @@ export class Web3Modal extends Web3ModalScaffold {
     chains: Web3ModalClientOptions['chains'],
     chainImages?: Web3ModalClientOptions['chainImages']
   ) {
-    const requestedCaipNetworks = chains?.map(
-      chain =>
-        ({
-          id: `${ConstantsUtil.EIP155}:${chain.chainId}`,
-          name: chain.name,
-          imageId: PresetsUtil.EIP155NetworkImageIds[chain.chainId],
-          imageUrl: chainImages?.[chain.chainId]
-        }) as CaipNetwork
-    )
+    const requestedCaipNetworks: CaipNetwork[] = chains?.map(chain => ({
+      id: `${ConstantsUtil.EIP155}:${chain.chainId}`,
+      name: chain.name,
+      imageId: PresetsUtil.EIP155NetworkImageIds[chain.chainId],
+      imageUrl: chainImages?.[chain.chainId],
+      chainId: chain.chainId
+    }))
+    this.setRequestedCaipNetworks(requestedCaipNetworks ?? [])
+  }
+
+  public syncNewRequestedNetworks(filterOutIds: number[] = []) {
+    const chains = this.getRequestedCaipNetworks()
+
+    // @ts-expect-error TODO
+    const requestedCaipNetworks = chains?.filter(chain => !filterOutIds.includes(chain.chainId))
+
     this.setRequestedCaipNetworks(requestedCaipNetworks ?? [])
   }
 

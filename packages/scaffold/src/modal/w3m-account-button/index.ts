@@ -83,8 +83,8 @@ export class W3mAccountButton extends LitElement {
         .unsupported=${Boolean(this.unsupported)}
         avatarSrc=${ifDefined(this.profileImage)}
         balance=${showBalance
-        ? CoreHelperUtil.formatBalance(this.balanceVal, this.balanceSymbol)
-        : ''}
+          ? CoreHelperUtil.formatBalance(this.balanceVal, this.balanceSymbol)
+          : ''}
         @click=${this.onClick.bind(this)}
         data-testid="account-button"
         .charsStart=${this.charsStart}
