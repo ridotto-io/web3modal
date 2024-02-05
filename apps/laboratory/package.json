@@ -1,6 +1,6 @@
 {
   "name": "@apps/laboratory",
-  "version": "3.6.7-alpha.0",
+  "version": "3.6.8-alpha.0",
   "private": true,
   "scripts": {
     "dev:laboratory": "next dev",
@@ -15,9 +15,9 @@
     "@chakra-ui/react": "2.8.2",
     "@emotion/react": "11.11.3",
     "@emotion/styled": "11.11.0",
-    "@ridotto-io/w3-ethers": "3.6.7-alpha.0",
-    "@ridotto-io/w3-ethers5": "3.6.7-alpha.0",
-    "@ridotto-io/w3-wagmi": "3.6.7-alpha.0",
+    "@ridotto-io/w3-ethers": "3.6.8-alpha.0",
+    "@ridotto-io/w3-ethers5": "3.6.8-alpha.0",
+    "@ridotto-io/w3-wagmi": "3.6.8-alpha.0",
     "@sentry/browser": "7.91.0",
     "@sentry/react": "7.91.0",
     "framer-motion": "10.16.16",

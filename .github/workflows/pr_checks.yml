@@ -48,6 +48,7 @@ jobs:
       - name: install
         run: npm ci
       - name: test
+        id: test
         run: npm run test
 
   ui-test:

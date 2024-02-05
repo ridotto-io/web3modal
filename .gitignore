@@ -10,3 +10,7 @@ lerna-debug.log
 playwright-report/
 dist
 screenshots/
+screenshots/
+coverage
+test-results
+.vscode/*

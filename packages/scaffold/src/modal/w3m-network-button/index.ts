@@ -9,9 +9,12 @@ import { customElement } from '@ridotto-io/w3-ui'
 import { LitElement, html } from 'lit'
 import { property, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
+import styles from './styles.js'
 
 @customElement('w3m-network-button')
 export class W3mNetworkButton extends LitElement {
+  public static override styles = styles
+
   // -- Members ------------------------------------------- //
   private unsubscribe: (() => void)[] = []
 
@@ -55,7 +58,9 @@ export class W3mNetworkButton extends LitElement {
 
   // -- Private ------------------------------------------- //
   private onClick() {
-    ModalController.open({ view: 'Networks' })
+    if (!this.loading) {
+      ModalController.open({ view: 'Networks' })
+    }
   }
 }
 

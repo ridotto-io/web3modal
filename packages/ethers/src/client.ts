@@ -35,7 +35,7 @@ import {
 } from '@ridotto-io/w3-scaffold-utils/ethers'
 import type { EthereumProviderOptions } from '@walletconnect/ethereum-provider'
 import type { Eip1193Provider } from 'ethers'
-import { W3mFrameProvider } from '@ridotto-io/w3-wallet'
+import { W3mFrameRpcConstants, W3mFrameProvider, type W3mFrameTypes } from '@ridotto-io/w3-wallet'
 import type { CombinedProvider } from '@ridotto-io/w3-scaffold-utils/ethers'
 
 // -- Types ---------------------------------------------------------------------
@@ -417,10 +417,10 @@ export class Web3Modal extends Web3ModalScaffold {
       showQrModal: false,
       rpcMap: this.chains
         ? this.chains.reduce<Record<number, string>>((map, chain) => {
-            map[chain.chainId] = chain.rpcUrl
+          map[chain.chainId] = chain.rpcUrl
 
-            return map
-          }, {})
+          return map
+        }, {})
         : ({} as Record<number, string>),
       optionalChains: [...this.chains.map(chain => chain.chainId)] as [number],
       metadata: {
@@ -753,8 +753,13 @@ export class Web3Modal extends Web3ModalScaffold {
 
   private watchEmail() {
     if (this.emailProvider) {
-      this.emailProvider.onRpcRequest(() => {
-        super.open({ view: 'ApproveTransaction' })
+      this.emailProvider.onRpcRequest(request => {
+        const req = request as W3mFrameTypes.AppEvent & { payload?: unknown }
+        const payload = req.payload as W3mFrameTypes.RPCRequest
+        // We only open the modal if it's not a safe (auto-approve)
+        if (!W3mFrameRpcConstants.SAFE_RPC_METHODS.includes(payload.method)) {
+          super.open({ view: 'ApproveTransaction' })
+        }
       })
       this.emailProvider.onRpcResponse(() => {
         super.close()
@@ -888,7 +893,7 @@ export class Web3Modal extends Web3ModalScaffold {
               switchError.code === EthersConstantsUtil.ERROR_CODE_UNRECOGNIZED_CHAIN_ID ||
               switchError.code === EthersConstantsUtil.ERROR_CODE_DEFAULT ||
               switchError?.data?.originalError?.code ===
-                EthersConstantsUtil.ERROR_CODE_UNRECOGNIZED_CHAIN_ID
+              EthersConstantsUtil.ERROR_CODE_UNRECOGNIZED_CHAIN_ID
             ) {
               await EthersHelpersUtil.addEthereumChain(
                 WalletConnectProvider as unknown as Provider,
@@ -914,7 +919,7 @@ export class Web3Modal extends Web3ModalScaffold {
               switchError.code === EthersConstantsUtil.ERROR_CODE_UNRECOGNIZED_CHAIN_ID ||
               switchError.code === EthersConstantsUtil.ERROR_CODE_DEFAULT ||
               switchError?.data?.originalError?.code ===
-                EthersConstantsUtil.ERROR_CODE_UNRECOGNIZED_CHAIN_ID
+              EthersConstantsUtil.ERROR_CODE_UNRECOGNIZED_CHAIN_ID
             ) {
               await EthersHelpersUtil.addEthereumChain(InjectedProvider, chain)
             } else {
@@ -938,7 +943,7 @@ export class Web3Modal extends Web3ModalScaffold {
               switchError.code === EthersConstantsUtil.ERROR_CODE_UNRECOGNIZED_CHAIN_ID ||
               switchError.code === EthersConstantsUtil.ERROR_CODE_DEFAULT ||
               switchError?.data?.originalError?.code ===
-                EthersConstantsUtil.ERROR_CODE_UNRECOGNIZED_CHAIN_ID
+              EthersConstantsUtil.ERROR_CODE_UNRECOGNIZED_CHAIN_ID
             ) {
               await EthersHelpersUtil.addEthereumChain(EIP6963Provider, chain)
             } else {
@@ -961,7 +966,7 @@ export class Web3Modal extends Web3ModalScaffold {
               switchError.code === EthersConstantsUtil.ERROR_CODE_UNRECOGNIZED_CHAIN_ID ||
               switchError.code === EthersConstantsUtil.ERROR_CODE_DEFAULT ||
               switchError?.data?.originalError?.code ===
-                EthersConstantsUtil.ERROR_CODE_UNRECOGNIZED_CHAIN_ID
+              EthersConstantsUtil.ERROR_CODE_UNRECOGNIZED_CHAIN_ID
             ) {
               await EthersHelpersUtil.addEthereumChain(CoinbaseProvider, chain)
             }

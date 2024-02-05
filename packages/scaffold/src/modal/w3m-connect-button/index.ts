@@ -57,7 +57,7 @@ export class W3mConnectButton extends LitElement {
   private onClick() {
     if (this.open) {
       ModalController.close()
-    } else {
+    } else if (!this.loading) {
       ModalController.open()
     }
   }

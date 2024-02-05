@@ -1,6 +1,6 @@
 {
   "name": "@ridotto-io/w3-scaffold-vue",
-  "version": "3.6.7-alpha.0",
+  "version": "3.6.8-alpha.0",
   "type": "module",
   "main": "./dist/esm/index.js",
   "types": "./dist/types/index.d.ts",
@@ -16,7 +16,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
-    "@ridotto-io/w3-scaffold": "3.6.7-alpha.0"
+    "@ridotto-io/w3-scaffold": "3.6.8-alpha.0"
   },
   "peerDependencies": {
     "vue": ">=3"
