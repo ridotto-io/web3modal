@@ -43,7 +43,7 @@ export function defaultConfig(options: ConfigOptions) {
       return undefined
     }
 
-    injectedProvider = window.ethereum
+    injectedProvider = (window.ethereum as unknown as Provider)
 
     return injectedProvider
   }

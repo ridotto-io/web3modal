@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-redundant-type-constituents */
 import '@ridotto-io/w3-polyfills'
 import type { Metadata, Provider, ProviderType } from '@ridotto-io/w3-scaffold-utils/ethers'
 import { CoinbaseWalletSDK } from '@coinbase/wallet-sdk'
@@ -39,7 +40,7 @@ export function defaultConfig(options: ConfigOptions) {
       return undefined
     }
 
-    injectedProvider = window.ethereum
+    injectedProvider = (window.ethereum as unknown as Provider)
 
     return injectedProvider
   }
