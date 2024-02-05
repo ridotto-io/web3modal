@@ -8,12 +8,9 @@ lerna-debug.log
 .env
 .turbo
 playwright-report/
-<<<<<<< HEAD
 dist
 screenshots/
-=======
 screenshots/
 coverage
 test-results
 .vscode/*
->>>>>>> upstream/V3

@@ -277,11 +277,7 @@ checkSdkVersion()
 // -- Check left over development constants ---------------------------------------
 async function checkDevelopmentConstants() {
   for (const f of updated_files) {
-<<<<<<< HEAD
-    if (f.includes('README.md')) {
-=======
     if (f.includes('README.md') || f.includes('.yml')) {
->>>>>>> upstream/V3
       continue
     }
     const diff = await diffForFile(f)

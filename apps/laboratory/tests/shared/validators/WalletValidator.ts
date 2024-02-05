@@ -9,20 +9,11 @@ export class WalletValidator {
   }
 
   async expectConnected() {
-<<<<<<< HEAD
-    await this.page.reload()
-=======
->>>>>>> upstream/V3
     await this.gotoSessions.click()
     await expect(this.page.getByTestId('session-card')).toBeVisible()
   }
 
   async expectDisconnected() {
-<<<<<<< HEAD
-    await this.page.waitForTimeout(1000)
-    await this.page.reload()
-=======
->>>>>>> upstream/V3
     await this.gotoSessions.click()
     await expect(this.page.getByTestId('session-card')).not.toBeVisible()
   }

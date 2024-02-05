@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-import { Center, Text, VStack } from '@chakra-ui/react'
-import { createWeb3Modal, defaultWagmiConfig } from '@ridotto-io/w3-wagmi/react'
-=======
 import { createWeb3Modal, defaultWagmiConfig } from '@web3modal/wagmi/react'
->>>>>>> upstream/V3
 import { useEffect, useState } from 'react'
 import { WagmiConfig } from 'wagmi'
 import { Web3ModalButtons } from '../../components/Web3ModalButtons'

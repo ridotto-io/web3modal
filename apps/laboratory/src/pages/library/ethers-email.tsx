@@ -1,11 +1,4 @@
-<<<<<<< HEAD
-import { Center, Text, VStack } from '@chakra-ui/react'
-import { NetworksButton } from '../../components/NetworksButton'
-import { EthersConnectButton } from '../../components/Ethers/EthersConnectButton'
 import { createWeb3Modal, defaultConfig } from '@ridotto-io/w3-ethers/react'
-=======
-import { createWeb3Modal, defaultConfig } from '@web3modal/ethers/react'
->>>>>>> upstream/V3
 import { ThemeStore } from '../../utils/StoreUtil'
 import { EthersConstants } from '../../utils/EthersConstants'
 import { ConstantsUtil } from '../../utils/ConstantsUtil'

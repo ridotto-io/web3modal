@@ -48,19 +48,6 @@ export default defineConfig<ModalFixture>({
     {
       name: 'firefox/ethers',
       use: { ...devices['Desktop Firefox'], library: 'ethers' }
-<<<<<<< HEAD
-=======
-    },
-
-    {
-      name: 'webkit/ethers',
-      use: { ...devices['Desktop Safari'], library: 'ethers' }
-    },
-
-    {
-      name: 'webkit/ethers',
-      use: { ...devices['Desktop Safari'], library: 'ethers' }
->>>>>>> upstream/V3
     }
   ],
 
@@ -68,10 +55,6 @@ export default defineConfig<ModalFixture>({
   webServer: {
     command: 'npm run playwright:start',
     url: BASE_URL,
-<<<<<<< HEAD
     reuseExistingServer: !process.env['CI']
-=======
-    reuseExistingServer: !process.env['CI'] || Boolean(process.env['SKIP_PLAYWRIGHT_WEBSERVER'])
->>>>>>> upstream/V3
   }
 })
