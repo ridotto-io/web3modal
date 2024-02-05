@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Center, Text, VStack } from '@chakra-ui/react'
 import { NetworksButton } from '../../components/NetworksButton'
 import { EthersConnectButton } from '../../components/Ethers/EthersConnectButton'
@@ -105,28 +106,36 @@ const siweConfig = createSIWEConfig({
     }
   }
 })
+=======
+import { SiweData } from '../../components/Siwe/SiweData'
+import { EthersTests } from '../../components/Ethers/EthersTests'
+import { Web3ModalButtons } from '../../components/Web3ModalButtons'
+import { createWeb3Modal, defaultConfig } from '@web3modal/ethers5/react'
+import { ThemeStore } from '../../utils/StoreUtil'
+import { EthersConstants } from '../../utils/EthersConstants'
+import { ConstantsUtil } from '../../utils/ConstantsUtil'
+import { siweConfig } from '../../utils/SiweUtils'
+>>>>>>> upstream/V3
 
 const modal = createWeb3Modal({
   ethersConfig: defaultConfig({
-    metadata,
+    metadata: ConstantsUtil.Metadata,
     defaultChainId: 1,
     rpcUrl: 'https://cloudflare-eth.com'
   }),
-  chains,
-  projectId,
+  chains: EthersConstants.chains,
+  projectId: ConstantsUtil.ProjectId,
   enableAnalytics: true,
-  metadata,
+  metadata: ConstantsUtil.Metadata,
   siweConfig
 })
 
 ThemeStore.setModal(modal)
 
 export default function EthersSiwe() {
-  const { data, status } = useSession()
-  const session = data as unknown as SIWESession
-
   return (
     <>
+<<<<<<< HEAD
       <Center paddingTop={10}>
         <Text fontSize="xl" fontWeight={700}>
           Ethers with SIWE
@@ -150,6 +159,11 @@ export default function EthersSiwe() {
           <NetworksButton />
         </VStack>
       </Center>
+=======
+      <Web3ModalButtons />
+      <SiweData />
+      <EthersTests />
+>>>>>>> upstream/V3
     </>
   )
 }

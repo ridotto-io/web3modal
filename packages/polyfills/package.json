@@ -1,6 +1,6 @@
 {
   "name": "@ridotto-io/w3-polyfills",
-  "version": "3.6.7-alpha.0",
+  "version": "3.6.8-alpha.0",
   "type": "module",
   "main": "./dist/esm/index.js",
   "types": "./dist/types/index.d.ts",

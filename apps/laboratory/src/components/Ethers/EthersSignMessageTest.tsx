@@ -1,6 +1,7 @@
 import { Button, useToast } from '@chakra-ui/react'
 import { useWeb3ModalAccount, useWeb3ModalProvider } from '@ridotto-io/w3-ethers/react'
 import { BrowserProvider, JsonRpcSigner } from 'ethers'
+<<<<<<< HEAD:apps/laboratory/src/components/Ethers/EthersConnectButton.tsx
 import { EthersTransactionButton } from './EthersTransactionButton'
 import type { TypedDataField } from 'ethers'
 import { SigningFailedToastTitle, SigningSucceededToastTitle } from '../../constants'
@@ -35,6 +36,14 @@ export function EthersConnectButton() {
   const toast = useToast()
   const { isConnected, address, chainId } = useWeb3ModalAccount()
   const { walletProvider, walletProviderType } = useWeb3ModalProvider()
+=======
+import { ConstantsUtil } from '../../utils/ConstantsUtil'
+
+export function EthersSignMessageTest() {
+  const toast = useToast()
+  const { address, chainId } = useWeb3ModalAccount()
+  const { walletProvider } = useWeb3ModalProvider()
+>>>>>>> upstream/V3:apps/laboratory/src/components/Ethers/EthersSignMessageTest.tsx
 
   async function onSignMessage() {
     try {
@@ -44,13 +53,19 @@ export function EthersConnectButton() {
       const provider = new BrowserProvider(walletProvider, chainId)
       const signer = new JsonRpcSigner(provider, address)
       const signature = await signer?.signMessage('Hello Web3Modal Ethers')
+<<<<<<< HEAD:apps/laboratory/src/components/Ethers/EthersConnectButton.tsx
 
       toast({
         title: SigningSucceededToastTitle,
+=======
+      toast({
+        title: ConstantsUtil.SigningSucceededToastTitle,
+>>>>>>> upstream/V3:apps/laboratory/src/components/Ethers/EthersSignMessageTest.tsx
         description: signature,
         status: 'success',
         isClosable: true
       })
+<<<<<<< HEAD:apps/laboratory/src/components/Ethers/EthersConnectButton.tsx
     } catch {
       toast({
         title: SigningFailedToastTitle,
@@ -78,9 +93,11 @@ export function EthersConnectButton() {
       const signature = await signer?.signTypedData(domain, types, message)
 
       toast({ title: 'Succcess', description: signature, status: 'success', isClosable: true })
+=======
+>>>>>>> upstream/V3:apps/laboratory/src/components/Ethers/EthersSignMessageTest.tsx
     } catch {
       toast({
-        title: 'Error',
+        title: ConstantsUtil.SigningFailedToastTitle,
         description: 'Failed to sign message',
         status: 'error',
         isClosable: true
@@ -89,6 +106,7 @@ export function EthersConnectButton() {
   }
 
   return (
+<<<<<<< HEAD:apps/laboratory/src/components/Ethers/EthersConnectButton.tsx
     <>
       <w3m-button />
       {isConnected ? (
@@ -103,5 +121,10 @@ export function EthersConnectButton() {
         </>
       ) : null}
     </>
+=======
+    <Button data-testid="sign-message-button" onClick={onSignMessage}>
+      Sign Message
+    </Button>
+>>>>>>> upstream/V3:apps/laboratory/src/components/Ethers/EthersSignMessageTest.tsx
   )
 }

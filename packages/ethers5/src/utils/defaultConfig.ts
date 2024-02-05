@@ -39,7 +39,6 @@ export function defaultConfig(options: ConfigOptions) {
       return undefined
     }
 
-    //  @ts-expect-error window.ethereum satisfies Provider
     injectedProvider = window.ethereum
 
     return injectedProvider
