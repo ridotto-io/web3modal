@@ -94,6 +94,17 @@ export default css`
     }
   }
 
+  @media (max-width: 500px) {
+    button[data-size='md'] {
+      height: 32px;
+      padding: 5px 12px;
+    }
+
+    button[data-size='md'] > wui-text > slot {
+      font-size: 14px !important;
+    }
+  }
+
   wui-loading-spinner {
     width: 14px;
     height: 14px;

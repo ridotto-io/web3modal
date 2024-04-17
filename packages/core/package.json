@@ -13,13 +13,16 @@
     "build:core": "tsc --build",
     "watch": "tsc --watch",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run --dir tests",
+    "test": "vitest run --dir tests --coverage.enabled --reporter=junit --coverage.reporter=json-summary --coverage.reporter=html",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
     "@ridotto-io/w3-common": "3.6.8-alpha.0",
     "@ridotto-io/w3-wallet": "3.6.8-alpha.0",
     "valtio": "1.11.2"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "1.1.2"
   },
   "keywords": [
     "web3",
