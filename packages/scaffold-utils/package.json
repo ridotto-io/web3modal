@@ -1,6 +1,6 @@
 {
   "name": "@ridotto-io/w3-scaffold-utils",
-  "version": "3.6.8-alpha.0",
+  "version": "4.1.9",
   "type": "module",
   "main": "./dist/esm/exports/index.js",
   "types": "./dist/types/exports/index.d.ts",
@@ -40,8 +40,8 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
-    "@ridotto-io/w3-core": "3.6.8-alpha.0",
-    "@ridotto-io/w3-polyfills": "3.6.8-alpha.0",
+    "@ridotto-io/w3-core": "4.1.9",
+    "@ridotto-io/w3-polyfills": "4.1.9",
     "valtio": "1.11.2"
   },
   "keywords": [
