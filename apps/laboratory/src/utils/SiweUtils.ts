@@ -1,7 +1,7 @@
 import { SiweMessage } from 'siwe'
 import { getCsrfToken, signIn, signOut, getSession } from 'next-auth/react'
-import type { SIWEVerifyMessageArgs, SIWECreateMessageArgs, SIWESession } from '@web3modal/core'
-import { createSIWEConfig } from '@web3modal/siwe'
+import type { SIWEVerifyMessageArgs, SIWECreateMessageArgs, SIWESession } from '@ridotto-io/w3-siwe'
+import { createSIWEConfig } from '@ridotto-io/w3-siwe'
 
 export const siweConfig = createSIWEConfig({
   createMessage: ({ nonce, address, chainId }: SIWECreateMessageArgs) =>

@@ -1,4 +1,4 @@
-import type { CaipNetwork } from '@ridotto-io/w3-scaffold'
+import type { CaipNetwork } from '@ridotto-io/w3-core'
 import { ConstantsUtil } from './ConstantsUtil.js'
 import { PresetsUtil } from './PresetsUtil.js'
 import type { Chain, Provider } from './EthersTypesUtil.js'

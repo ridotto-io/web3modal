@@ -20,8 +20,8 @@
     "qrcode": "1.5.3"
   },
   "devDependencies": {
-    "@ridotto-io/w3-common": "3.6.8-alpha.0",
     "@types/qrcode": "1.5.5",
+    "@ridotto-io/w3-common": "3.6.8-alpha.0",
     "eslint-plugin-lit": "1.11.0",
     "eslint-plugin-wc": "2.0.4"
   },

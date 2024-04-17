@@ -18,6 +18,11 @@
       "types": "./dist/types/exports/ethers.d.ts",
       "import": "./dist/esm/exports/ethers.js",
       "default": "./dist/esm/exports/ethers.js"
+    },
+    "./solana": {
+      "types": "./dist/types/exports/solana.d.ts",
+      "import": "./dist/esm/exports/solana.js",
+      "default": "./dist/esm/exports/solana.js"
     }
   },
   "typesVersions": {
@@ -35,8 +40,8 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
+    "@ridotto-io/w3-core": "3.6.8-alpha.0",
     "@ridotto-io/w3-polyfills": "3.6.8-alpha.0",
-    "@ridotto-io/w3-scaffold": "3.6.8-alpha.0",
     "valtio": "1.11.2"
   },
   "keywords": [

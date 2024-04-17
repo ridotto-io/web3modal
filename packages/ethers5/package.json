@@ -49,15 +49,18 @@
     "@ridotto-io/w3-scaffold-react": "3.6.8-alpha.0",
     "@ridotto-io/w3-scaffold-utils": "3.6.8-alpha.0",
     "@ridotto-io/w3-scaffold-vue": "3.6.8-alpha.0",
+    "@ridotto-io/w3-siwe": "3.6.8-alpha.0",
     "@walletconnect/ethereum-provider": "2.11.0",
     "valtio": "1.11.2"
   },
   "devDependencies": {
     "@ridotto-io/w3-siwe": "*",
-    "ethers": "5.7.2"
+    "ethers": "5.7.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "vue": "3.4.3"
   },
   "peerDependencies": {
-    "@ridotto-io/w3-siwe": "*",
     "ethers": ">=5.0.0 <6.0.0",
     "react": ">=17",
     "react-dom": ">=17",
@@ -67,21 +70,12 @@
     "react": {
       "optional": true
     },
-    "@ridotto-io/w3-siwe": {
-      "optional": true
-    },
     "react-dom": {
       "optional": true
     },
     "vue": {
       "optional": true
     }
-  },
-  "optionalDependencies": {
-    "@ridotto-io/w3-siwe": "3.5.0-6a05dc24",
-    "react": ">=17",
-    "react-dom": ">=17",
-    "vue": ">=3"
   },
   "keywords": [
     "web3",

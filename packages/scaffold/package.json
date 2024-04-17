@@ -19,9 +19,8 @@
     "@ridotto-io/w3-common": "3.6.8-alpha.0",
     "@ridotto-io/w3-core": "3.6.8-alpha.0",
     "@ridotto-io/w3-ui": "3.6.8-alpha.0",
-    "lit": "3.1.0"
-  },
-  "devDependencies": {
+    "lit": "3.1.0",
+    "@ridotto-io/w3-siwe": "3.6.8-alpha.0",
     "@ridotto-io/w3-wallet": "3.6.8-alpha.0"
   },
   "keywords": [

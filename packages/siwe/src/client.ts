@@ -1,10 +1,11 @@
 import type {
   SIWECreateMessageArgs,
   SIWEVerifyMessageArgs,
-  SIWEControllerClient,
   SIWEConfig,
   SIWEClientMethods
-} from '@ridotto-io/w3-core'
+} from '../core/utils/TypeUtils.js'
+import type { SIWEControllerClient } from '../core/controller/SIWEController.js'
+
 import {
   AccountController,
   NetworkController,
@@ -12,8 +13,8 @@ import {
   RouterUtil
 } from '@ridotto-io/w3-core'
 
-import { ConstantsUtil } from './utils/ConstantsUtil.js'
-import { HelpersUtil } from '@ridotto-io/w3-scaffold-utils'
+import { NetworkUtil } from '@ridotto-io/w3-common'
+import { ConstantsUtil } from '../core/utils/ConstantsUtil.js'
 
 // -- Client -------------------------------------------------------------------- //
 export class Web3ModalSIWEClient {
@@ -45,8 +46,8 @@ export class Web3ModalSIWEClient {
     this.methods = siweConfigMethods
   }
 
-  async getNonce() {
-    const nonce = await this.methods.getNonce()
+  async getNonce(address?: string) {
+    const nonce = await this.methods.getNonce(address)
     if (!nonce) {
       throw new Error('siweControllerClient:getNonce - nonce is undefined')
     }
@@ -80,12 +81,12 @@ export class Web3ModalSIWEClient {
   }
 
   async signIn() {
-    const nonce = await this.methods.getNonce()
     const { address } = AccountController.state
+    const nonce = await this.methods.getNonce(address)
     if (!address) {
       throw new Error('An address is required to create a SIWE message.')
     }
-    const chainId = HelpersUtil.caipNetworkIdToNumber(NetworkController.state.caipNetwork?.id)
+    const chainId = NetworkUtil.caipNetworkIdToNumber(NetworkController.state.caipNetwork?.id)
     if (!chainId) {
       throw new Error('A chainId is required to create a SIWE message.')
     }

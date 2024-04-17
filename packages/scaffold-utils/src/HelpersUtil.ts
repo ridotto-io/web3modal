@@ -1,11 +1,7 @@
-import type { CaipNetworkId, Tokens } from '@ridotto-io/w3-scaffold'
+import type { Tokens } from '@ridotto-io/w3-core'
 import { ConstantsUtil } from './ConstantsUtil.js'
 
 export const HelpersUtil = {
-  caipNetworkIdToNumber(caipnetworkId?: CaipNetworkId) {
-    return caipnetworkId ? Number(caipnetworkId.split(':')[1]) : undefined
-  },
-
   getCaipTokens(tokens?: Tokens) {
     if (!tokens) {
       return undefined

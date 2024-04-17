@@ -1,8 +1,8 @@
 import {
   AssetUtil,
   NetworkController,
+  OptionsController,
   RouterController,
-  SIWEController,
   RouterUtil
 } from '@ridotto-io/w3-core'
 import { customElement } from '@ridotto-io/w3-ui'
@@ -111,7 +111,7 @@ export class W3mNetworkSwitchView extends LitElement {
       this.error = false
       if (this.network) {
         await NetworkController.switchActiveNetwork(this.network)
-        if (!SIWEController.state.isSiweEnabled) {
+        if (!OptionsController.state.isSiweEnabled) {
           RouterUtil.navigateAfterNetworkSwitch()
         }
       }

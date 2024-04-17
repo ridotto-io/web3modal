@@ -7,9 +7,16 @@
     "build:examples": "vite build"
   },
   "dependencies": {
-    "@ridotto-io/w3-wagmi": "3.6.8-alpha.0"
+    "@ridotto-io/w3-wagmi": "3.6.8-alpha.0",
+    "@tanstack/react-query": "5.24.8",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "vite": "5.0.12",
+    "viem": "2.7.13",
+    "wagmi": "2.5.7"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "4.2.1"
+    "@vitejs/plugin-react": "4.2.1",
+    "vite": "5.0.12"
   }
 }
