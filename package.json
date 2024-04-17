@@ -27,10 +27,10 @@
     "changeset": "changeset; changeset version",
     "new-version": "lerna version --no-git-tag-version --exact",
     "pre-publish": "npm run new-version; npm install",
-    "publish:latest": "npm install; npm run build; changeset publish",
-    "publish:alpha": "npm install; npm run build; changeset publish --tag alpha",
-    "publish:beta": "npm install; npm run build; changeset publish --tag beta",
-    "publish:canary": "npm install; npm run build; changeset publish --tag canary"
+    "publish:latest": "npm run build; lerna exec -- npm publish --no-private --access public --tag latest",
+    "publish:alpha": "npm run build; lerna exec -- npm publish --no-private --access public --tag alpha",
+    "publish:beta": "npm run build; lerna exec -- npm publish --no-private --access public --tag beta",
+    "publish:canary": "npm run build; lerna exec -- npm publish --no-private --access public --tag canary"
   },
   "workspaces": [
     "packages/common",
@@ -63,6 +63,7 @@
     "prettier": "3.1.1",
     "turbo": "1.11.3",
     "typescript": "5.3.3",
-    "vitest": "1.1.1"
+    "vitest": "1.1.1",
+    "lerna": "8.0.1"
   }
 }
