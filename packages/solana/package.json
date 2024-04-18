@@ -55,7 +55,7 @@
     "@solana/wallet-adapter-solflare": "0.6.28",
     "@solana/wallet-adapter-trust": "0.1.13",
     "@solana/wallet-adapter-walletconnect": "0.1.16",
-    "@solana/web3.js": "1.91.1",
+    "@solana/web3.js": "1.87.7",
     "@walletconnect/universal-provider": "2.11.2",
     "bn.js": "5.2.1",
     "bs58": "5.0.0"
