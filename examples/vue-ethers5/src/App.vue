@@ -72,7 +72,7 @@ setTimeout(() => {
 
 <template>
   Ridotto Examples
-  <w3m-button :avatarSrc="profileImg" />
+  <w3m-button />
   <w3m-network-button />
   <w3m-connect-button />
   <w3m-account-button />
