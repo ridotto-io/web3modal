@@ -1,6 +1,6 @@
 {
   "name": "@ridotto-io/w3-wallet",
-  "version": "3.6.8-alpha.0",
+  "version": "4.1.9",
   "type": "module",
   "main": "./dist/esm/index.js",
   "types": "./dist/types/index.d.ts",
@@ -16,6 +16,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
+    "@ridotto-io/w3-polyfills": "4.1.9",
     "zod": "3.22.4"
   },
   "keywords": [

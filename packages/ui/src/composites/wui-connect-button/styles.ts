@@ -51,12 +51,14 @@ export default css`
   }
 
   ::slotted(*) {
-    transition: opacity 200ms ease-in-out;
+    transition: opacity var(--wui-ease-out-power-1) var(--wui-duration-md);
+    will-change: opacity;
     opacity: var(--local-opacity-100);
   }
 
   button > wui-text {
-    transition: opacity 200ms ease-in-out;
+    transition: opacity var(--wui-ease-out-power-1) var(--wui-duration-md);
+    will-change: opacity;
     opacity: var(--local-opacity-100);
   }
 
@@ -70,6 +72,17 @@ export default css`
   button[data-size='md'] + wui-text {
     padding-left: var(--wui-spacing-3xs);
     color: #fff !important;
+  }
+
+  @media (max-width: 500px) {
+    button[data-size='md'] {
+      height: 32px;
+      padding: 5px 12px;
+    }
+
+    button[data-size='md'] > wui-text > slot {
+      font-size: 14px !important;
+    }
   }
 
   @media (max-width: 500px) {

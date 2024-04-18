@@ -1,5 +1,5 @@
 import { getWeb3Modal } from '@ridotto-io/w3-scaffold-vue'
-import type { Web3ModalOptions } from '../src/client.js'
+import type { Web3ModalOptions, CoreConfig } from '../src/client.js'
 import { Web3Modal } from '../src/client.js'
 import { ConstantsUtil } from '@ridotto-io/w3-scaffold-utils'
 
@@ -9,7 +9,7 @@ export type { Web3ModalOptions } from '../src/client.js'
 // -- Setup -------------------------------------------------------------------
 let modal: Web3Modal | undefined = undefined
 
-export function createWeb3Modal(options: Web3ModalOptions) {
+export function createWeb3Modal(options: Web3ModalOptions<CoreConfig>) {
   if (!modal) {
     modal = new Web3Modal({
       ...options,
@@ -26,9 +26,9 @@ export {
   useWeb3ModalTheme,
   useWeb3Modal,
   useWeb3ModalState,
-  useWeb3ModalEvents
+  useWeb3ModalEvents,
+  useWalletInfo
 } from '@ridotto-io/w3-scaffold-vue'
 
 // -- Universal Exports -------------------------------------------------------
-export { EIP6963Connector } from '../src/connectors/EIP6963Connector.js'
 export { defaultWagmiConfig } from '../src/utils/defaultWagmiCoreConfig.js'

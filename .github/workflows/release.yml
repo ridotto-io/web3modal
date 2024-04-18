@@ -5,7 +5,7 @@ on:
 
   push:
     branches:
-      - V3
+      - V4
 
 jobs:
   release-package:
@@ -76,6 +76,10 @@ jobs:
       - name: Publish
         run: |
           cd packages/ethers5/
+          npm publish
+      - name: Publish
+        run: |
+          cd packages/solana/
           npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}

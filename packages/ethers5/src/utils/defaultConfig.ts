@@ -40,7 +40,7 @@ export function defaultConfig(options: ConfigOptions) {
       return undefined
     }
 
-    injectedProvider = (window.ethereum as unknown as Provider)
+    injectedProvider = window.ethereum as unknown as Provider
 
     return injectedProvider
   }
@@ -58,6 +58,8 @@ export function defaultConfig(options: ConfigOptions) {
       appName: metadata.name,
       appLogoUrl: metadata.icons[0],
       darkMode: false
+      // TODO check this after
+      // enableMobileWalletLink: true
     })
 
     coinbaseProvider = coinbaseWallet.makeWeb3Provider(rpcUrl, defaultChainId)

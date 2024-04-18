@@ -1,6 +1,6 @@
 {
   "name": "@ridotto-io/w3-ui",
-  "version": "3.6.8-alpha.0",
+  "version": "4.1.9",
   "type": "module",
   "main": "./dist/esm/index.js",
   "types": "./dist/types/index.d.ts",
@@ -20,7 +20,7 @@
     "qrcode": "1.5.3"
   },
   "devDependencies": {
-    "@ridotto-io/w3-common": "3.6.8-alpha.0",
+    "@ridotto-io/w3-common": "4.1.9",
     "@types/qrcode": "1.5.5",
     "eslint-plugin-lit": "1.11.0",
     "eslint-plugin-wc": "2.0.4"

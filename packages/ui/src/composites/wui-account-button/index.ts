@@ -22,6 +22,8 @@ export class WuiAccountButton extends LitElement {
 
   @property() public balance?: string = undefined
 
+  @property({ type: Boolean }) public isUnsupportedChain?: boolean = undefined
+
   @property({ type: Boolean }) public disabled = false
 
   @property({ type: Boolean }) public isProfileName = false
@@ -29,6 +31,7 @@ export class WuiAccountButton extends LitElement {
   @property() public address = ''
 
   @property() public unsupported?: string = undefined
+  @property() public profileName = ''
 
   @property() public charsStart = 4
 
@@ -49,12 +52,14 @@ export class WuiAccountButton extends LitElement {
             address=${this.address}
           ></wui-avatar>
           <wui-text variant="paragraph-600" color="inherit">
-            ${UiHelperUtil.getTruncateString({
-      string: this.address,
-      charsStart: this.isProfileName ? 18 : this.charsStart,
-      charsEnd: this.isProfileName ? 0 : this.charsEnd,
-      truncate: this.isProfileName ? 'end' : 'middle'
-    })}
+            ${this.address
+              ? UiHelperUtil.getTruncateString({
+                  string: this.isProfileName ? this.profileName : this.address,
+                  charsStart: this.isProfileName ? 18 : this.charsStart,
+                  charsEnd: this.isProfileName ? 0 : this.charsEnd,
+                  truncate: this.isProfileName ? 'end' : 'middle'
+                })
+              : null}
           </wui-text>
         </wui-flex>
       </button>
@@ -63,6 +68,15 @@ export class WuiAccountButton extends LitElement {
 
   // -- Private ------------------------------------------- //
   private balanceTemplate() {
+    if (this.isUnsupportedChain) {
+      return html` <wui-icon-box
+          size="sm"
+          iconColor="error-100"
+          backgroundColor="error-100"
+          icon="warningCircle"
+        ></wui-icon-box>
+        <wui-text variant="paragraph-600" color="inherit"> Switch Network</wui-text>`
+    }
     if (this.balance) {
       const networkElement = this.networkSrc
         ? html`<wui-image src=${this.networkSrc}></wui-image>`

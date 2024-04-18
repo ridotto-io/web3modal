@@ -1,6 +1,6 @@
 {
   "name": "@ridotto-io/w3-scaffold-react",
-  "version": "3.6.8-alpha.0",
+  "version": "4.1.9",
   "type": "module",
   "main": "./dist/esm/index.js",
   "types": "./dist/types/index.d.ts",
@@ -16,11 +16,23 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
-    "@ridotto-io/w3-scaffold": "3.6.8-alpha.0"
+    "@ridotto-io/w3-scaffold": "4.1.9"
   },
   "peerDependencies": {
     "react": ">=17",
     "react-dom": ">=17"
+  },
+  "devDependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
   },
   "keywords": [
     "web3",

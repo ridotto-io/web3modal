@@ -39,7 +39,11 @@ export class W3mAccountButton extends LitElement {
 
   @state() private network = NetworkController.state.caipNetwork
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   @state() private profileImage = AccountController.state.profileImage
+
+  @state() private isUnsupportedChain = NetworkController.state.isUnsupportedChain
 
   // -- Lifecycle ----------------------------------------- //
   public constructor() {
@@ -57,10 +61,12 @@ export class W3mAccountButton extends LitElement {
             this.address = ''
             this.balanceVal = ''
             this.profileName = ''
+            this.profileImage = ''
             this.balanceSymbol = ''
           }
         }),
-        NetworkController.subscribeKey('caipNetwork', val => (this.network = val))
+        NetworkController.subscribeKey('caipNetwork', val => (this.network = val)),
+        NetworkController.subscribeKey('isUnsupportedChain', val => (this.isUnsupportedChain = val))
       ]
     )
   }
@@ -77,11 +83,13 @@ export class W3mAccountButton extends LitElement {
     return html`
       <wui-account-button
         .disabled=${Boolean(this.disabled)}
-        address=${ifDefined(this.profileName ?? this.address)}
+        .isUnsupportedChain=${this.isUnsupportedChain}
+        address=${ifDefined(this.address)}
+        profileName=${ifDefined(this.profileName)}
         ?isProfileName=${Boolean(this.profileName)}
         networkSrc=${ifDefined(networkImage)}
         .unsupported=${Boolean(this.unsupported)}
-        avatarSrc=${ifDefined(this.profileImage)}
+        avatarSrc=${ifDefined(this.avatarSrc)}
         balance=${showBalance
           ? CoreHelperUtil.formatBalance(this.balanceVal, this.balanceSymbol)
           : ''}
@@ -96,7 +104,11 @@ export class W3mAccountButton extends LitElement {
 
   // -- Private ------------------------------------------- //
   private onClick() {
-    ModalController.open()
+    if (this.isUnsupportedChain) {
+      ModalController.open({ view: 'UnsupportedChain' })
+    } else {
+      ModalController.open()
+    }
   }
 }
 

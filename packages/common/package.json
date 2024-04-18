@@ -1,6 +1,6 @@
 {
   "name": "@ridotto-io/w3-common",
-  "version": "3.6.8-alpha.0",
+  "version": "4.1.9",
   "type": "module",
   "main": "./dist/esm/index.js",
   "types": "./dist/types/index.d.ts",
@@ -13,10 +13,11 @@
     "build:common": "tsc --build",
     "watch": "tsc --watch",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run --dir tests",
+    "test": "vitest run --dir tests --coverage.enabled --reporter=junit --coverage.reporter=json-summary --coverage.reporter=html",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
+    "bignumber.js": "9.1.2",
     "dayjs": "1.11.10"
   },
   "keywords": [
