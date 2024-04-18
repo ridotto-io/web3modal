@@ -1,6 +1,6 @@
 {
   "name": "@ridotto-io/w3-siwe",
-  "version": "4.1.9",
+  "version": "4.1.10",
   "type": "module",
   "main": "./dist/esm/exports/index.js",
   "types": "./dist/types/exports/index.d.ts",
@@ -16,8 +16,8 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
-    "@ridotto-io/w3-core": "4.1.9",
-    "@ridotto-io/w3-scaffold-utils": "4.1.9",
+    "@ridotto-io/w3-core": "4.1.10",
+    "@ridotto-io/w3-scaffold-utils": "4.1.10",
     "lit": "3.1.0",
     "valtio": "1.11.2"
   },
