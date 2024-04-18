@@ -89,7 +89,7 @@ export class W3mAccountButton extends LitElement {
         ?isProfileName=${Boolean(this.profileName)}
         networkSrc=${ifDefined(networkImage)}
         .unsupported=${Boolean(this.unsupported)}
-        avatarSrc=${ifDefined(this.avatarSrc)}
+        avatarSrc=${ifDefined(this.profileImage)}
         balance=${showBalance
           ? CoreHelperUtil.formatBalance(this.balanceVal, this.balanceSymbol)
           : ''}

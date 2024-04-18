@@ -1,6 +1,6 @@
 {
   "name": "@examples/next-wagmi",
-  "version": "4.1.9",
+  "version": "4.1.10",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@ridotto-io/w3-wagmi": "4.1.9",
+    "@ridotto-io/w3-wagmi": "4.1.10",
     "@tanstack/react-query": "5.24.8",
     "next": "14.1.0",
     "react": "18.2.0",

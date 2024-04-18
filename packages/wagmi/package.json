@@ -1,6 +1,6 @@
 {
   "name": "@ridotto-io/w3-wagmi",
-  "version": "4.1.9",
+  "version": "4.1.10",
   "type": "module",
   "main": "./dist/esm/exports/index.js",
   "types": "./dist/types/exports/index.d.ts",
@@ -51,13 +51,13 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
-    "@ridotto-io/w3-polyfills": "4.1.9",
-    "@ridotto-io/w3-scaffold": "4.1.9",
-    "@ridotto-io/w3-scaffold-react": "4.1.9",
-    "@ridotto-io/w3-scaffold-utils": "4.1.9",
-    "@ridotto-io/w3-scaffold-vue": "4.1.9",
-    "@ridotto-io/w3-siwe": "4.1.9",
-    "@ridotto-io/w3-wallet": "4.1.9"
+    "@ridotto-io/w3-polyfills": "4.1.10",
+    "@ridotto-io/w3-scaffold": "4.1.10",
+    "@ridotto-io/w3-scaffold-react": "4.1.10",
+    "@ridotto-io/w3-scaffold-utils": "4.1.10",
+    "@ridotto-io/w3-scaffold-vue": "4.1.10",
+    "@ridotto-io/w3-siwe": "4.1.10",
+    "@ridotto-io/w3-wallet": "4.1.10"
   },
   "peerDependencies": {
     "@wagmi/connectors": ">=4.0.0",

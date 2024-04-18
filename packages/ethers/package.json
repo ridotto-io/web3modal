@@ -1,6 +1,6 @@
 {
   "name": "@ridotto-io/w3-ethers",
-  "version": "4.1.9",
+  "version": "4.1.10",
   "type": "module",
   "main": "./dist/esm/exports/index.js",
   "types": "./dist/types/exports/index.d.ts",
@@ -44,12 +44,12 @@
   },
   "dependencies": {
     "@coinbase/wallet-sdk": "3.9.1",
-    "@ridotto-io/w3-polyfills": "4.1.9",
-    "@ridotto-io/w3-scaffold": "4.1.9",
-    "@ridotto-io/w3-scaffold-react": "4.1.9",
-    "@ridotto-io/w3-scaffold-utils": "4.1.9",
-    "@ridotto-io/w3-scaffold-vue": "4.1.9",
-    "@ridotto-io/w3-siwe": "4.1.9",
+    "@ridotto-io/w3-polyfills": "4.1.10",
+    "@ridotto-io/w3-scaffold": "4.1.10",
+    "@ridotto-io/w3-scaffold-react": "4.1.10",
+    "@ridotto-io/w3-scaffold-utils": "4.1.10",
+    "@ridotto-io/w3-scaffold-vue": "4.1.10",
+    "@ridotto-io/w3-siwe": "4.1.10",
     "@walletconnect/ethereum-provider": "2.11.0",
     "valtio": "1.11.2"
   },
