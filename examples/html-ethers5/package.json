@@ -1,16 +1,16 @@
 {
   "name": "@examples/html-ethers5",
   "private": true,
-  "version": "4.1.10",
+  "version": "5.0.11",
   "scripts": {
-    "dev:example": "vite --port 3011",
-    "build:examples": "vite build"
+    "dev": "vite --port 3011",
+    "build": "vite build"
   },
   "dependencies": {
-    "@ridotto-io/w3-ethers5": "4.1.10",
+    "@ridotto-io/w3-ethers5": "5.0.11",
     "ethers": "5.7.2"
   },
   "devDependencies": {
-    "vite": "5.0.12"
+    "vite": "5.2.11"
   }
 }

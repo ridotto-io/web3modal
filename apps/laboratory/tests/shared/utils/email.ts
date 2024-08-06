@@ -1,10 +1,9 @@
 import { Mailsac } from '@mailsac/api'
-const EMAIL_CHECK_TIMEOUT = 1000
-const MAX_EMAIL_CHECK = 16
+const EMAIL_CHECK_INTERVAL = 2500
+const MAX_EMAIL_CHECK = 24
 const EMAIL_APPROVE_BUTTON_TEXT = 'Approve this login'
 const APPROVE_URL_REGEX = /https:\/\/register.*/u
 const OTP_CODE_REGEX = /\d{3}\s?\d{3}/u
-const AVAILABLE_MAILSAC_ADDRESSES = 10
 const EMAIL_DOMAIN = 'web3modal.msdc.co'
 
 export class Email {
@@ -41,7 +40,7 @@ export class Email {
 
         return id
       }
-      await this.timeout(EMAIL_CHECK_TIMEOUT)
+      await this.timeout(EMAIL_CHECK_INTERVAL)
       checks += 1
     }
     throw new Error(`No email found for address ${email}`)
@@ -67,22 +66,24 @@ export class Email {
   }
 
   getOtpCodeFromBody(body: string): string {
-    const match = body.match(OTP_CODE_REGEX)
+    const cleanedBody = body.replace(/https:\/\/s1\.designmodo\.com\/postcards\/[^\s]+\s?/gu, '')
+
+    const match = cleanedBody.match(OTP_CODE_REGEX)
     if (match) {
-      return match[0]
+      // Remove empty space in OTP code 111 111
+      return match[0].replace(' ', '')
     }
 
     throw new Error(`No code found in email: ${body}`)
   }
 
-  getEmailAddressToUse(index: number): string {
-    const maxIndex = AVAILABLE_MAILSAC_ADDRESSES - 1
-    if (index > maxIndex) {
-      throw new Error(
-        `No available Mailsac address. Requested index ${index}, maximum: ${maxIndex}`
-      )
-    }
+  getEmailAddressToUse(index: number, domain = EMAIL_DOMAIN): string {
+    const randIndex = Math.floor(Math.random() * 10) % 9
 
-    return `tests-${index}@${EMAIL_DOMAIN}`
+    return `w3m-w${index}${randIndex}@${domain}`
+  }
+
+  getSmartAccountEnabledEmail(): string {
+    return 'web3modal-smart-account@mailsac.com'
   }
 }

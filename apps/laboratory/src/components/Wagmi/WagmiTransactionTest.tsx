@@ -1,21 +1,40 @@
-import { Button, useToast, Stack, Link, Text, Spacer } from '@chakra-ui/react'
+import { Button, Stack, Link, Text, Spacer } from '@chakra-ui/react'
 import { parseGwei, type Address } from 'viem'
 import { useEstimateGas, useSendTransaction, useAccount } from 'wagmi'
 import { vitalikEthAddress } from '../../utils/DataUtil'
 import { useCallback, useState } from 'react'
 import { optimism, optimismSepolia, sepolia } from 'wagmi/chains'
+import { useChakraToast } from '../Toast'
 
 const TEST_TX = {
   to: vitalikEthAddress as Address,
   value: parseGwei('0.001')
 }
 
+const ALLOWED_CHAINS = [sepolia.id, optimism.id, optimismSepolia.id] as number[]
+
 export function WagmiTransactionTest() {
-  const toast = useToast()
   const { status, chain } = useAccount()
-  const { data: gas, error: prepareError } = useEstimateGas(TEST_TX)
+
+  return ALLOWED_CHAINS.includes(Number(chain?.id)) && status === 'connected' ? (
+    <AvailableTestContent />
+  ) : (
+    <Text fontSize="md" color="yellow">
+      Switch to Sepolia or OP to test this feature
+    </Text>
+  )
+}
+
+function AvailableTestContent() {
+  const toast = useChakraToast()
+  const { refetch: estimateGas, isFetching: estimateGasFetching } = useEstimateGas({
+    ...TEST_TX,
+    query: {
+      enabled: false
+    }
+  })
   const [isLoading, setLoading] = useState(false)
-  const isConnected = status === 'connected'
+
   const { sendTransaction } = useSendTransaction({
     mutation: {
       onSuccess: hash => {
@@ -23,29 +42,28 @@ export function WagmiTransactionTest() {
         toast({
           title: 'Transaction Success',
           description: hash,
-          status: 'success',
-          isClosable: true
+          type: 'success'
         })
       },
       onError: () => {
         setLoading(false)
         toast({
           title: 'Error',
-          description: 'Failed to send transaction',
-          status: 'error',
-          isClosable: true
+          description: 'Failed to sign transaction',
+          type: 'error'
         })
       }
     }
   })
 
-  const onSendTransaction = useCallback(() => {
+  const onSendTransaction = useCallback(async () => {
+    const { data: gas, error: prepareError } = await estimateGas()
+
     if (prepareError) {
       toast({
         title: 'Error',
         description: 'Not enough funds for transaction',
-        status: 'error',
-        isClosable: true
+        type: 'error'
       })
     } else {
       setLoading(true)
@@ -54,17 +72,16 @@ export function WagmiTransactionTest() {
         gas
       })
     }
-  }, [sendTransaction, prepareError])
+  }, [sendTransaction, estimateGas])
 
-  const allowedChains = [sepolia.id, optimism.id, optimismSepolia.id] as number[]
-
-  return allowedChains.includes(Number(chain?.id)) && status === 'connected' ? (
+  return (
     <Stack direction={['column', 'column', 'row']}>
       <Button
         data-test-id="sign-transaction-button"
         onClick={onSendTransaction}
         disabled={!sendTransaction}
-        isDisabled={isLoading || !isConnected}
+        isDisabled={isLoading}
+        isLoading={estimateGasFetching}
       >
         Send Transaction to Vitalik
       </Button>
@@ -83,9 +100,5 @@ export function WagmiTransactionTest() {
         </Button>
       </Link>
     </Stack>
-  ) : (
-    <Text fontSize="md" color="yellow">
-      Switch to Sepolia or OP to test this feature
-    </Text>
   )
 }

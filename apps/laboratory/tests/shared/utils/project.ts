@@ -34,34 +34,58 @@ const braveOptions: UseOptions = {
   }
 }
 
+const SOLANA_DISABLED_TESTS = [
+  'canary.spec.ts',
+  'email.spec.ts',
+  'siwe.spec.ts',
+  'siwe-email.spec.ts',
+  'siwe-sa.spec.ts',
+  'smart-account.spec.ts',
+  'social.spec.ts',
+  'wallet-features.spec.ts',
+  'wallet.spec.ts'
+]
+const WAGMI_DISABLED_TESTS = ['smart-account.spec.ts', 'social.spec.ts']
+const ETHERS_DISABLED_TESTS = ['wallet-features.spec.ts', 'social.spec.ts']
+
+const ETHERS_EMAIL_BASED_REGEX = new RegExp(ETHERS_DISABLED_TESTS.join('|'), 'u')
+const WAGMI_DISABLED_TESTS_REGEX = new RegExp(WAGMI_DISABLED_TESTS.join('|'), 'u')
+const SOLANA_DISABLED_TESTS_REGEX = new RegExp(SOLANA_DISABLED_TESTS.join('|'), 'u')
+
 const customProjectProperties: CustomProjectProperties = {
-  'Desktop Brave/wagmi': {
-    testIgnore: /(?:email\.spec\.ts|smart-account\.spec\.ts).*$/u,
-    useOptions: braveOptions
+  'Desktop Chrome/ethers': {
+    testIgnore: ETHERS_EMAIL_BASED_REGEX
   },
   'Desktop Brave/ethers': {
-    testIgnore: /(?:email\.spec\.ts|smart-account\.spec\.ts).*$/u,
+    testIgnore: ETHERS_EMAIL_BASED_REGEX,
+    useOptions: braveOptions
+  },
+  'Desktop Firefox/ethers': {
+    testIgnore: ETHERS_EMAIL_BASED_REGEX
+  },
+  'Desktop Brave/wagmi': {
+    testIgnore: WAGMI_DISABLED_TESTS_REGEX,
     useOptions: braveOptions
   },
   'Desktop Chrome/wagmi': {
-    testIgnore: /(?:email\.spec\.ts|smart-account\.spec\.ts).*$/u
+    testIgnore: WAGMI_DISABLED_TESTS_REGEX
   },
   'Desktop Firefox/wagmi': {
-    testIgnore: /(?:email\.spec\.ts|smart-account\.spec\.ts).*$/u
+    testIgnore: WAGMI_DISABLED_TESTS_REGEX
   },
-  // Exclude email.spec.ts, siwe.spec.ts, and canary.spec.ts from solana, not yet implemented
+  // Exclude social.spec.ts, email.spec.ts, siwe.spec.ts, and canary.spec.ts from solana, not yet implemented
   'Desktop Chrome/solana': {
-    grep: /^(?!.*(?:email\.spec\.ts|siwe\.spec\.ts|canary\.spec\.ts|smart-account\.spec\.ts|wallet\.spec\.ts)).*$/u
+    testIgnore: SOLANA_DISABLED_TESTS_REGEX
   },
   'Desktop Brave/solana': {
     useOptions: braveOptions,
-    grep: /^(?!.*(?:email\.spec\.ts|siwe\.spec\.ts|canary\.spec\.ts|smart-account\.spec\.ts|wallet\.spec\.ts)).*$/u
+    testIgnore: SOLANA_DISABLED_TESTS_REGEX
   },
   'Desktop Firefox/solana': {
-    grep: /^(?!.*(?:email\.spec\.ts|siwe\.spec\.ts|canary\.spec\.ts|smart-account\.spec\.ts|wallet\.spec\.ts)).*$/u
+    testIgnore: SOLANA_DISABLED_TESTS_REGEX
   },
   'Desktop Safari/solana': {
-    grep: /^(?!.*(?:email\.spec\.ts|siwe\.spec\.ts|canary\.spec\.ts|smart-account\.spec\.ts|wallet\.spec\.ts)).*$/u
+    testIgnore: SOLANA_DISABLED_TESTS_REGEX
   }
 }
 
@@ -75,7 +99,8 @@ export function getProjects() {
     const deviceName = device === 'Desktop Brave' ? 'Desktop Chrome' : device
     let project = {
       name: `${device}/${library}`,
-      use: { ...devices[deviceName], library }
+      use: { ...devices[deviceName], library },
+      storageState: 'playwright/.auth/user.json'
     }
     const props = customProjectProperties[project.name]
     if (props) {

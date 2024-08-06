@@ -1,6 +1,6 @@
 {
   "name": "@ridotto-io/w3-ui",
-  "version": "4.1.10",
+  "version": "5.0.11",
   "type": "module",
   "main": "./dist/esm/index.js",
   "types": "./dist/types/index.d.ts",
@@ -10,8 +10,9 @@
   ],
   "scripts": {
     "build:clean": "rm -rf dist",
-    "build:ui": "tsc --build",
+    "build": "tsc --build",
     "watch": "tsc --watch",
+    "test": "vitest run --dir tests --coverage.enabled --reporter=junit --coverage.reporter=json-summary --coverage.reporter=html",
     "typecheck": "tsc --noEmit",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
@@ -20,8 +21,10 @@
     "qrcode": "1.5.3"
   },
   "devDependencies": {
-    "@ridotto-io/w3-common": "4.1.10",
+    "@ridotto-io/w3-common": "5.0.11",
     "@types/qrcode": "1.5.5",
+    "@ridotto-io/w3-wallet": "5.0.11",
+    "@ridotto-io/w3-core": "5.0.11",
     "eslint-plugin-lit": "1.11.0",
     "eslint-plugin-wc": "2.0.4"
   },

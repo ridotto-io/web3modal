@@ -1,13 +1,21 @@
 import base58 from 'bs58'
 import { PublicKey, Transaction, VersionedTransaction } from '@solana/web3.js'
+import { OptionsController } from '@web3modal/core'
+
+import { SolStoreUtil } from '../utils/scaffold/index.js'
+import { UniversalProviderFactory } from './universalProvider.js'
+import { BaseConnector } from './baseConnector.js'
+
+import type { Signer } from '@solana/web3.js'
 import type UniversalProvider from '@walletconnect/universal-provider'
-import { OptionsController } from '@ridotto-io/w3-core'
 
 import type { Connector } from './baseConnector.js'
 import type { Chain } from '../utils/scaffold/SolanaTypesUtil.js'
-import { SolStoreUtil } from '../utils/scaffold/SolanaStoreUtil.js'
-import { UniversalProviderFactory } from './universalProvider.js'
-import { BaseConnector } from './baseConnector.js'
+import {
+  getChainsFromChainId,
+  getDefaultChainFromSession,
+  type ChainIDType
+} from '../utils/chainPath/index.js'
 
 export interface WalletConnectAppMetadata {
   name: string
@@ -46,24 +54,14 @@ export class WalletConnectConnector extends BaseConnector implements Connector {
       qrcode: this.qrcode
     })
 
-    UniversalProviderFactory.getProvider().then(provider => {
-      provider.on('session_delete', () => {
-        delete provider.session?.namespaces['solana']
-      })
-    })
+    UniversalProviderFactory.init()
   }
 
   public static readonly connectorName = 'walletconnect'
 
   public async disconnect() {
     const provider = await UniversalProviderFactory.getProvider()
-
-    try {
-      await provider.disconnect()
-    } finally {
-      delete provider.session?.namespaces['solana']
-    }
-
+    await provider.disconnect()
     SolStoreUtil.setAddress('')
   }
 
@@ -130,6 +128,7 @@ export class WalletConnectConnector extends BaseConnector implements Connector {
     }
 
     const res = await this.request('solana_signTransaction', transactionParams)
+
     transaction.addSignature(
       new PublicKey(SolStoreUtil.state.address ?? ''),
       Buffer.from(base58.decode(res.signature))
@@ -144,16 +143,55 @@ export class WalletConnectConnector extends BaseConnector implements Connector {
     return { signatures: [{ signature: base58.encode(transaction.serialize()) }] }
   }
 
-  public async sendTransaction(transactionParam: Transaction | VersionedTransaction) {
+  private async _sendTransaction(transactionParam: Transaction | VersionedTransaction) {
     const encodedTransaction = (await this.signTransaction(transactionParam)) as {
       signatures: {
         signature: string
       }[]
     }
     const signedTransaction = base58.decode(encodedTransaction.signatures[0]?.signature ?? '')
-    await SolStoreUtil.state.connection?.sendRawTransaction(signedTransaction)
+    const txHash = await SolStoreUtil.state.connection?.sendRawTransaction(signedTransaction)
 
-    return base58.encode(signedTransaction)
+    return {
+      tx: txHash,
+      signature: base58.encode(signedTransaction)
+    }
+  }
+
+  public async sendTransaction(transactionParam: Transaction | VersionedTransaction) {
+    const { signature } = await this._sendTransaction(transactionParam)
+
+    return signature
+  }
+
+  public async signAndSendTransaction(
+    transactionParam: Transaction | VersionedTransaction,
+    signers: Signer[]
+  ) {
+    if (transactionParam instanceof VersionedTransaction) {
+      throw Error('Versioned transactions are not supported')
+    }
+
+    if (signers.length) {
+      transactionParam.partialSign(...signers)
+    }
+
+    const { tx } = await this._sendTransaction(transactionParam)
+
+    if (tx) {
+      const latestBlockHash = await SolStoreUtil.state.connection?.getLatestBlockhash()
+      if (latestBlockHash?.blockhash) {
+        await SolStoreUtil.state.connection?.confirmTransaction({
+          blockhash: latestBlockHash.blockhash,
+          lastValidBlockHeight: latestBlockHash.lastValidBlockHeight,
+          signature: tx
+        })
+
+        return tx
+      }
+    }
+
+    throw Error('Transaction Failed')
   }
 
   /**
@@ -166,20 +204,20 @@ export class WalletConnectConnector extends BaseConnector implements Connector {
    * If `qrcode = false`, this will return the pairing URI used to generate the
    * QRCode.
    */
+
   public generateNamespaces(chainId: string) {
     const rpcs = this.chains.reduce<Record<string, string>>((acc, chain) => {
       acc[chain.chainId] = chain.rpcUrl
 
       return acc
     }, {})
-    const chainsNamespaces = [`solana:${chainId}`]
     const rpcMap = {
       [chainId]: rpcs[chainId] ?? ''
     }
 
     return {
       solana: {
-        chains: [...chainsNamespaces],
+        chains: getChainsFromChainId(`solana:${chainId}` as ChainIDType),
         methods: ['solana_signMessage', 'solana_signTransaction'],
         events: [],
         rpcMap
@@ -187,30 +225,29 @@ export class WalletConnectConnector extends BaseConnector implements Connector {
     }
   }
 
-  public async connect(useURI?: boolean) {
-    const solanaNamespace = this.generateNamespaces(SolStoreUtil.state.currentChain?.chainId ?? '')
+  public async connect() {
+    const currentChainId = SolStoreUtil.state.currentChain?.chainId
+    const solanaNamespace = this.generateNamespaces(currentChainId ?? '')
 
     const provider = await UniversalProviderFactory.getProvider()
 
     return new Promise<string>((resolve, reject) => {
-      provider.on('display_uri', (uri: string) => {
-        if (!(this.qrcode && !useURI)) {
-          resolve(uri)
-        }
-      })
-      // Without namespaces provider.enable() will not work (reconnect flow)
       provider
         .connect({
-          pairingTopic: undefined,
-          namespaces: solanaNamespace,
           optionalNamespaces: solanaNamespace
         })
-        .then(providerResult => {
-          if (!providerResult) {
+        .then(session => {
+          if (!session) {
             throw new Error('Failed connection.')
           }
-          const address = providerResult.namespaces['solana']?.accounts[0]?.split(':')[2] ?? null
+          const address = session.namespaces['solana']?.accounts[0]?.split(':')[2] ?? null
           if (address && this.qrcode) {
+            const defaultChain = getDefaultChainFromSession(
+              session,
+              `solana:${currentChainId}` as ChainIDType
+            )
+            provider.setDefaultChain(defaultChain)
+
             resolve(address)
           } else {
             reject(new Error('Could not resolve address'))

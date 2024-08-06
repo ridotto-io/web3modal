@@ -13,3 +13,5 @@ screenshots/
 coverage
 test-results
 .vscode/*
+apps/laboratory/playwright/.auth/user.json
+tsconfig.tsbuildinfo
