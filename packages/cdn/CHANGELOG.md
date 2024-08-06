@@ -7,7 +7,7 @@
 - - Hotfix to prevent loading state with QR code
 
 - Updated dependencies []:
-  - @web3modal/ethers@5.0.11
+  - @ridotto-io/w3-ethers@5.0.11
   - @ridotto-io/w3-wagmi@5.0.11
 
 ## 5.0.10
@@ -19,7 +19,7 @@
 **Full Changelog**: https://github.com/WalletConnect/web3modal/compare/5.0.9...5.0.10
 
 - Updated dependencies []:
-  - @web3modal/ethers@5.0.10
+  - @ridotto-io/w3-ethers@5.0.10
   - @ridotto-io/w3-wagmi@5.0.10
 
 ## 5.0.9
@@ -55,7 +55,7 @@
   **Full Changelog**: https://github.com/WalletConnect/web3modal/compare/5.0.7...5.0.8
 
 - Updated dependencies []:
-  - @web3modal/ethers@5.0.8
+  - @ridotto-io/w3-ethers@5.0.8
   - @ridotto-io/w3-wagmi@5.0.8
 
 ## 5.0.7
@@ -70,7 +70,7 @@
   - Add Wallet Standard to AppKit + Solana by @glitch-txs in https://github.com/WalletConnect/web3modal/pull/2482
   - chore: remove onramp widget from labs by @tomiir in https://github.com/WalletConnect/web3modal/pull/2526
   - feat: support custom connectors by @chris13524 in https://github.com/WalletConnect/web3modal/pull/2119
-  - fix: disconnect logic for EIP6963 & Injected provider types for @web3modal/ethers by @hmzakhalid in https://github.com/WalletConnect/web3modal/pull/2289
+  - fix: disconnect logic for EIP6963 & Injected provider types for @ridotto-io/w3-ethers by @hmzakhalid in https://github.com/WalletConnect/web3modal/pull/2289
   - Feat ERC7715 grant_permissions support on lab by @KannuSingh in https://github.com/WalletConnect/web3modal/pull/2500
   - update chain on network change by @glitch-txs in https://github.com/WalletConnect/web3modal/pull/2497
   - fix: make accounts optional in social response by @tomiir in https://github.com/WalletConnect/web3modal/pull/2520
@@ -87,7 +87,7 @@
   - refactor: laboratory wagmi tests by @zoruka in https://github.com/WalletConnect/web3modal/pull/2552
   - fix: sync accounts in wagmi and subscribe to account change by @tomiir in https://github.com/WalletConnect/web3modal/pull/2544
 - Updated dependencies []:
-  - @web3modal/ethers@5.0.7
+  - @ridotto-io/w3-ethers@5.0.7
   - @ridotto-io/w3-wagmi@5.0.7
 
 ## 5.0.6
@@ -97,7 +97,7 @@
 - fix: Social Login illegal invocation issue. Wagmi tests
 
 - Updated dependencies []:
-  - @web3modal/ethers@5.0.6
+  - @ridotto-io/w3-ethers@5.0.6
   - @ridotto-io/w3-wagmi@5.0.6
 
 ## 5.0.5
@@ -107,7 +107,7 @@
 - feat: universal link internal flag. Add kotlin assetlinks. Fix email truncation'
 
 - Updated dependencies []:
-  - @web3modal/ethers@5.0.5
+  - @ridotto-io/w3-ethers@5.0.5
   - @ridotto-io/w3-wagmi@5.0.5
 
 ## 5.0.4
@@ -117,7 +117,7 @@
 - fix: wcPromise incompatibility issues
 
 - Updated dependencies []:
-  - @web3modal/ethers@5.0.4
+  - @ridotto-io/w3-ethers@5.0.4
   - @ridotto-io/w3-wagmi@5.0.4
 
 ## 5.0.3
@@ -127,7 +127,7 @@
 - fix: ethers5 coinbase issues. Turbo build issues. Upate cb connector.
 
 - Updated dependencies []:
-  - @web3modal/ethers@5.0.3
+  - @ridotto-io/w3-ethers@5.0.3
   - @ridotto-io/w3-wagmi@5.0.3
 
 ## 5.0.2
@@ -137,7 +137,7 @@
 - fix: siwe signOutOnNetwork change issue. fix: wallets filtered by rdns matched from explorer api. fix: solana network id issue
 
 - Updated dependencies []:
-  - @web3modal/ethers@5.0.2
+  - @ridotto-io/w3-ethers@5.0.2
   - @ridotto-io/w3-wagmi@5.0.2
 
 ## 5.0.1
@@ -147,7 +147,7 @@
 - fix: remove walletconnect restriction on names
 
 - Updated dependencies []:
-  - @web3modal/ethers@5.0.1
+  - @ridotto-io/w3-ethers@5.0.1
   - @ridotto-io/w3-wagmi@5.0.1
 
 ## 5.0.0
@@ -159,7 +159,7 @@
 ### Patch Changes
 
 - Updated dependencies []:
-  - @web3modal/ethers@5.0.0
+  - @ridotto-io/w3-ethers@5.0.0
   - @ridotto-io/w3-wagmi@5.0.0
 
 ## 5.0.0-cn-v5.0
@@ -171,5 +171,5 @@
 ### Patch Changes
 
 - Updated dependencies []:
-  - @web3modal/ethers@5.0.0-cn-v5.0
+  - @ridotto-io/w3-ethers@5.0.0-cn-v5.0
   - @ridotto-io/w3-wagmi@5.0.0-cn-v5.0

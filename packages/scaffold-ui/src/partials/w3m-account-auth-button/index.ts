@@ -6,7 +6,7 @@ import {
   RouterController,
   StorageUtil,
   type SocialProvider
-} from '@web3modal/core'
+} from '@ridotto-io/w3-core'
 
 @customElement('w3m-account-auth-button')
 export class W3mAccountAuthButton extends LitElement {

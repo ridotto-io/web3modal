@@ -2,7 +2,7 @@ import { html, LitElement } from 'lit'
 import { property, state } from 'lit/decorators.js'
 import { customElement } from '@ridotto-io/w3-ui'
 import styles from './styles.js'
-import { ModalController, RouterController, TooltipController } from '@web3modal/core'
+import { ModalController, RouterController, TooltipController } from '@ridotto-io/w3-core'
 
 @customElement('w3m-tooltip-trigger')
 export class WuiTooltipTrigger extends LitElement {

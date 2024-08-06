@@ -5,14 +5,14 @@ import {
   NetworkController,
   RouterController,
   type CaipNetwork
-} from '@web3modal/core'
+} from '@ridotto-io/w3-core'
 import { customElement } from '@ridotto-io/w3-ui'
 
 import { html, LitElement } from 'lit'
 import { state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import styles from './styles.js'
-import { ConstantsUtil } from '@web3modal/common'
+import { ConstantsUtil } from '@ridotto-io/w3-common'
 
 @customElement('w3m-connecting-multi-chain-view')
 export class W3mConnectingMultiChainView extends LitElement {

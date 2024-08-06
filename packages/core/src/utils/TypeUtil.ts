@@ -1,5 +1,5 @@
 import type { W3mFrameProvider, W3mFrameTypes } from '@ridotto-io/w3-wallet'
-import type { Balance, Transaction, Chain } from '@web3modal/common'
+import type { Balance, Transaction, Chain } from '@ridotto-io/w3-common'
 import type {
   NetworkControllerClient,
   NetworkControllerState

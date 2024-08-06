@@ -13,8 +13,8 @@ import {
   type SwapInputTarget,
   EventsController,
   AccountController
-} from '@web3modal/core'
-import { NumberUtil } from '@web3modal/common'
+} from '@ridotto-io/w3-core'
+import { NumberUtil } from '@ridotto-io/w3-common'
 import { W3mFrameRpcConstants } from '@ridotto-io/w3-wallet'
 
 @customElement('w3m-swap-view')

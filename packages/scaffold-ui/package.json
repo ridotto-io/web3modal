@@ -1,5 +1,5 @@
 {
-  "name": "@web3modal/scaffold-ui",
+  "name": "@ridotto-io/w3-scaffold-ui",
   "version": "5.0.11",
   "type": "module",
   "main": "./dist/esm/exports/index.js",
@@ -28,12 +28,12 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
-    "@web3modal/common": "workspace:*",
-    "@web3modal/scaffold-utils": "workspace:*",
-    "@web3modal/core": "workspace:*",
+    "@ridotto-io/w3-common": "workspace:*",
+    "@ridotto-io/w3-scaffold-utils": "workspace:*",
+    "@ridotto-io/w3-core": "workspace:*",
     "@ridotto-io/w3-ui": "workspace:*",
     "lit": "3.1.0",
-    "@web3modal/siwe": "workspace:*",
+    "@ridotto-io/w3-siwe": "workspace:*",
     "@ridotto-io/w3-wallet": "workspace:*"
   },
   "keywords": [

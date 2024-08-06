@@ -7,8 +7,8 @@
 - - Hotfix to prevent loading state with QR code
 
 - Updated dependencies []:
-  - @web3modal/polyfills@5.0.11
-  - @web3modal/common@5.0.11
+  - @ridotto-io/w3-polyfills@5.0.11
+  - @ridotto-io/w3-common@5.0.11
 
 ## 5.0.10
 
@@ -19,8 +19,8 @@
 **Full Changelog**: https://github.com/WalletConnect/web3modal/compare/5.0.9...5.0.10
 
 - Updated dependencies []:
-  - @web3modal/common@5.0.10
-  - @web3modal/polyfills@5.0.10
+  - @ridotto-io/w3-common@5.0.10
+  - @ridotto-io/w3-polyfills@5.0.10
 
 ## 5.0.9
 
@@ -55,8 +55,8 @@
   **Full Changelog**: https://github.com/WalletConnect/web3modal/compare/5.0.7...5.0.8
 
 - Updated dependencies []:
-  - @web3modal/common@5.0.8
-  - @web3modal/polyfills@5.0.8
+  - @ridotto-io/w3-common@5.0.8
+  - @ridotto-io/w3-polyfills@5.0.8
 
 ## 5.0.7
 
@@ -70,7 +70,7 @@
   - Add Wallet Standard to AppKit + Solana by @glitch-txs in https://github.com/WalletConnect/web3modal/pull/2482
   - chore: remove onramp widget from labs by @tomiir in https://github.com/WalletConnect/web3modal/pull/2526
   - feat: support custom connectors by @chris13524 in https://github.com/WalletConnect/web3modal/pull/2119
-  - fix: disconnect logic for EIP6963 & Injected provider types for @web3modal/ethers by @hmzakhalid in https://github.com/WalletConnect/web3modal/pull/2289
+  - fix: disconnect logic for EIP6963 & Injected provider types for @ridotto-io/w3-ethers by @hmzakhalid in https://github.com/WalletConnect/web3modal/pull/2289
   - Feat ERC7715 grant_permissions support on lab by @KannuSingh in https://github.com/WalletConnect/web3modal/pull/2500
   - update chain on network change by @glitch-txs in https://github.com/WalletConnect/web3modal/pull/2497
   - fix: make accounts optional in social response by @tomiir in https://github.com/WalletConnect/web3modal/pull/2520
@@ -87,7 +87,7 @@
   - refactor: laboratory wagmi tests by @zoruka in https://github.com/WalletConnect/web3modal/pull/2552
   - fix: sync accounts in wagmi and subscribe to account change by @tomiir in https://github.com/WalletConnect/web3modal/pull/2544
 - Updated dependencies []:
-  - @web3modal/polyfills@5.0.7
+  - @ridotto-io/w3-polyfills@5.0.7
 
 ## 5.0.6
 
@@ -96,7 +96,7 @@
 - fix: Social Login illegal invocation issue. Wagmi tests
 
 - Updated dependencies []:
-  - @web3modal/polyfills@5.0.6
+  - @ridotto-io/w3-polyfills@5.0.6
 
 ## 5.0.5
 
@@ -105,7 +105,7 @@
 - feat: universal link internal flag. Add kotlin assetlinks. Fix email truncation'
 
 - Updated dependencies []:
-  - @web3modal/polyfills@5.0.5
+  - @ridotto-io/w3-polyfills@5.0.5
 
 ## 5.0.4
 
@@ -114,7 +114,7 @@
 - fix: wcPromise incompatibility issues
 
 - Updated dependencies []:
-  - @web3modal/polyfills@5.0.4
+  - @ridotto-io/w3-polyfills@5.0.4
 
 ## 5.0.3
 
@@ -123,7 +123,7 @@
 - fix: ethers5 coinbase issues. Turbo build issues. Upate cb connector.
 
 - Updated dependencies []:
-  - @web3modal/polyfills@5.0.3
+  - @ridotto-io/w3-polyfills@5.0.3
 
 ## 5.0.2
 
@@ -132,7 +132,7 @@
 - fix: siwe signOutOnNetwork change issue. fix: wallets filtered by rdns matched from explorer api. fix: solana network id issue
 
 - Updated dependencies []:
-  - @web3modal/polyfills@5.0.2
+  - @ridotto-io/w3-polyfills@5.0.2
 
 ## 5.0.1
 
@@ -141,7 +141,7 @@
 - fix: remove walletconnect restriction on names
 
 - Updated dependencies []:
-  - @web3modal/polyfills@5.0.1
+  - @ridotto-io/w3-polyfills@5.0.1
 
 ## 5.0.0
 
@@ -152,7 +152,7 @@
 ### Patch Changes
 
 - Updated dependencies []:
-  - @web3modal/polyfills@5.0.0
+  - @ridotto-io/w3-polyfills@5.0.0
 
 ## 5.0.0-cn-v5.0
 
@@ -163,7 +163,7 @@
 ### Patch Changes
 
 - Updated dependencies []:
-  - @web3modal/polyfills@5.0.0-cn-v5.0
+  - @ridotto-io/w3-polyfills@5.0.0-cn-v5.0
 
 ## 4.2.3
 
@@ -172,7 +172,7 @@
 - feat: - feat: restricted ens names. fix: iat set automatically if not present in messageParams. Adds siwe config handlers
 
 - Updated dependencies []:
-  - @web3modal/polyfills@4.2.3
+  - @ridotto-io/w3-polyfills@4.2.3
 
 ## 4.2.3-alpha.0
 
@@ -181,7 +181,7 @@
 - feat: add support for coinbase smart accounts
 
 - Updated dependencies []:
-  - @web3modal/polyfills@4.2.3-alpha.0
+  - @ridotto-io/w3-polyfills@4.2.3-alpha.0
 
 ## 4.2.2
 
@@ -190,7 +190,7 @@
 - feat: social login refactor. wagmi sendCalls support. refactor theme variables
 
 - Updated dependencies []:
-  - @web3modal/polyfills@4.2.2
+  - @ridotto-io/w3-polyfills@4.2.2
 
 ## 4.2.1
 
@@ -199,7 +199,7 @@
 - Hotfix to support injected and announced wallets in in app browsers
 
 - Updated dependencies []:
-  - @web3modal/polyfills@4.2.1
+  - @ridotto-io/w3-polyfills@4.2.1
 
 ## 4.2.0
 
@@ -208,7 +208,7 @@
 - release: 4.2.0 version release
 
 - Updated dependencies []:
-  - @web3modal/polyfills@4.2.0
+  - @ridotto-io/w3-polyfills@4.2.0
 
 ## 4.2.0-alpha.0
 
@@ -217,7 +217,7 @@
 - feat: 4.2.0-alpha release
 
 - Updated dependencies []:
-  - @web3modal/polyfills@4.2.0-alpha.0
+  - @ridotto-io/w3-polyfills@4.2.0-alpha.0
 
 ## 4.2.0-03e4f4a8.2
 
@@ -226,7 +226,7 @@
 - fix: Issue with SIWE + Wagmi sign out. Fixes issue where signature verification fail resulted in empty open modal'
 
 - Updated dependencies []:
-  - @web3modal/polyfills@4.2.0-03e4f4a8.2
+  - @ridotto-io/w3-polyfills@4.2.0-03e4f4a8.2
 
 ## 4.2.0-448f7f4.1
 
@@ -237,7 +237,7 @@
 ### Patch Changes
 
 - Updated dependencies []:
-  - @web3modal/polyfills@4.2.0-448f7f4.1
+  - @ridotto-io/w3-polyfills@4.2.0-448f7f4.1
 
 ## 4.1.12-910a844.0
 
@@ -246,7 +246,7 @@
 - refactor: sync theme with secure site
 
 - Updated dependencies []:
-  - @web3modal/polyfills@4.1.12-910a844.0
+  - @ridotto-io/w3-polyfills@4.1.12-910a844.0
 
 ## 4.1.11
 
@@ -258,7 +258,7 @@
 - feat: convert
 
 - Updated dependencies []:
-  - @web3modal/polyfills@4.1.11
+  - @ridotto-io/w3-polyfills@4.1.11
 
 ## 5.0.11
 
@@ -267,7 +267,7 @@
 - Fix activity list styling issue
 
 - Updated dependencies []:
-  - @web3modal/polyfills@5.0.11
+  - @ridotto-io/w3-polyfills@5.0.11
 
 ## 4.1.9
 
@@ -276,7 +276,7 @@
 - Blockchain API fix
 
 - Updated dependencies []:
-  - @web3modal/polyfills@4.1.9
+  - @ridotto-io/w3-polyfills@4.1.9
 
 ## 4.1.8
 
@@ -285,7 +285,7 @@
 - Hotfix for redundant tokenbalance calls
 
 - Updated dependencies []:
-  - @web3modal/polyfills@4.1.8
+  - @ridotto-io/w3-polyfills@4.1.8
 
 ## 4.1.7
 
@@ -294,7 +294,7 @@
 - Hotfix for inccorect state of w3m-button when email is enabled
 
 - Updated dependencies []:
-  - @web3modal/polyfills@4.1.7
+  - @ridotto-io/w3-polyfills@4.1.7
 
 ## 4.1.6
 
@@ -303,7 +303,7 @@
 - Fix modal default height. Fix ethers email connection lag. Fix ethers + rc relay disconnect issue. Adds new wui-components for secure site.
 
 - Updated dependencies []:
-  - @web3modal/polyfills@4.1.6
+  - @ridotto-io/w3-polyfills@4.1.6
 
 ## 4.1.6-a0733f5.0
 
@@ -312,9 +312,9 @@
 - chore: canary release for siwe dependency
 
 - Updated dependencies []:
-  - @web3modal/ethers@4.1.6-a0733f5.0
-  - @web3modal/siwe@4.1.6-a0733f5.0
-  - @web3modal/solana@4.1.6-a0733f5.0
+  - @ridotto-io/w3-ethers@4.1.6-a0733f5.0
+  - @ridotto-io/w3-siwe@4.1.6-a0733f5.0
+  - @ridotto-io/w3-solana@4.1.6-a0733f5.0
   - @ridotto-io/w3-wagmi@4.1.6-a0733f5.0
 
 ## 4.1.5
@@ -324,7 +324,7 @@
 - release: v4.1.5
 
 - Updated dependencies []:
-  - @web3modal/polyfills@4.1.5
+  - @ridotto-io/w3-polyfills@4.1.5
 
 ## 4.1.5-93c81127.0
 
@@ -333,7 +333,7 @@
 - fix: polyfill process in wallet package
 
 - Updated dependencies []:
-  - @web3modal/polyfills@4.1.5-93c81127.0
+  - @ridotto-io/w3-polyfills@4.1.5-93c81127.0
 
 ## 4.1.4
 
@@ -387,7 +387,7 @@
 
 - Updated dependencies []:
   - @ridotto-io/w3-ui@4.2.0-dbbd8c44.0
-  - @web3modal/common@4.2.0-dbbd8c44.0
+  - @ridotto-io/w3-common@4.2.0-dbbd8c44.0
 
 ## 4.2.0-500a38.0
 

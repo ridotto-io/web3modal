@@ -13,7 +13,7 @@ import { LitElement, html } from 'lit'
 import { property, state } from 'lit/decorators.js'
 import type { TransactionType } from '@ridotto-io/w3-ui/src/utils/TypeUtil.js'
 import { W3mFrameRpcConstants } from '@ridotto-io/w3-wallet'
-import { ConstantsUtil } from '@web3modal/common'
+import { ConstantsUtil } from '@ridotto-io/w3-common'
 
 import styles from './styles.js'
 

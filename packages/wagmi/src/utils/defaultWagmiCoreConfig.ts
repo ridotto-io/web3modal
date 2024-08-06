@@ -5,7 +5,7 @@ import { createConfig } from '@wagmi/core'
 import { coinbaseWallet, walletConnect, injected } from '@wagmi/connectors'
 import { authConnector } from '../connectors/AuthConnector.js'
 import { getTransport } from './helpers.js'
-import type { SocialProvider } from '@web3modal/scaffold-utils'
+import type { SocialProvider } from '@ridotto-io/w3-scaffold-utils'
 
 export type ConfigOptions = Partial<CreateConfigParameters> & {
   chains: CreateConfigParameters['chains']

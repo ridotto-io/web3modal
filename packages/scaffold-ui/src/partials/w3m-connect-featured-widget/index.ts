@@ -1,5 +1,10 @@
-import type { WcWallet } from '@web3modal/core'
-import { ApiController, AssetUtil, ConnectorController, RouterController } from '@web3modal/core'
+import type { WcWallet } from '@ridotto-io/w3-core'
+import {
+  ApiController,
+  AssetUtil,
+  ConnectorController,
+  RouterController
+} from '@ridotto-io/w3-core'
 import { customElement } from '@ridotto-io/w3-ui'
 import { LitElement, html } from 'lit'
 import { ifDefined } from 'lit/directives/if-defined.js'

@@ -4,7 +4,7 @@ import {
   OptionsController,
   StorageUtil,
   type WcWallet
-} from '@web3modal/core'
+} from '@ridotto-io/w3-core'
 
 export const WalletUtil = {
   filterOutDuplicatesByRDNS(wallets: WcWallet[]) {

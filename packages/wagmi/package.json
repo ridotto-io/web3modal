@@ -53,14 +53,14 @@
   "dependencies": {
     "@walletconnect/ethereum-provider": "2.14.0",
     "@walletconnect/utils": "2.14.0",
-    "@web3modal/polyfills": "workspace:*",
+    "@ridotto-io/w3-polyfills": "workspace:*",
     "@ridotto-io/w3-wallet": "workspace:*",
-    "@web3modal/common": "workspace:*",
-    "@web3modal/scaffold": "workspace:*",
-    "@web3modal/scaffold-react": "workspace:*",
-    "@web3modal/scaffold-utils": "workspace:*",
-    "@web3modal/scaffold-vue": "workspace:*",
-    "@web3modal/siwe": "workspace:*"
+    "@ridotto-io/w3-common": "workspace:*",
+    "@ridotto-io/w3-scaffold": "workspace:*",
+    "@ridotto-io/w3-scaffold-react": "workspace:*",
+    "@ridotto-io/w3-scaffold-utils": "workspace:*",
+    "@ridotto-io/w3-scaffold-vue": "workspace:*",
+    "@ridotto-io/w3-siwe": "workspace:*"
   },
   "devDependencies": {
     "@wagmi/connectors": "5.0.21",

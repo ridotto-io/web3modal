@@ -13,12 +13,12 @@ import {
   ConstantsUtil as CommonConstantsUtil,
   OptionsController,
   ChainController
-} from '@web3modal/core'
+} from '@ridotto-io/w3-core'
 import { customElement, UiHelperUtil } from '@ridotto-io/w3-ui'
 import { LitElement, html } from 'lit'
 import { state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
-import { ConstantsUtil } from '@web3modal/common'
+import { ConstantsUtil } from '@ridotto-io/w3-common'
 import { W3mFrameRpcConstants } from '@ridotto-io/w3-wallet'
 
 import styles from './styles.js'

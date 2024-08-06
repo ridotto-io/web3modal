@@ -1,4 +1,4 @@
-import type { BaseError, Connector } from '@web3modal/core'
+import type { BaseError, Connector } from '@ridotto-io/w3-core'
 import {
   AssetUtil,
   ConnectionController,
@@ -8,8 +8,8 @@ import {
   OptionsController,
   RouterController,
   StorageUtil
-} from '@web3modal/core'
-import { ConstantsUtil } from '@web3modal/scaffold-utils'
+} from '@ridotto-io/w3-core'
+import { ConstantsUtil } from '@ridotto-io/w3-scaffold-utils'
 import { customElement } from '@ridotto-io/w3-ui'
 import { LitElement, html } from 'lit'
 import { state } from 'lit/decorators.js'

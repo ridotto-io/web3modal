@@ -11,15 +11,15 @@ import type {
   SendTransactionArgs,
   Token,
   WriteContractArgs
-} from '@web3modal/scaffold'
-import { Web3ModalScaffold } from '@web3modal/scaffold'
-import { ConstantsUtil, PresetsUtil, HelpersUtil } from '@web3modal/scaffold-utils'
-import { ConstantsUtil as CommonConstantsUtil } from '@web3modal/common'
+} from '@ridotto-io/w3-scaffold'
+import { Web3ModalScaffold } from '@ridotto-io/w3-scaffold'
+import { ConstantsUtil, PresetsUtil, HelpersUtil } from '@ridotto-io/w3-scaffold-utils'
+import { ConstantsUtil as CommonConstantsUtil } from '@ridotto-io/w3-common'
 import EthereumProvider, { OPTIONAL_METHODS } from '@walletconnect/ethereum-provider'
 import { getChainsFromAccounts } from '@walletconnect/utils'
-import type { Web3ModalSIWEClient } from '@web3modal/siwe'
-import { ConstantsUtil as CommonConstants } from '@web3modal/common'
-import type { Chain as AvailableChain } from '@web3modal/common'
+import type { Web3ModalSIWEClient } from '@ridotto-io/w3-siwe'
+import { ConstantsUtil as CommonConstants } from '@ridotto-io/w3-common'
+import type { Chain as AvailableChain } from '@ridotto-io/w3-common'
 import type {
   Address,
   Metadata,
@@ -55,8 +55,8 @@ import {
   W3mFrameRpcConstants,
   W3mFrameConstants
 } from '@ridotto-io/w3-wallet'
-import type { CombinedProvider } from '@web3modal/scaffold-utils/ethers'
-import { NetworkUtil } from '@web3modal/common'
+import type { CombinedProvider } from '@ridotto-io/w3-scaffold-utils/ethers'
+import { NetworkUtil } from '@ridotto-io/w3-common'
 import type { W3mFrameTypes } from '@ridotto-io/w3-wallet'
 // -- Types ---------------------------------------------------------------------
 export interface Web3ModalClientOptions extends Omit<LibraryOptions, 'defaultChain' | 'tokens'> {
@@ -213,7 +213,9 @@ export class Web3Modal extends Web3ModalScaffold {
         const params = await siweConfig?.getMessageParams?.()
         // Must perform these checks to satify optional types
         if (siweConfig?.options?.enabled && params && Object.keys(params || {}).length > 0) {
-          const { SIWEController, getDidChainId, getDidAddress } = await import('@web3modal/siwe')
+          const { SIWEController, getDidChainId, getDidAddress } = await import(
+            '@ridotto-io/w3-siwe'
+          )
 
           // Make active chain first in requested chains to make it default for siwe message
           const chainId = NetworkUtil.caipNetworkIdToNumber(this.getCaipNetwork()?.id)
@@ -341,7 +343,7 @@ export class Web3Modal extends Web3ModalScaffold {
         EthersStoreUtil.reset()
         this.setClientId(null)
         if (siweConfig?.options?.signOutOnDisconnect) {
-          const { SIWEController } = await import('@web3modal/siwe')
+          const { SIWEController } = await import('@ridotto-io/w3-siwe')
           await SIWEController.signOut()
         }
         if (

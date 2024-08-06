@@ -7,9 +7,9 @@ import { ConnectorController } from './ConnectorController.js'
 import { RouterController } from './RouterController.js'
 import { ConnectionController } from './ConnectionController.js'
 import { NetworkController } from './NetworkController.js'
-import { NetworkUtil } from '@web3modal/common'
+import { NetworkUtil } from '@ridotto-io/w3-common'
 import { EnsUtil } from '../utils/EnsUtil.js'
-import { ConstantsUtil } from '@web3modal/common'
+import { ConstantsUtil } from '@ridotto-io/w3-common'
 
 // -- Types --------------------------------------------- //
 type Suggestion = {

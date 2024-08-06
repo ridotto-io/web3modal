@@ -1,7 +1,7 @@
 import { subscribeKey as subKey } from 'valtio/vanilla/utils'
 import { proxy, ref, snapshot } from 'valtio/vanilla'
 import type { AuthConnector, Connector } from '../utils/TypeUtil.js'
-import { getW3mThemeVariables } from '@web3modal/common'
+import { getW3mThemeVariables } from '@ridotto-io/w3-common'
 import { OptionsController } from './OptionsController.js'
 import { ThemeController } from './ThemeController.js'
 

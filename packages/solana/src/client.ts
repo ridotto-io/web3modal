@@ -7,9 +7,9 @@ import {
   EventsController,
   NetworkController,
   OptionsController
-} from '@web3modal/core'
-import { ConstantsUtil, HelpersUtil, PresetsUtil } from '@web3modal/scaffold-utils'
-import { ConstantsUtil as CommonConstantsUtil } from '@web3modal/common'
+} from '@ridotto-io/w3-core'
+import { ConstantsUtil, HelpersUtil, PresetsUtil } from '@ridotto-io/w3-scaffold-utils'
+import { ConstantsUtil as CommonConstantsUtil } from '@ridotto-io/w3-common'
 
 import { SolConstantsUtil, SolHelpersUtil, SolStoreUtil } from './utils/scaffold/index.js'
 import { WalletConnectConnector } from './connectors/walletConnectConnector.js'
@@ -27,8 +27,8 @@ import type {
   Connector,
   CaipAddress,
   CaipNetwork
-} from '@web3modal/scaffold'
-import type { Chain as AvailableChain } from '@web3modal/common'
+} from '@ridotto-io/w3-scaffold'
+import type { Chain as AvailableChain } from '@ridotto-io/w3-common'
 
 import type { ProviderType, Chain, Provider, SolStoreUtilState } from './utils/scaffold/index.js'
 import { watchStandard } from './utils/wallet-standard/watchStandard.js'

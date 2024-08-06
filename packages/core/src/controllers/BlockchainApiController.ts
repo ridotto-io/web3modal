@@ -1,7 +1,7 @@
 import { ConstantsUtil } from '../utils/ConstantsUtil.js'
 import { CoreHelperUtil } from '../utils/CoreHelperUtil.js'
 import { FetchUtil } from '../utils/FetchUtil.js'
-import { ConstantsUtil as CommonConstantsUtil } from '@web3modal/common'
+import { ConstantsUtil as CommonConstantsUtil } from '@ridotto-io/w3-common'
 import type {
   BlockchainApiTransactionsRequest,
   BlockchainApiTransactionsResponse,

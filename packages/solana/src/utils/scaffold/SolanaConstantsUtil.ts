@@ -1,5 +1,5 @@
 import { PublicKey } from '@solana/web3.js'
-import { ConstantsUtil } from '@web3modal/common'
+import { ConstantsUtil } from '@ridotto-io/w3-common'
 
 /**
  * Request methods to the solana RPC.

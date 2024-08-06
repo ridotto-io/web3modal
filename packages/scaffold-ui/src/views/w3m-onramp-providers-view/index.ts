@@ -8,11 +8,11 @@ import {
   NetworkController,
   BlockchainApiController,
   EventsController
-} from '@web3modal/core'
+} from '@ridotto-io/w3-core'
 import { customElement } from '@ridotto-io/w3-ui'
 import { LitElement, html } from 'lit'
 import { state } from 'lit/decorators.js'
-import type { CoinbasePaySDKChainNameValues } from '@web3modal/core/src/utils/ConstantsUtil'
+import type { CoinbasePaySDKChainNameValues } from '@ridotto-io/w3-core/src/utils/ConstantsUtil'
 import { W3mFrameRpcConstants } from '@ridotto-io/w3-wallet'
 
 @customElement('w3m-onramp-providers-view')

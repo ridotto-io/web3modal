@@ -8,10 +8,10 @@ import {
   ConnectorController,
   OptionsController,
   StorageUtil
-} from '@web3modal/core'
-import { ConstantsUtil as CommonConstantsUtil } from '@web3modal/common'
+} from '@ridotto-io/w3-core'
+import { ConstantsUtil as CommonConstantsUtil } from '@ridotto-io/w3-common'
 import { state } from 'lit/decorators.js'
-import { ConstantsUtil } from '@web3modal/scaffold-utils'
+import { ConstantsUtil } from '@ridotto-io/w3-scaffold-utils'
 import { WalletUtil } from '../../utils/WalletUtil.js'
 @customElement('w3m-connector-list')
 export class W3mConnectorList extends LitElement {

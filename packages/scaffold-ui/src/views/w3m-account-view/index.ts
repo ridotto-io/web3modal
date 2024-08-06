@@ -1,4 +1,4 @@
-import { ConnectorController, StorageUtil } from '@web3modal/core'
+import { ConnectorController, StorageUtil } from '@ridotto-io/w3-core'
 import { customElement } from '@ridotto-io/w3-ui'
 import { LitElement, html } from 'lit'
 

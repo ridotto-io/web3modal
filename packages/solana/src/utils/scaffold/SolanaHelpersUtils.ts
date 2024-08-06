@@ -1,5 +1,5 @@
-import { PresetsUtil, ConstantsUtil } from '@web3modal/scaffold-utils'
-import { ConstantsUtil as CommonConstantsUtil } from '@web3modal/common'
+import { PresetsUtil, ConstantsUtil } from '@ridotto-io/w3-scaffold-utils'
+import { ConstantsUtil as CommonConstantsUtil } from '@ridotto-io/w3-common'
 
 import { SolConstantsUtil } from './SolanaConstantsUtil.js'
 

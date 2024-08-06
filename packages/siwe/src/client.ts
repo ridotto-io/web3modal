@@ -15,7 +15,7 @@ import {
   StorageUtil,
   NetworkController,
   AccountController
-} from '@web3modal/core'
+} from '@ridotto-io/w3-core'
 
 import { NetworkUtil } from '@ridotto-io/w3-common'
 import { ConstantsUtil } from '../core/utils/ConstantsUtil.js'

@@ -81,7 +81,7 @@ export class W3mConnectingWcView extends LitElement {
         ) {
           RouterController.push('SelectAddresses')
         } else if (OptionsController.state.isSiweEnabled) {
-          const { SIWEController } = await import('@web3modal/siwe')
+          const { SIWEController } = await import('@ridotto-io/w3-siwe')
           if (SIWEController.state.status === 'success') {
             ModalController.close()
           } else {

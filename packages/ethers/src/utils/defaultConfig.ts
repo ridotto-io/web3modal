@@ -1,7 +1,7 @@
-import '@web3modal/polyfills'
-import type { Chain, Metadata, Provider, ProviderType } from '@web3modal/scaffold-utils/ethers'
+import '@ridotto-io/w3-polyfills'
+import type { Chain, Metadata, Provider, ProviderType } from '@ridotto-io/w3-scaffold-utils/ethers'
 import { CoinbaseWalletSDK, type ProviderInterface } from '@coinbase/wallet-sdk'
-import type { SocialProvider } from '@web3modal/scaffold-utils'
+import type { SocialProvider } from '@ridotto-io/w3-scaffold-utils'
 
 export interface ConfigOptions {
   enableEIP6963?: boolean

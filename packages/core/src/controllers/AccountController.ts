@@ -12,7 +12,7 @@ import { SwapController } from './SwapController.js'
 import { SwapApiUtil } from '../utils/SwapApiUtil.js'
 import type { W3mFrameTypes } from '@ridotto-io/w3-wallet'
 import { ChainController } from './ChainController.js'
-import type { Chain } from '@web3modal/common'
+import type { Chain } from '@ridotto-io/w3-common'
 import { NetworkController } from './NetworkController.js'
 import { proxy, ref } from 'valtio'
 

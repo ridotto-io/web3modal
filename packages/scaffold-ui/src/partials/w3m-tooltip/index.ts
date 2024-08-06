@@ -1,5 +1,5 @@
 import { html, LitElement } from 'lit'
-import { TooltipController } from '@web3modal/core'
+import { TooltipController } from '@ridotto-io/w3-core'
 import { customElement } from '@ridotto-io/w3-ui'
 import { state } from 'lit/decorators.js'
 import styles from './styles.js'

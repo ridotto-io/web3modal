@@ -1,1 +1,1 @@
-export * as Web3modal from '@web3modal/ethers'
+export * as Web3modal from '@ridotto-io/w3-ethers'

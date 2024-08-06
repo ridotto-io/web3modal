@@ -5,8 +5,8 @@ import {
   RouterController,
   type SwapToken,
   type SwapInputTarget
-} from '@web3modal/core'
-import { InputUtil, NumberUtil } from '@web3modal/common'
+} from '@ridotto-io/w3-core'
+import { InputUtil, NumberUtil } from '@ridotto-io/w3-common'
 import { UiHelperUtil, customElement } from '@ridotto-io/w3-ui'
 import styles from './styles.js'
 

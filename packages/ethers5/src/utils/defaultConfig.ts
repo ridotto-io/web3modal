@@ -1,5 +1,5 @@
-import '@web3modal/polyfills'
-import type { Chain, Metadata, Provider, ProviderType } from '@web3modal/scaffold-utils/ethers'
+import '@ridotto-io/w3-polyfills'
+import type { Chain, Metadata, Provider, ProviderType } from '@ridotto-io/w3-scaffold-utils/ethers'
 import { CoinbaseWalletSDK, type ProviderInterface } from '@coinbase/wallet-sdk'
 
 export interface ConfigOptions {

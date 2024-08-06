@@ -36,14 +36,14 @@ import type {
   SocialProvider,
   Token,
   WriteContractArgs
-} from '@web3modal/scaffold'
+} from '@ridotto-io/w3-scaffold'
 import { formatUnits, parseUnits } from 'viem'
 import type { Hex } from 'viem'
-import { Web3ModalScaffold } from '@web3modal/scaffold'
-import type { Web3ModalSIWEClient } from '@web3modal/siwe'
-import { ConstantsUtil, PresetsUtil, HelpersUtil } from '@web3modal/scaffold-utils'
-import { ConstantsUtil as CommonConstantsUtil } from '@web3modal/common'
-import type { Chain as AvailableChain } from '@web3modal/common'
+import { Web3ModalScaffold } from '@ridotto-io/w3-scaffold'
+import type { Web3ModalSIWEClient } from '@ridotto-io/w3-siwe'
+import { ConstantsUtil, PresetsUtil, HelpersUtil } from '@ridotto-io/w3-scaffold-utils'
+import { ConstantsUtil as CommonConstantsUtil } from '@ridotto-io/w3-common'
+import type { Chain as AvailableChain } from '@ridotto-io/w3-common'
 import {
   getCaipDefaultChain,
   getEmailCaipNetworks,
@@ -51,7 +51,7 @@ import {
 } from './utils/helpers.js'
 import { W3mFrameConstants, W3mFrameHelpers, W3mFrameRpcConstants } from '@ridotto-io/w3-wallet'
 import type { W3mFrameProvider, W3mFrameTypes } from '@ridotto-io/w3-wallet'
-import { NetworkUtil } from '@web3modal/common'
+import { NetworkUtil } from '@ridotto-io/w3-common'
 import { normalize } from 'viem/ens'
 
 // -- Types ---------------------------------------------------------------------
@@ -154,7 +154,9 @@ export class Web3Modal extends Web3ModalScaffold {
           siweParams &&
           Object.keys(siweParams || {}).length > 0
         ) {
-          const { SIWEController, getDidChainId, getDidAddress } = await import('@web3modal/siwe')
+          const { SIWEController, getDidChainId, getDidAddress } = await import(
+            '@ridotto-io/w3-siwe'
+          )
 
           // @ts-expect-error - setting requested chains beforehand avoids wagmi auto disconnecting the session when `connect` is called because it things chains are stale
           await connector.setRequestedChainsIds(siweParams.chains)
@@ -261,7 +263,7 @@ export class Web3Modal extends Web3ModalScaffold {
         await disconnect(this.wagmiConfig)
         this.setClientId(null)
         if (siweConfig?.options?.signOutOnDisconnect) {
-          const { SIWEController } = await import('@web3modal/siwe')
+          const { SIWEController } = await import('@ridotto-io/w3-siwe')
           await SIWEController.signOut()
         }
       },

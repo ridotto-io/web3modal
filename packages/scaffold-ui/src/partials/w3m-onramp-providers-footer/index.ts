@@ -3,7 +3,7 @@ import {
   EventsController,
   OptionsController,
   RouterController
-} from '@web3modal/core'
+} from '@ridotto-io/w3-core'
 import { customElement } from '@ridotto-io/w3-ui'
 import { LitElement, html } from 'lit'
 import styles from './styles.js'

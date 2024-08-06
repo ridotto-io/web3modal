@@ -6,8 +6,8 @@ import {
   OptionsController,
   RouterController,
   StorageUtil
-} from '@web3modal/core'
-import { ConstantsUtil } from '@web3modal/scaffold-utils'
+} from '@ridotto-io/w3-core'
+import { ConstantsUtil } from '@ridotto-io/w3-scaffold-utils'
 import { customElement } from '@ridotto-io/w3-ui'
 import { W3mConnectingWidget } from '../../utils/w3m-connecting-widget/index.js'
 

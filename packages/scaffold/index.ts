@@ -1,4 +1,4 @@
-export * from '@web3modal/scaffold-ui'
+export * from '@ridotto-io/w3-scaffold-ui'
 
 export { Web3ModalScaffold } from './src/client.js'
 export type { LibraryOptions, ScaffoldOptions } from './src/client.js'

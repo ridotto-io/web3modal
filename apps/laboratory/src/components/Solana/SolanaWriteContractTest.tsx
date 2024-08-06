@@ -8,7 +8,7 @@ import {
   TransactionInstruction,
   LAMPORTS_PER_SOL
 } from '@solana/web3.js'
-import { useWeb3ModalAccount, useWeb3ModalProvider } from '@web3modal/solana/react'
+import { useWeb3ModalAccount, useWeb3ModalProvider } from '@ridotto-io/w3-solana/react'
 
 import { COUNTER_ACCOUNT_SIZE } from '../../utils/SolanaConstants'
 import { deserializeCounterAccount, detectProgramId } from '../../utils/SolanaUtil'

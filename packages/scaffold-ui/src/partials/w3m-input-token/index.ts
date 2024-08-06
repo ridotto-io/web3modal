@@ -2,9 +2,9 @@ import { UiHelperUtil, customElement } from '@ridotto-io/w3-ui'
 import { LitElement, html } from 'lit'
 import styles from './styles.js'
 import { property } from 'lit/decorators.js'
-import { RouterController, SendController } from '@web3modal/core'
-import type { Balance } from '@web3modal/common'
-import { NumberUtil } from '@web3modal/common'
+import { RouterController, SendController } from '@ridotto-io/w3-core'
+import type { Balance } from '@ridotto-io/w3-common'
+import { NumberUtil } from '@ridotto-io/w3-common'
 
 @customElement('w3m-input-token')
 export class W3mInputToken extends LitElement {

@@ -1,11 +1,11 @@
-import { defaultSolanaConfig } from '@web3modal/solana/react'
+import { defaultSolanaConfig } from '@ridotto-io/w3-solana/react'
 import {
   createWeb3Modal,
   useWeb3Modal,
   useWeb3ModalEvents,
   useWeb3ModalState,
   useWeb3ModalTheme
-} from '@web3modal/solana/react'
+} from '@ridotto-io/w3-solana/react'
 import { BackpackWalletAdapter } from '@solana/wallet-adapter-backpack'
 import {
   PhantomWalletAdapter,

@@ -1,7 +1,7 @@
 import { customElement, MathUtil } from '@ridotto-io/w3-ui'
 import { LitElement, html } from 'lit'
 import styles from './styles.js'
-import { RouterController, SwapController, type SwapTokenWithBalance } from '@web3modal/core'
+import { RouterController, SwapController, type SwapTokenWithBalance } from '@ridotto-io/w3-core'
 import { state } from 'lit/decorators.js'
 
 @customElement('w3m-swap-select-token-view')

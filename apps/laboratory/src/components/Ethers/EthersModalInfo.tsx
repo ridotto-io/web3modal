@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useWeb3ModalAccount, useWeb3ModalProvider } from '@web3modal/ethers/react'
+import { useWeb3ModalAccount, useWeb3ModalProvider } from '@ridotto-io/w3-ethers/react'
 import EthereumProvider from '@walletconnect/ethereum-provider'
 
 import { Web3ModalInfo } from '../Web3ModalInfo'

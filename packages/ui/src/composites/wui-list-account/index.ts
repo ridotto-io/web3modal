@@ -13,7 +13,7 @@ import {
   BlockchainApiController,
   NetworkController,
   StorageUtil
-} from '@web3modal/core'
+} from '@ridotto-io/w3-core'
 
 @customElement('wui-list-account')
 export class WuiListAccount extends LitElement {

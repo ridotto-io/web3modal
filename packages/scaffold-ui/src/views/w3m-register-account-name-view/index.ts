@@ -9,7 +9,7 @@ import {
   EnsController,
   EventsController,
   AccountController
-} from '@web3modal/core'
+} from '@ridotto-io/w3-core'
 import { W3mFrameRpcConstants } from '@ridotto-io/w3-wallet'
 
 @customElement('w3m-register-account-name-view')

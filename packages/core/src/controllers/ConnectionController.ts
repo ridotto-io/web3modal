@@ -15,7 +15,7 @@ import { type W3mFrameTypes } from '@ridotto-io/w3-wallet'
 import { ModalController } from './ModalController.js'
 import { ConnectorController } from './ConnectorController.js'
 import { EventsController } from './EventsController.js'
-import type { Chain } from '@web3modal/common'
+import type { Chain } from '@ridotto-io/w3-common'
 import { NetworkController } from './NetworkController.js'
 
 // -- Types --------------------------------------------- //

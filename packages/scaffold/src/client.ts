@@ -12,7 +12,7 @@ import type {
   ConnectedWalletInfo,
   RouterControllerState,
   CaipNetwork
-} from '@web3modal/core'
+} from '@ridotto-io/w3-core'
 import {
   BlockchainApiController,
   ConnectionController,
@@ -29,10 +29,10 @@ import {
   EnsController,
   ChainController,
   AccountController
-} from '@web3modal/core'
+} from '@ridotto-io/w3-core'
 import { setColorTheme, setThemeVariables } from '@ridotto-io/w3-ui'
-import type { SIWEControllerClient } from '@web3modal/siwe'
-import { ConstantsUtil, type Chain } from '@web3modal/common'
+import type { SIWEControllerClient } from '@ridotto-io/w3-siwe'
+import { ConstantsUtil, type Chain } from '@ridotto-io/w3-common'
 
 // -- Helpers -------------------------------------------------------------------
 let isInitialized = false
@@ -384,7 +384,7 @@ export class Web3ModalScaffold {
     }
 
     if (options.siweControllerClient) {
-      const { SIWEController } = await import('@web3modal/siwe')
+      const { SIWEController } = await import('@ridotto-io/w3-siwe')
 
       SIWEController.setSIWEClient(options.siweControllerClient)
     }
@@ -394,7 +394,10 @@ export class Web3ModalScaffold {
     if (!this.initPromise && !isInitialized && CoreHelperUtil.isClient()) {
       isInitialized = true
       this.initPromise = new Promise<void>(async resolve => {
-        await Promise.all([import('@ridotto-io/w3-ui'), import('@web3modal/scaffold-ui/w3m-modal')])
+        await Promise.all([
+          import('@ridotto-io/w3-ui'),
+          import('@ridotto-io/w3-scaffold-ui/w3m-modal')
+        ])
         const modal = document.createElement('w3m-modal')
         if (!OptionsController.state.disableAppend) {
           document.body.insertAdjacentElement('beforeend', modal)

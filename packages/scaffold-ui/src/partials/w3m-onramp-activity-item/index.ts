@@ -2,7 +2,7 @@ import { html, LitElement } from 'lit'
 import { property } from 'lit/decorators.js'
 import { customElement } from '@ridotto-io/w3-ui'
 import type { ColorType } from '@ridotto-io/w3-ui/src/utils/TypeUtil.js'
-import { ApiController } from '@web3modal/core'
+import { ApiController } from '@ridotto-io/w3-core'
 import styles from './styles.js'
 
 @customElement('w3m-onramp-activity-item')

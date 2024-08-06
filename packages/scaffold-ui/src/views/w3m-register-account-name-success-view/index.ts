@@ -1,8 +1,8 @@
 import { customElement } from '@ridotto-io/w3-ui'
-import { CoreHelperUtil, RouterController } from '@web3modal/core'
+import { CoreHelperUtil, RouterController } from '@ridotto-io/w3-core'
 import { LitElement, html } from 'lit'
 import styles from './styles.js'
-import { NavigationUtil } from '@web3modal/common'
+import { NavigationUtil } from '@ridotto-io/w3-common'
 
 @customElement('w3m-register-account-name-success-view')
 export class W3mRegisterAccountNameSuccess extends LitElement {

@@ -2,8 +2,8 @@ import { html, LitElement } from 'lit'
 import { property, state } from 'lit/decorators.js'
 import styles from './styles.js'
 import { UiHelperUtil, customElement } from '@ridotto-io/w3-ui'
-import { NumberUtil } from '@web3modal/common'
-import { ConstantsUtil, NetworkController, SwapController } from '@web3modal/core'
+import { NumberUtil } from '@ridotto-io/w3-common'
+import { ConstantsUtil, NetworkController, SwapController } from '@ridotto-io/w3-core'
 
 // -- Constants ----------------------------------------- //
 const slippageRate = ConstantsUtil.CONVERT_SLIPPAGE_TOLERANCE

@@ -1,4 +1,4 @@
-# @web3modal/ethers5
+# @ridotto-io/w3-ethers5
 
 ## 5.0.11
 
@@ -7,13 +7,13 @@
 - - Hotfix to prevent loading state with QR code
 
 - Updated dependencies []:
-  - @web3modal/scaffold-react@5.0.11
-  - @web3modal/scaffold-utils@5.0.11
-  - @web3modal/scaffold-vue@5.0.11
-  - @web3modal/polyfills@5.0.11
-  - @web3modal/scaffold@5.0.11
-  - @web3modal/common@5.0.11
-  - @web3modal/siwe@5.0.11
+  - @ridotto-io/w3-scaffold-react@5.0.11
+  - @ridotto-io/w3-scaffold-utils@5.0.11
+  - @ridotto-io/w3-scaffold-vue@5.0.11
+  - @ridotto-io/w3-polyfills@5.0.11
+  - @ridotto-io/w3-scaffold@5.0.11
+  - @ridotto-io/w3-common@5.0.11
+  - @ridotto-io/w3-siwe@5.0.11
 
 ## 5.0.10
 
@@ -24,13 +24,13 @@
 **Full Changelog**: https://github.com/WalletConnect/web3modal/compare/5.0.9...5.0.10
 
 - Updated dependencies []:
-  - @web3modal/common@5.0.10
-  - @web3modal/polyfills@5.0.10
-  - @web3modal/scaffold@5.0.10
-  - @web3modal/scaffold-react@5.0.10
-  - @web3modal/scaffold-utils@5.0.10
-  - @web3modal/scaffold-vue@5.0.10
-  - @web3modal/siwe@5.0.10
+  - @ridotto-io/w3-common@5.0.10
+  - @ridotto-io/w3-polyfills@5.0.10
+  - @ridotto-io/w3-scaffold@5.0.10
+  - @ridotto-io/w3-scaffold-react@5.0.10
+  - @ridotto-io/w3-scaffold-utils@5.0.10
+  - @ridotto-io/w3-scaffold-vue@5.0.10
+  - @ridotto-io/w3-siwe@5.0.10
 
 ## 5.0.9
 
@@ -65,13 +65,13 @@
   **Full Changelog**: https://github.com/WalletConnect/web3modal/compare/5.0.7...5.0.8
 
 - Updated dependencies []:
-  - @web3modal/common@5.0.8
-  - @web3modal/polyfills@5.0.8
-  - @web3modal/scaffold@5.0.8
-  - @web3modal/scaffold-react@5.0.8
-  - @web3modal/scaffold-utils@5.0.8
-  - @web3modal/scaffold-vue@5.0.8
-  - @web3modal/siwe@5.0.8
+  - @ridotto-io/w3-common@5.0.8
+  - @ridotto-io/w3-polyfills@5.0.8
+  - @ridotto-io/w3-scaffold@5.0.8
+  - @ridotto-io/w3-scaffold-react@5.0.8
+  - @ridotto-io/w3-scaffold-utils@5.0.8
+  - @ridotto-io/w3-scaffold-vue@5.0.8
+  - @ridotto-io/w3-siwe@5.0.8
 
 ## 5.0.7
 
@@ -85,7 +85,7 @@
   - Add Wallet Standard to AppKit + Solana by @glitch-txs in https://github.com/WalletConnect/web3modal/pull/2482
   - chore: remove onramp widget from labs by @tomiir in https://github.com/WalletConnect/web3modal/pull/2526
   - feat: support custom connectors by @chris13524 in https://github.com/WalletConnect/web3modal/pull/2119
-  - fix: disconnect logic for EIP6963 & Injected provider types for @web3modal/ethers by @hmzakhalid in https://github.com/WalletConnect/web3modal/pull/2289
+  - fix: disconnect logic for EIP6963 & Injected provider types for @ridotto-io/w3-ethers by @hmzakhalid in https://github.com/WalletConnect/web3modal/pull/2289
   - Feat ERC7715 grant_permissions support on lab by @KannuSingh in https://github.com/WalletConnect/web3modal/pull/2500
   - update chain on network change by @glitch-txs in https://github.com/WalletConnect/web3modal/pull/2497
   - fix: make accounts optional in social response by @tomiir in https://github.com/WalletConnect/web3modal/pull/2520
@@ -102,12 +102,12 @@
   - refactor: laboratory wagmi tests by @zoruka in https://github.com/WalletConnect/web3modal/pull/2552
   - fix: sync accounts in wagmi and subscribe to account change by @tomiir in https://github.com/WalletConnect/web3modal/pull/2544
 - Updated dependencies []:
-  - @web3modal/polyfills@5.0.7
-  - @web3modal/scaffold@5.0.7
-  - @web3modal/scaffold-react@5.0.7
-  - @web3modal/scaffold-utils@5.0.7
-  - @web3modal/scaffold-vue@5.0.7
-  - @web3modal/siwe@5.0.7
+  - @ridotto-io/w3-polyfills@5.0.7
+  - @ridotto-io/w3-scaffold@5.0.7
+  - @ridotto-io/w3-scaffold-react@5.0.7
+  - @ridotto-io/w3-scaffold-utils@5.0.7
+  - @ridotto-io/w3-scaffold-vue@5.0.7
+  - @ridotto-io/w3-siwe@5.0.7
 
 ## 5.0.6
 
@@ -116,12 +116,12 @@
 - fix: Social Login illegal invocation issue. Wagmi tests
 
 - Updated dependencies []:
-  - @web3modal/polyfills@5.0.6
-  - @web3modal/scaffold@5.0.6
-  - @web3modal/scaffold-react@5.0.6
-  - @web3modal/scaffold-utils@5.0.6
-  - @web3modal/scaffold-vue@5.0.6
-  - @web3modal/siwe@5.0.6
+  - @ridotto-io/w3-polyfills@5.0.6
+  - @ridotto-io/w3-scaffold@5.0.6
+  - @ridotto-io/w3-scaffold-react@5.0.6
+  - @ridotto-io/w3-scaffold-utils@5.0.6
+  - @ridotto-io/w3-scaffold-vue@5.0.6
+  - @ridotto-io/w3-siwe@5.0.6
 
 ## 5.0.5
 
@@ -130,12 +130,12 @@
 - feat: universal link internal flag. Add kotlin assetlinks. Fix email truncation'
 
 - Updated dependencies []:
-  - @web3modal/polyfills@5.0.5
-  - @web3modal/scaffold@5.0.5
-  - @web3modal/scaffold-react@5.0.5
-  - @web3modal/scaffold-utils@5.0.5
-  - @web3modal/scaffold-vue@5.0.5
-  - @web3modal/siwe@5.0.5
+  - @ridotto-io/w3-polyfills@5.0.5
+  - @ridotto-io/w3-scaffold@5.0.5
+  - @ridotto-io/w3-scaffold-react@5.0.5
+  - @ridotto-io/w3-scaffold-utils@5.0.5
+  - @ridotto-io/w3-scaffold-vue@5.0.5
+  - @ridotto-io/w3-siwe@5.0.5
 
 ## 5.0.4
 
@@ -144,12 +144,12 @@
 - fix: wcPromise incompatibility issues
 
 - Updated dependencies []:
-  - @web3modal/polyfills@5.0.4
-  - @web3modal/scaffold@5.0.4
-  - @web3modal/scaffold-react@5.0.4
-  - @web3modal/scaffold-utils@5.0.4
-  - @web3modal/scaffold-vue@5.0.4
-  - @web3modal/siwe@5.0.4
+  - @ridotto-io/w3-polyfills@5.0.4
+  - @ridotto-io/w3-scaffold@5.0.4
+  - @ridotto-io/w3-scaffold-react@5.0.4
+  - @ridotto-io/w3-scaffold-utils@5.0.4
+  - @ridotto-io/w3-scaffold-vue@5.0.4
+  - @ridotto-io/w3-siwe@5.0.4
 
 ## 5.0.3
 
@@ -158,12 +158,12 @@
 - fix: ethers5 coinbase issues. Turbo build issues. Upate cb connector.
 
 - Updated dependencies []:
-  - @web3modal/polyfills@5.0.3
-  - @web3modal/scaffold@5.0.3
-  - @web3modal/scaffold-react@5.0.3
-  - @web3modal/scaffold-utils@5.0.3
-  - @web3modal/scaffold-vue@5.0.3
-  - @web3modal/siwe@5.0.3
+  - @ridotto-io/w3-polyfills@5.0.3
+  - @ridotto-io/w3-scaffold@5.0.3
+  - @ridotto-io/w3-scaffold-react@5.0.3
+  - @ridotto-io/w3-scaffold-utils@5.0.3
+  - @ridotto-io/w3-scaffold-vue@5.0.3
+  - @ridotto-io/w3-siwe@5.0.3
 
 ## 5.0.2
 
@@ -172,12 +172,12 @@
 - fix: siwe signOutOnNetwork change issue. fix: wallets filtered by rdns matched from explorer api. fix: solana network id issue
 
 - Updated dependencies []:
-  - @web3modal/polyfills@5.0.2
-  - @web3modal/scaffold@5.0.2
-  - @web3modal/scaffold-react@5.0.2
-  - @web3modal/scaffold-utils@5.0.2
-  - @web3modal/scaffold-vue@5.0.2
-  - @web3modal/siwe@5.0.2
+  - @ridotto-io/w3-polyfills@5.0.2
+  - @ridotto-io/w3-scaffold@5.0.2
+  - @ridotto-io/w3-scaffold-react@5.0.2
+  - @ridotto-io/w3-scaffold-utils@5.0.2
+  - @ridotto-io/w3-scaffold-vue@5.0.2
+  - @ridotto-io/w3-siwe@5.0.2
 
 ## 5.0.1
 
@@ -186,12 +186,12 @@
 - fix: remove walletconnect restriction on names
 
 - Updated dependencies []:
-  - @web3modal/scaffold-react@5.0.1
-  - @web3modal/scaffold-utils@5.0.1
-  - @web3modal/scaffold-vue@5.0.1
-  - @web3modal/polyfills@5.0.1
-  - @web3modal/scaffold@5.0.1
-  - @web3modal/siwe@5.0.1
+  - @ridotto-io/w3-scaffold-react@5.0.1
+  - @ridotto-io/w3-scaffold-utils@5.0.1
+  - @ridotto-io/w3-scaffold-vue@5.0.1
+  - @ridotto-io/w3-polyfills@5.0.1
+  - @ridotto-io/w3-scaffold@5.0.1
+  - @ridotto-io/w3-siwe@5.0.1
 
 ## 5.0.0
 
@@ -202,12 +202,12 @@
 ### Patch Changes
 
 - Updated dependencies []:
-  - @web3modal/polyfills@5.0.0
-  - @web3modal/scaffold@5.0.0
-  - @web3modal/scaffold-react@5.0.0
-  - @web3modal/scaffold-utils@5.0.0
-  - @web3modal/scaffold-vue@5.0.0
-  - @web3modal/siwe@5.0.0
+  - @ridotto-io/w3-polyfills@5.0.0
+  - @ridotto-io/w3-scaffold@5.0.0
+  - @ridotto-io/w3-scaffold-react@5.0.0
+  - @ridotto-io/w3-scaffold-utils@5.0.0
+  - @ridotto-io/w3-scaffold-vue@5.0.0
+  - @ridotto-io/w3-siwe@5.0.0
 
 ## 5.0.0-cn-v5.0
 
@@ -218,12 +218,12 @@
 ### Patch Changes
 
 - Updated dependencies []:
-  - @web3modal/polyfills@5.0.0-cn-v5.0
-  - @web3modal/scaffold@5.0.0-cn-v5.0
-  - @web3modal/scaffold-react@5.0.0-cn-v5.0
-  - @web3modal/scaffold-utils@5.0.0-cn-v5.0
-  - @web3modal/scaffold-vue@5.0.0-cn-v5.0
-  - @web3modal/siwe@5.0.0-cn-v5.0
+  - @ridotto-io/w3-polyfills@5.0.0-cn-v5.0
+  - @ridotto-io/w3-scaffold@5.0.0-cn-v5.0
+  - @ridotto-io/w3-scaffold-react@5.0.0-cn-v5.0
+  - @ridotto-io/w3-scaffold-utils@5.0.0-cn-v5.0
+  - @ridotto-io/w3-scaffold-vue@5.0.0-cn-v5.0
+  - @ridotto-io/w3-siwe@5.0.0-cn-v5.0
 
 ## 4.2.3
 
@@ -232,12 +232,12 @@
 - feat: - feat: restricted ens names. fix: iat set automatically if not present in messageParams. Adds siwe config handlers
 
 - Updated dependencies []:
-  - @web3modal/polyfills@4.2.3
-  - @web3modal/scaffold@4.2.3
-  - @web3modal/scaffold-react@4.2.3
-  - @web3modal/scaffold-utils@4.2.3
-  - @web3modal/scaffold-vue@4.2.3
-  - @web3modal/siwe@4.2.3
+  - @ridotto-io/w3-polyfills@4.2.3
+  - @ridotto-io/w3-scaffold@4.2.3
+  - @ridotto-io/w3-scaffold-react@4.2.3
+  - @ridotto-io/w3-scaffold-utils@4.2.3
+  - @ridotto-io/w3-scaffold-vue@4.2.3
+  - @ridotto-io/w3-siwe@4.2.3
 
 ## 4.2.3-alpha.0
 
@@ -246,12 +246,12 @@
 - feat: add support for coinbase smart accounts
 
 - Updated dependencies []:
-  - @web3modal/scaffold-utils@4.2.3-alpha.0
-  - @web3modal/scaffold@4.2.3-alpha.0
-  - @web3modal/siwe@4.2.3-alpha.0
-  - @web3modal/polyfills@4.2.3-alpha.0
-  - @web3modal/scaffold-react@4.2.3-alpha.0
-  - @web3modal/scaffold-vue@4.2.3-alpha.0
+  - @ridotto-io/w3-scaffold-utils@4.2.3-alpha.0
+  - @ridotto-io/w3-scaffold@4.2.3-alpha.0
+  - @ridotto-io/w3-siwe@4.2.3-alpha.0
+  - @ridotto-io/w3-polyfills@4.2.3-alpha.0
+  - @ridotto-io/w3-scaffold-react@4.2.3-alpha.0
+  - @ridotto-io/w3-scaffold-vue@4.2.3-alpha.0
 
 ## 4.2.2
 
@@ -260,12 +260,12 @@
 - feat: social login refactor. wagmi sendCalls support. refactor theme variables
 
 - Updated dependencies []:
-  - @web3modal/polyfills@4.2.2
-  - @web3modal/scaffold@4.2.2
-  - @web3modal/scaffold-react@4.2.2
-  - @web3modal/scaffold-utils@4.2.2
-  - @web3modal/scaffold-vue@4.2.2
-  - @web3modal/siwe@4.2.2
+  - @ridotto-io/w3-polyfills@4.2.2
+  - @ridotto-io/w3-scaffold@4.2.2
+  - @ridotto-io/w3-scaffold-react@4.2.2
+  - @ridotto-io/w3-scaffold-utils@4.2.2
+  - @ridotto-io/w3-scaffold-vue@4.2.2
+  - @ridotto-io/w3-siwe@4.2.2
 
 ## 4.2.1
 
@@ -274,12 +274,12 @@
 - Hotfix to support injected and announced wallets in in app browsers
 
 - Updated dependencies []:
-  - @web3modal/scaffold@4.2.1
-  - @web3modal/polyfills@4.2.1
-  - @web3modal/scaffold-react@4.2.1
-  - @web3modal/scaffold-utils@4.2.1
-  - @web3modal/scaffold-vue@4.2.1
-  - @web3modal/siwe@4.2.1
+  - @ridotto-io/w3-scaffold@4.2.1
+  - @ridotto-io/w3-polyfills@4.2.1
+  - @ridotto-io/w3-scaffold-react@4.2.1
+  - @ridotto-io/w3-scaffold-utils@4.2.1
+  - @ridotto-io/w3-scaffold-vue@4.2.1
+  - @ridotto-io/w3-siwe@4.2.1
 
 ## 4.2.0
 
@@ -288,12 +288,12 @@
 - release: 4.2.0 version release
 
 - Updated dependencies []:
-  - @web3modal/polyfills@4.2.0
-  - @web3modal/scaffold@4.2.0
-  - @web3modal/scaffold-react@4.2.0
-  - @web3modal/scaffold-utils@4.2.0
-  - @web3modal/scaffold-vue@4.2.0
-  - @web3modal/siwe@4.2.0
+  - @ridotto-io/w3-polyfills@4.2.0
+  - @ridotto-io/w3-scaffold@4.2.0
+  - @ridotto-io/w3-scaffold-react@4.2.0
+  - @ridotto-io/w3-scaffold-utils@4.2.0
+  - @ridotto-io/w3-scaffold-vue@4.2.0
+  - @ridotto-io/w3-siwe@4.2.0
 
 ## 4.2.0-alpha.0
 
@@ -302,12 +302,12 @@
 - feat: 4.2.0-alpha release
 
 - Updated dependencies []:
-  - @web3modal/scaffold-react@4.2.0-alpha.0
-  - @web3modal/scaffold-utils@4.2.0-alpha.0
-  - @web3modal/scaffold-vue@4.2.0-alpha.0
-  - @web3modal/polyfills@4.2.0-alpha.0
-  - @web3modal/scaffold@4.2.0-alpha.0
-  - @web3modal/siwe@4.2.0-alpha.0
+  - @ridotto-io/w3-scaffold-react@4.2.0-alpha.0
+  - @ridotto-io/w3-scaffold-utils@4.2.0-alpha.0
+  - @ridotto-io/w3-scaffold-vue@4.2.0-alpha.0
+  - @ridotto-io/w3-polyfills@4.2.0-alpha.0
+  - @ridotto-io/w3-scaffold@4.2.0-alpha.0
+  - @ridotto-io/w3-siwe@4.2.0-alpha.0
 
 ## 4.2.0-03e4f4a8.2
 
@@ -316,12 +316,12 @@
 - fix: Issue with SIWE + Wagmi sign out. Fixes issue where signature verification fail resulted in empty open modal'
 
 - Updated dependencies []:
-  - @web3modal/scaffold-react@4.2.0-03e4f4a8.2
-  - @web3modal/scaffold-utils@4.2.0-03e4f4a8.2
-  - @web3modal/scaffold-vue@4.2.0-03e4f4a8.2
-  - @web3modal/polyfills@4.2.0-03e4f4a8.2
-  - @web3modal/scaffold@4.2.0-03e4f4a8.2
-  - @web3modal/siwe@4.2.0-03e4f4a8.2
+  - @ridotto-io/w3-scaffold-react@4.2.0-03e4f4a8.2
+  - @ridotto-io/w3-scaffold-utils@4.2.0-03e4f4a8.2
+  - @ridotto-io/w3-scaffold-vue@4.2.0-03e4f4a8.2
+  - @ridotto-io/w3-polyfills@4.2.0-03e4f4a8.2
+  - @ridotto-io/w3-scaffold@4.2.0-03e4f4a8.2
+  - @ridotto-io/w3-siwe@4.2.0-03e4f4a8.2
 
 ## 4.2.0-448f7f4.1
 
@@ -332,12 +332,12 @@
 ### Patch Changes
 
 - Updated dependencies []:
-  - @web3modal/scaffold@4.2.0-448f7f4.1
-  - @web3modal/siwe@4.2.0-448f7f4.1
-  - @web3modal/polyfills@4.2.0-448f7f4.1
-  - @web3modal/scaffold-react@4.2.0-448f7f4.1
-  - @web3modal/scaffold-utils@4.2.0-448f7f4.1
-  - @web3modal/scaffold-vue@4.2.0-448f7f4.1
+  - @ridotto-io/w3-scaffold@4.2.0-448f7f4.1
+  - @ridotto-io/w3-siwe@4.2.0-448f7f4.1
+  - @ridotto-io/w3-polyfills@4.2.0-448f7f4.1
+  - @ridotto-io/w3-scaffold-react@4.2.0-448f7f4.1
+  - @ridotto-io/w3-scaffold-utils@4.2.0-448f7f4.1
+  - @ridotto-io/w3-scaffold-vue@4.2.0-448f7f4.1
 
 ## 4.1.12-910a844.0
 
@@ -346,12 +346,12 @@
 - refactor: sync theme with secure site
 
 - Updated dependencies []:
-  - @web3modal/scaffold@4.1.12-910a844.0
-  - @web3modal/polyfills@4.1.12-910a844.0
-  - @web3modal/scaffold-react@4.1.12-910a844.0
-  - @web3modal/scaffold-utils@4.1.12-910a844.0
-  - @web3modal/scaffold-vue@4.1.12-910a844.0
-  - @web3modal/siwe@4.1.12-910a844.0
+  - @ridotto-io/w3-scaffold@4.1.12-910a844.0
+  - @ridotto-io/w3-polyfills@4.1.12-910a844.0
+  - @ridotto-io/w3-scaffold-react@4.1.12-910a844.0
+  - @ridotto-io/w3-scaffold-utils@4.1.12-910a844.0
+  - @ridotto-io/w3-scaffold-vue@4.1.12-910a844.0
+  - @ridotto-io/w3-siwe@4.1.12-910a844.0
 
 ## 4.1.11
 
@@ -363,12 +363,12 @@
 - feat: convert
 
 - Updated dependencies []:
-  - @web3modal/polyfills@4.1.11
-  - @web3modal/scaffold@4.1.11
-  - @web3modal/scaffold-react@4.1.11
-  - @web3modal/scaffold-utils@4.1.11
-  - @web3modal/scaffold-vue@4.1.11
-  - @web3modal/siwe@4.1.11
+  - @ridotto-io/w3-polyfills@4.1.11
+  - @ridotto-io/w3-scaffold@4.1.11
+  - @ridotto-io/w3-scaffold-react@4.1.11
+  - @ridotto-io/w3-scaffold-utils@4.1.11
+  - @ridotto-io/w3-scaffold-vue@4.1.11
+  - @ridotto-io/w3-siwe@4.1.11
 
 ## 5.0.11
 
@@ -377,12 +377,12 @@
 - Fix activity list styling issue
 
 - Updated dependencies []:
-  - @web3modal/scaffold@5.0.11
-  - @web3modal/polyfills@5.0.11
-  - @web3modal/scaffold-react@5.0.11
-  - @web3modal/scaffold-utils@5.0.11
-  - @web3modal/scaffold-vue@5.0.11
-  - @web3modal/siwe@5.0.11
+  - @ridotto-io/w3-scaffold@5.0.11
+  - @ridotto-io/w3-polyfills@5.0.11
+  - @ridotto-io/w3-scaffold-react@5.0.11
+  - @ridotto-io/w3-scaffold-utils@5.0.11
+  - @ridotto-io/w3-scaffold-vue@5.0.11
+  - @ridotto-io/w3-siwe@5.0.11
 
 ## 4.1.9
 
@@ -391,12 +391,12 @@
 - Blockchain API fix
 
 - Updated dependencies []:
-  - @web3modal/polyfills@4.1.9
-  - @web3modal/scaffold@4.1.9
-  - @web3modal/scaffold-react@4.1.9
-  - @web3modal/scaffold-utils@4.1.9
-  - @web3modal/scaffold-vue@4.1.9
-  - @web3modal/siwe@4.1.9
+  - @ridotto-io/w3-polyfills@4.1.9
+  - @ridotto-io/w3-scaffold@4.1.9
+  - @ridotto-io/w3-scaffold-react@4.1.9
+  - @ridotto-io/w3-scaffold-utils@4.1.9
+  - @ridotto-io/w3-scaffold-vue@4.1.9
+  - @ridotto-io/w3-siwe@4.1.9
 
 ## 4.1.8
 
@@ -405,12 +405,12 @@
 - Hotfix for redundant tokenbalance calls
 
 - Updated dependencies []:
-  - @web3modal/scaffold@4.1.8
-  - @web3modal/polyfills@4.1.8
-  - @web3modal/scaffold-react@4.1.8
-  - @web3modal/scaffold-utils@4.1.8
-  - @web3modal/scaffold-vue@4.1.8
-  - @web3modal/siwe@4.1.8
+  - @ridotto-io/w3-scaffold@4.1.8
+  - @ridotto-io/w3-polyfills@4.1.8
+  - @ridotto-io/w3-scaffold-react@4.1.8
+  - @ridotto-io/w3-scaffold-utils@4.1.8
+  - @ridotto-io/w3-scaffold-vue@4.1.8
+  - @ridotto-io/w3-siwe@4.1.8
 
 ## 4.1.7
 
@@ -419,12 +419,12 @@
 - Hotfix for inccorect state of w3m-button when email is enabled
 
 - Updated dependencies []:
-  - @web3modal/scaffold@4.1.7
-  - @web3modal/polyfills@4.1.7
-  - @web3modal/scaffold-react@4.1.7
-  - @web3modal/scaffold-utils@4.1.7
-  - @web3modal/scaffold-vue@4.1.7
-  - @web3modal/siwe@4.1.7
+  - @ridotto-io/w3-scaffold@4.1.7
+  - @ridotto-io/w3-polyfills@4.1.7
+  - @ridotto-io/w3-scaffold-react@4.1.7
+  - @ridotto-io/w3-scaffold-utils@4.1.7
+  - @ridotto-io/w3-scaffold-vue@4.1.7
+  - @ridotto-io/w3-siwe@4.1.7
 
 ## 4.1.6
 
@@ -433,12 +433,12 @@
 - Fix modal default height. Fix ethers email connection lag. Fix ethers + rc relay disconnect issue. Adds new wui-components for secure site.
 
 - Updated dependencies []:
-  - @web3modal/polyfills@4.1.6
-  - @web3modal/scaffold@4.1.6
-  - @web3modal/scaffold-react@4.1.6
-  - @web3modal/scaffold-utils@4.1.6
-  - @web3modal/scaffold-vue@4.1.6
-  - @web3modal/siwe@4.1.6
+  - @ridotto-io/w3-polyfills@4.1.6
+  - @ridotto-io/w3-scaffold@4.1.6
+  - @ridotto-io/w3-scaffold-react@4.1.6
+  - @ridotto-io/w3-scaffold-utils@4.1.6
+  - @ridotto-io/w3-scaffold-vue@4.1.6
+  - @ridotto-io/w3-siwe@4.1.6
 
 ## 4.1.6-a0733f5.0
 
@@ -447,9 +447,9 @@
 - chore: canary release for siwe dependency
 
 - Updated dependencies []:
-  - @web3modal/ethers@4.1.6-a0733f5.0
-  - @web3modal/siwe@4.1.6-a0733f5.0
-  - @web3modal/solana@4.1.6-a0733f5.0
+  - @ridotto-io/w3-ethers@4.1.6-a0733f5.0
+  - @ridotto-io/w3-siwe@4.1.6-a0733f5.0
+  - @ridotto-io/w3-solana@4.1.6-a0733f5.0
   - @ridotto-io/w3-wagmi@4.1.6-a0733f5.0
 
 ## 4.1.5
@@ -459,12 +459,12 @@
 - release: v4.1.5
 
 - Updated dependencies []:
-  - @web3modal/polyfills@4.1.5
-  - @web3modal/scaffold@4.1.5
-  - @web3modal/scaffold-react@4.1.5
-  - @web3modal/scaffold-utils@4.1.5
-  - @web3modal/scaffold-vue@4.1.5
-  - @web3modal/siwe@4.1.5
+  - @ridotto-io/w3-polyfills@4.1.5
+  - @ridotto-io/w3-scaffold@4.1.5
+  - @ridotto-io/w3-scaffold-react@4.1.5
+  - @ridotto-io/w3-scaffold-utils@4.1.5
+  - @ridotto-io/w3-scaffold-vue@4.1.5
+  - @ridotto-io/w3-siwe@4.1.5
 
 ## 4.1.5-93c81127.0
 
@@ -473,12 +473,12 @@
 - fix: polyfill process in wallet package
 
 - Updated dependencies []:
-  - @web3modal/polyfills@4.1.5-93c81127.0
-  - @web3modal/scaffold@4.1.5-93c81127.0
-  - @web3modal/scaffold-react@4.1.5-93c81127.0
-  - @web3modal/scaffold-utils@4.1.5-93c81127.0
-  - @web3modal/scaffold-vue@4.1.5-93c81127.0
-  - @web3modal/siwe@4.1.5-93c81127.0
+  - @ridotto-io/w3-polyfills@4.1.5-93c81127.0
+  - @ridotto-io/w3-scaffold@4.1.5-93c81127.0
+  - @ridotto-io/w3-scaffold-react@4.1.5-93c81127.0
+  - @ridotto-io/w3-scaffold-utils@4.1.5-93c81127.0
+  - @ridotto-io/w3-scaffold-vue@4.1.5-93c81127.0
+  - @ridotto-io/w3-siwe@4.1.5-93c81127.0
 
 ## 4.1.4
 
@@ -487,12 +487,12 @@
 - feat: wallet info hook
 
 - Updated dependencies []:
-  - @web3modal/scaffold-react@4.1.4
-  - @web3modal/scaffold-utils@4.1.4
-  - @web3modal/scaffold-vue@4.1.4
-  - @web3modal/polyfills@4.1.4
-  - @web3modal/scaffold@4.1.4
-  - @web3modal/siwe@4.1.4
+  - @ridotto-io/w3-scaffold-react@4.1.4
+  - @ridotto-io/w3-scaffold-utils@4.1.4
+  - @ridotto-io/w3-scaffold-vue@4.1.4
+  - @ridotto-io/w3-polyfills@4.1.4
+  - @ridotto-io/w3-scaffold@4.1.4
+  - @ridotto-io/w3-siwe@4.1.4
 
 ## 4.1.3
 
@@ -503,12 +503,12 @@
 - feat: reset version to 4.1.3
 
 - Updated dependencies []:
-  - @web3modal/polyfills@4.1.3
-  - @web3modal/scaffold@4.1.3
-  - @web3modal/scaffold-react@4.1.3
-  - @web3modal/scaffold-utils@4.1.3
-  - @web3modal/scaffold-vue@4.1.3
-  - @web3modal/siwe@4.1.3
+  - @ridotto-io/w3-polyfills@4.1.3
+  - @ridotto-io/w3-scaffold@4.1.3
+  - @ridotto-io/w3-scaffold-react@4.1.3
+  - @ridotto-io/w3-scaffold-utils@4.1.3
+  - @ridotto-io/w3-scaffold-vue@4.1.3
+  - @ridotto-io/w3-siwe@4.1.3
 
 ## 4.1.3-5f2ae345.1
 
@@ -517,12 +517,12 @@
 - canary: test imports
 
 - Updated dependencies []:
-  - @web3modal/scaffold-react@4.1.3-5f2ae345.1
-  - @web3modal/scaffold-utils@4.1.3-5f2ae345.1
-  - @web3modal/scaffold-vue@4.1.3-5f2ae345.1
-  - @web3modal/polyfills@4.1.3-5f2ae345.1
-  - @web3modal/scaffold@4.1.3-5f2ae345.1
-  - @web3modal/siwe@4.1.3-5f2ae345.1
+  - @ridotto-io/w3-scaffold-react@4.1.3-5f2ae345.1
+  - @ridotto-io/w3-scaffold-utils@4.1.3-5f2ae345.1
+  - @ridotto-io/w3-scaffold-vue@4.1.3-5f2ae345.1
+  - @ridotto-io/w3-polyfills@4.1.3-5f2ae345.1
+  - @ridotto-io/w3-scaffold@4.1.3-5f2ae345.1
+  - @ridotto-io/w3-siwe@4.1.3-5f2ae345.1
 
 ## 4.1.3-8e039e.0
 
@@ -531,12 +531,12 @@
 - feat: update optional dependencies
 
 - Updated dependencies []:
-  - @web3modal/scaffold-react@4.1.3-8e039e.0
-  - @web3modal/scaffold-utils@4.1.3-8e039e.0
-  - @web3modal/scaffold-vue@4.1.3-8e039e.0
-  - @web3modal/polyfills@4.1.3-8e039e.0
-  - @web3modal/scaffold@4.1.3-8e039e.0
-  - @web3modal/siwe@4.1.3-8e039e.0
+  - @ridotto-io/w3-scaffold-react@4.1.3-8e039e.0
+  - @ridotto-io/w3-scaffold-utils@4.1.3-8e039e.0
+  - @ridotto-io/w3-scaffold-vue@4.1.3-8e039e.0
+  - @ridotto-io/w3-polyfills@4.1.3-8e039e.0
+  - @ridotto-io/w3-scaffold@4.1.3-8e039e.0
+  - @ridotto-io/w3-siwe@4.1.3-8e039e.0
 
 ## 4.1.2
 
@@ -545,7 +545,7 @@
 - 4.1.2 release
 
 - Updated dependencies []:
-  - @web3modal/polyfills@4.1.2 - @web3modal/scaffold@4.1.2 - @web3modal/scaffold-react@4.1.2 - @web3modal/scaffold-utils@4.1.2 - @web3modal/scaffold-vue@4.1.2 - @web3modal/siwe@4.1.2
+  - @ridotto-io/w3-polyfills@4.1.2 - @ridotto-io/w3-scaffold@4.1.2 - @ridotto-io/w3-scaffold-react@4.1.2 - @ridotto-io/w3-scaffold-utils@4.1.2 - @ridotto-io/w3-scaffold-vue@4.1.2 - @ridotto-io/w3-siwe@4.1.2
 
 ## 4.2.0-4b5257b4.1
 
@@ -560,12 +560,12 @@
 ### Patch Changes
 
 - Updated dependencies [[`1b90376`](https://github.com/WalletConnect/web3modal/commit/1b903765a675f0f1b9ea0a44bcf84e2dad6b4436), [`729313f`](https://github.com/WalletConnect/web3modal/commit/729313fe9dfb402ca694cbd77f49cc61895e2d07)]:
-  - @web3modal/scaffold-utils@4.2.0-4b5257b4.1
-  - @web3modal/scaffold@4.2.0-4b5257b4.1
-  - @web3modal/polyfills@4.2.0-4b5257b4.1
-  - @web3modal/scaffold-react@4.2.0-4b5257b4.1
-  - @web3modal/scaffold-vue@4.2.0-4b5257b4.1
-  - @web3modal/siwe@4.2.0-4b5257b4.1
+  - @ridotto-io/w3-scaffold-utils@4.2.0-4b5257b4.1
+  - @ridotto-io/w3-scaffold@4.2.0-4b5257b4.1
+  - @ridotto-io/w3-polyfills@4.2.0-4b5257b4.1
+  - @ridotto-io/w3-scaffold-react@4.2.0-4b5257b4.1
+  - @ridotto-io/w3-scaffold-vue@4.2.0-4b5257b4.1
+  - @ridotto-io/w3-siwe@4.2.0-4b5257b4.1
 
 ## 4.2.0-dbbd8c44.0
 
@@ -577,7 +577,7 @@
 
 - Updated dependencies []:
   - @ridotto-io/w3-ui@4.2.0-dbbd8c44.0
-  - @web3modal/common@4.2.0-dbbd8c44.0
+  - @ridotto-io/w3-common@4.2.0-dbbd8c44.0
 
 ## 4.2.0-500a38.0
 
@@ -588,12 +588,12 @@
 ### Patch Changes
 
 - Updated dependencies []:
-  - @web3modal/scaffold-utils@4.2.0-500a38.0
-  - @web3modal/scaffold@4.2.0-500a38.0
-  - @web3modal/polyfills@4.2.0-500a38.0
-  - @web3modal/scaffold-react@4.2.0-500a38.0
-  - @web3modal/scaffold-vue@4.2.0-500a38.0
-  - @web3modal/siwe@4.2.0-500a38.0
+  - @ridotto-io/w3-scaffold-utils@4.2.0-500a38.0
+  - @ridotto-io/w3-scaffold@4.2.0-500a38.0
+  - @ridotto-io/w3-polyfills@4.2.0-500a38.0
+  - @ridotto-io/w3-scaffold-react@4.2.0-500a38.0
+  - @ridotto-io/w3-scaffold-vue@4.2.0-500a38.0
+  - @ridotto-io/w3-siwe@4.2.0-500a38.0
 
 ## 4.1.1
 
@@ -602,12 +602,12 @@
 - Fix siwe version
 
 - Updated dependencies []:
-  - @web3modal/scaffold@4.1.1
-  - @web3modal/siwe@4.1.1
-  - @web3modal/polyfills@4.1.1
-  - @web3modal/scaffold-react@4.1.1
-  - @web3modal/scaffold-utils@4.1.1
-  - @web3modal/scaffold-vue@4.1.1
+  - @ridotto-io/w3-scaffold@4.1.1
+  - @ridotto-io/w3-siwe@4.1.1
+  - @ridotto-io/w3-polyfills@4.1.1
+  - @ridotto-io/w3-scaffold-react@4.1.1
+  - @ridotto-io/w3-scaffold-utils@4.1.1
+  - @ridotto-io/w3-scaffold-vue@4.1.1
 
 ## 4.1.0
 
@@ -618,12 +618,12 @@
 ### Patch Changes
 
 - Updated dependencies []:
-  - @web3modal/scaffold@4.1.0
-  - @web3modal/polyfills@4.1.0
-  - @web3modal/scaffold-react@4.1.0
-  - @web3modal/scaffold-utils@4.1.0
-  - @web3modal/scaffold-vue@4.1.0
-  - @web3modal/siwe@4.1.0
+  - @ridotto-io/w3-scaffold@4.1.0
+  - @ridotto-io/w3-polyfills@4.1.0
+  - @ridotto-io/w3-scaffold-react@4.1.0
+  - @ridotto-io/w3-scaffold-utils@4.1.0
+  - @ridotto-io/w3-scaffold-vue@4.1.0
+  - @ridotto-io/w3-siwe@4.1.0
 
 ## 4.0.13
 
@@ -632,12 +632,12 @@
 - Fix secure site url
 
 - Updated dependencies []:
-  - @web3modal/polyfills@4.0.13
-  - @web3modal/scaffold@4.0.13
-  - @web3modal/scaffold-react@4.0.13
-  - @web3modal/scaffold-utils@4.0.13
-  - @web3modal/scaffold-vue@4.0.13
-  - @web3modal/siwe@4.0.13
+  - @ridotto-io/w3-polyfills@4.0.13
+  - @ridotto-io/w3-scaffold@4.0.13
+  - @ridotto-io/w3-scaffold-react@4.0.13
+  - @ridotto-io/w3-scaffold-utils@4.0.13
+  - @ridotto-io/w3-scaffold-vue@4.0.13
+  - @ridotto-io/w3-siwe@4.0.13
 
 ## 4.0.12
 
@@ -648,12 +648,12 @@
 - Smart Account initialization and feature flag
 
 - Updated dependencies [[`95b35e1`](https://github.com/WalletConnect/web3modal/commit/95b35e1ebaf261a56a29cd9254d85b7c1430bfc0)]:
-  - @web3modal/scaffold@4.0.12
-  - @web3modal/polyfills@4.0.12
-  - @web3modal/scaffold-react@4.0.12
-  - @web3modal/scaffold-utils@4.0.12
-  - @web3modal/scaffold-vue@4.0.12
-  - @web3modal/siwe@4.0.12
+  - @ridotto-io/w3-scaffold@4.0.12
+  - @ridotto-io/w3-polyfills@4.0.12
+  - @ridotto-io/w3-scaffold-react@4.0.12
+  - @ridotto-io/w3-scaffold-utils@4.0.12
+  - @ridotto-io/w3-scaffold-vue@4.0.12
+  - @ridotto-io/w3-siwe@4.0.12
 
 ## 4.0.12-0c59f84f.0
 
@@ -662,12 +662,12 @@
 - Smart Account RPC handler canary
 
 - Updated dependencies []:
-  - @web3modal/scaffold@4.0.12-0c59f84f.0
-  - @web3modal/polyfills@4.0.12-0c59f84f.0
-  - @web3modal/scaffold-react@4.0.12-0c59f84f.0
-  - @web3modal/scaffold-utils@4.0.12-0c59f84f.0
-  - @web3modal/scaffold-vue@4.0.12-0c59f84f.0
-  - @web3modal/siwe@4.0.12-0c59f84f.0
+  - @ridotto-io/w3-scaffold@4.0.12-0c59f84f.0
+  - @ridotto-io/w3-polyfills@4.0.12-0c59f84f.0
+  - @ridotto-io/w3-scaffold-react@4.0.12-0c59f84f.0
+  - @ridotto-io/w3-scaffold-utils@4.0.12-0c59f84f.0
+  - @ridotto-io/w3-scaffold-vue@4.0.12-0c59f84f.0
+  - @ridotto-io/w3-siwe@4.0.12-0c59f84f.0
 
 ## 4.0.11
 
@@ -676,12 +676,12 @@
 - Analytics connection event improvements. Unsupported chain flag. Siwe package refactor. RPC improvements. UI improvements'
 
 - Updated dependencies []:
-  - @web3modal/polyfills@4.0.11
-  - @web3modal/scaffold@4.0.11
-  - @web3modal/scaffold-react@4.0.11
-  - @web3modal/scaffold-utils@4.0.11
-  - @web3modal/scaffold-vue@4.0.11
-  - @web3modal/siwe@4.0.11
+  - @ridotto-io/w3-polyfills@4.0.11
+  - @ridotto-io/w3-scaffold@4.0.11
+  - @ridotto-io/w3-scaffold-react@4.0.11
+  - @ridotto-io/w3-scaffold-utils@4.0.11
+  - @ridotto-io/w3-scaffold-vue@4.0.11
+  - @ridotto-io/w3-siwe@4.0.11
 
 ## 4.0.10
 
@@ -690,12 +690,12 @@
 - Add error state to wui-chip composite
 
 - Updated dependencies []:
-  - @web3modal/polyfills@4.0.10
-  - @web3modal/scaffold@4.0.10
-  - @web3modal/scaffold-react@4.0.10
-  - @web3modal/scaffold-utils@4.0.10
-  - @web3modal/scaffold-vue@4.0.10
-  - @web3modal/siwe@4.0.10
+  - @ridotto-io/w3-polyfills@4.0.10
+  - @ridotto-io/w3-scaffold@4.0.10
+  - @ridotto-io/w3-scaffold-react@4.0.10
+  - @ridotto-io/w3-scaffold-utils@4.0.10
+  - @ridotto-io/w3-scaffold-vue@4.0.10
+  - @ridotto-io/w3-siwe@4.0.10
 
 ## 4.0.9
 
@@ -704,12 +704,12 @@
 - Add all rpc methods + auto reject when modal closes
 
 - Updated dependencies []:
-  - @web3modal/polyfills@4.0.9
-  - @web3modal/scaffold@4.0.9
-  - @web3modal/scaffold-react@4.0.9
-  - @web3modal/scaffold-utils@4.0.9
-  - @web3modal/scaffold-vue@4.0.9
-  - @web3modal/siwe@4.0.9
+  - @ridotto-io/w3-polyfills@4.0.9
+  - @ridotto-io/w3-scaffold@4.0.9
+  - @ridotto-io/w3-scaffold-react@4.0.9
+  - @ridotto-io/w3-scaffold-utils@4.0.9
+  - @ridotto-io/w3-scaffold-vue@4.0.9
+  - @ridotto-io/w3-siwe@4.0.9
 
 ## 4.0.8
 
@@ -718,12 +718,12 @@
 - [#1954](https://github.com/WalletConnect/web3modal/pull/1954) [`c3366e7`](https://github.com/WalletConnect/web3modal/commit/c3366e7211dba2f5c6d3377c9d9a77da5a52c0d8) Thanks [@tomiir](https://github.com/tomiir)! - Add support for eth_getBlockByNumber
 
 - Updated dependencies [[`c3366e7`](https://github.com/WalletConnect/web3modal/commit/c3366e7211dba2f5c6d3377c9d9a77da5a52c0d8)]:
-  - @web3modal/polyfills@4.0.8
-  - @web3modal/scaffold@4.0.8
-  - @web3modal/scaffold-react@4.0.8
-  - @web3modal/scaffold-utils@4.0.8
-  - @web3modal/scaffold-vue@4.0.8
-  - @web3modal/siwe@4.0.8
+  - @ridotto-io/w3-polyfills@4.0.8
+  - @ridotto-io/w3-scaffold@4.0.8
+  - @ridotto-io/w3-scaffold-react@4.0.8
+  - @ridotto-io/w3-scaffold-utils@4.0.8
+  - @ridotto-io/w3-scaffold-vue@4.0.8
+  - @ridotto-io/w3-siwe@4.0.8
 
 ## 4.0.8-f1845392.0
 
@@ -732,12 +732,12 @@
 - [#1954](https://github.com/WalletConnect/web3modal/pull/1954) [`4755109`](https://github.com/WalletConnect/web3modal/commit/475510962a92ea9f4388db1d08c979d99da18e54) Thanks [@tomiir](https://github.com/tomiir)! - Add support for eth_getBlockByNumber
 
 - Updated dependencies [[`4755109`](https://github.com/WalletConnect/web3modal/commit/475510962a92ea9f4388db1d08c979d99da18e54)]:
-  - @web3modal/polyfills@4.0.8-f1845392.0
-  - @web3modal/scaffold@4.0.8-f1845392.0
-  - @web3modal/scaffold-react@4.0.8-f1845392.0
-  - @web3modal/scaffold-utils@4.0.8-f1845392.0
-  - @web3modal/scaffold-vue@4.0.8-f1845392.0
-  - @web3modal/siwe@4.0.8-f1845392.0
+  - @ridotto-io/w3-polyfills@4.0.8-f1845392.0
+  - @ridotto-io/w3-scaffold@4.0.8-f1845392.0
+  - @ridotto-io/w3-scaffold-react@4.0.8-f1845392.0
+  - @ridotto-io/w3-scaffold-utils@4.0.8-f1845392.0
+  - @ridotto-io/w3-scaffold-vue@4.0.8-f1845392.0
+  - @ridotto-io/w3-siwe@4.0.8-f1845392.0
 
 ## 4.0.7
 
@@ -746,12 +746,12 @@
 - Add eth_getBalance to list of allowed methods
 
 - Updated dependencies []:
-  - @web3modal/polyfills@4.0.7
-  - @web3modal/scaffold@4.0.7
-  - @web3modal/scaffold-react@4.0.7
-  - @web3modal/scaffold-utils@4.0.7
-  - @web3modal/scaffold-vue@4.0.7
-  - @web3modal/siwe@4.0.7
+  - @ridotto-io/w3-polyfills@4.0.7
+  - @ridotto-io/w3-scaffold@4.0.7
+  - @ridotto-io/w3-scaffold-react@4.0.7
+  - @ridotto-io/w3-scaffold-utils@4.0.7
+  - @ridotto-io/w3-scaffold-vue@4.0.7
+  - @ridotto-io/w3-siwe@4.0.7
 
 ## 4.0.6
 
@@ -760,12 +760,12 @@
 - Email stability fixes
 
 - Updated dependencies []:
-  - @web3modal/polyfills@4.0.6
-  - @web3modal/scaffold@4.0.6
-  - @web3modal/scaffold-react@4.0.6
-  - @web3modal/scaffold-utils@4.0.6
-  - @web3modal/scaffold-vue@4.0.6
-  - @web3modal/siwe@4.0.6
+  - @ridotto-io/w3-polyfills@4.0.6
+  - @ridotto-io/w3-scaffold@4.0.6
+  - @ridotto-io/w3-scaffold-react@4.0.6
+  - @ridotto-io/w3-scaffold-utils@4.0.6
+  - @ridotto-io/w3-scaffold-vue@4.0.6
+  - @ridotto-io/w3-siwe@4.0.6
 
 ## 4.0.5
 
@@ -774,12 +774,12 @@
 - [#1917](https://github.com/WalletConnect/web3modal/pull/1917) [`f79566c`](https://github.com/WalletConnect/web3modal/commit/f79566ca5119fa12795dd49fce01aea8e1a05d97) Thanks [@tomiir](https://github.com/tomiir)! - Replaces public url with blockchain api for supported networks
 
 - Updated dependencies [[`f79566c`](https://github.com/WalletConnect/web3modal/commit/f79566ca5119fa12795dd49fce01aea8e1a05d97)]:
-  - @web3modal/polyfills@4.0.5
-  - @web3modal/scaffold@4.0.5
-  - @web3modal/scaffold-react@4.0.5
-  - @web3modal/scaffold-utils@4.0.5
-  - @web3modal/scaffold-vue@4.0.5
-  - @web3modal/siwe@4.0.5
+  - @ridotto-io/w3-polyfills@4.0.5
+  - @ridotto-io/w3-scaffold@4.0.5
+  - @ridotto-io/w3-scaffold-react@4.0.5
+  - @ridotto-io/w3-scaffold-utils@4.0.5
+  - @ridotto-io/w3-scaffold-vue@4.0.5
+  - @ridotto-io/w3-siwe@4.0.5
 
 ## 4.0.4
 
@@ -788,12 +788,12 @@
 - Fix theming issue for email
 
 - Updated dependencies []:
-  - @web3modal/scaffold@4.0.4
-  - @web3modal/polyfills@4.0.4
-  - @web3modal/scaffold-react@4.0.4
-  - @web3modal/scaffold-utils@4.0.4
-  - @web3modal/scaffold-vue@4.0.4
-  - @web3modal/siwe@4.0.4
+  - @ridotto-io/w3-scaffold@4.0.4
+  - @ridotto-io/w3-polyfills@4.0.4
+  - @ridotto-io/w3-scaffold-react@4.0.4
+  - @ridotto-io/w3-scaffold-utils@4.0.4
+  - @ridotto-io/w3-scaffold-vue@4.0.4
+  - @ridotto-io/w3-siwe@4.0.4
 
 ## 4.0.3
 
@@ -802,12 +802,12 @@
 - Tag email beta, Sync Theme For Secure Wallet, Use manual version in constants
 
 - Updated dependencies []:
-  - @web3modal/scaffold-utils@4.0.3
-  - @web3modal/scaffold@4.0.3
-  - @web3modal/polyfills@4.0.3
-  - @web3modal/scaffold-react@4.0.3
-  - @web3modal/scaffold-vue@4.0.3
-  - @web3modal/siwe@4.0.3
+  - @ridotto-io/w3-scaffold-utils@4.0.3
+  - @ridotto-io/w3-scaffold@4.0.3
+  - @ridotto-io/w3-polyfills@4.0.3
+  - @ridotto-io/w3-scaffold-react@4.0.3
+  - @ridotto-io/w3-scaffold-vue@4.0.3
+  - @ridotto-io/w3-siwe@4.0.3
 
 ## 4.0.2
 
@@ -816,12 +816,12 @@
 - [#1899](https://github.com/WalletConnect/web3modal/pull/1899) [`42e97a0`](https://github.com/WalletConnect/web3modal/commit/42e97a04eb60090a821019ae80d62acacf35fc66) Thanks [@xzilja](https://github.com/xzilja)! - Reverted change that removed email update flow from account view
 
 - Updated dependencies [[`42e97a0`](https://github.com/WalletConnect/web3modal/commit/42e97a04eb60090a821019ae80d62acacf35fc66)]:
-  - @web3modal/polyfills@4.0.2
-  - @web3modal/scaffold@4.0.2
-  - @web3modal/scaffold-react@4.0.2
-  - @web3modal/scaffold-utils@4.0.2
-  - @web3modal/scaffold-vue@4.0.2
-  - @web3modal/siwe@4.0.2
+  - @ridotto-io/w3-polyfills@4.0.2
+  - @ridotto-io/w3-scaffold@4.0.2
+  - @ridotto-io/w3-scaffold-react@4.0.2
+  - @ridotto-io/w3-scaffold-utils@4.0.2
+  - @ridotto-io/w3-scaffold-vue@4.0.2
+  - @ridotto-io/w3-siwe@4.0.2
 
 ## 4.0.1
 
@@ -830,9 +830,9 @@
 - [#1879](https://github.com/WalletConnect/web3modal/pull/1879) [`e3fa353`](https://github.com/WalletConnect/web3modal/commit/e3fa35396e3d2b1153d12bfaf92738bc67b46640) Thanks [@svenvoskamp](https://github.com/svenvoskamp)! - Fix various issues on ethers/ethers5 package
 
 - Updated dependencies [[`e3fa353`](https://github.com/WalletConnect/web3modal/commit/e3fa35396e3d2b1153d12bfaf92738bc67b46640)]:
-  - @web3modal/polyfills@4.0.1
-  - @web3modal/scaffold@4.0.1
-  - @web3modal/scaffold-react@4.0.1
-  - @web3modal/scaffold-utils@4.0.1
-  - @web3modal/scaffold-vue@4.0.1
-  - @web3modal/siwe@4.0.1
+  - @ridotto-io/w3-polyfills@4.0.1
+  - @ridotto-io/w3-scaffold@4.0.1
+  - @ridotto-io/w3-scaffold-react@4.0.1
+  - @ridotto-io/w3-scaffold-utils@4.0.1
+  - @ridotto-io/w3-scaffold-vue@4.0.1
+  - @ridotto-io/w3-siwe@4.0.1

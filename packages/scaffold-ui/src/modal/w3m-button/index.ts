@@ -1,4 +1,4 @@
-import { AccountController, ModalController } from '@web3modal/core'
+import { AccountController, ModalController } from '@ridotto-io/w3-core'
 import { customElement } from '@ridotto-io/w3-ui'
 import { LitElement, html } from 'lit'
 import { property, state } from 'lit/decorators.js'

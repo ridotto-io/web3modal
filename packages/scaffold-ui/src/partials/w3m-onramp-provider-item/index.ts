@@ -3,7 +3,7 @@ import { property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import { customElement } from '@ridotto-io/w3-ui'
 import type { ColorType } from '@ridotto-io/w3-ui/src/utils/TypeUtil.js'
-import { AssetUtil, NetworkController, type OnRampProvider } from '@web3modal/core'
+import { AssetUtil, NetworkController, type OnRampProvider } from '@ridotto-io/w3-core'
 import styles from './styles.js'
 
 @customElement('w3m-onramp-provider-item')

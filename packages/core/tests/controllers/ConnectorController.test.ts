@@ -7,7 +7,7 @@ import {
   type ThemeMode,
   type ThemeVariables
 } from '../../index.js'
-import { ConstantsUtil, getW3mThemeVariables } from '@web3modal/common'
+import { ConstantsUtil, getW3mThemeVariables } from '@ridotto-io/w3-common'
 
 // -- Setup --------------------------------------------------------------------
 const authProvider = {

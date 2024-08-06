@@ -17,8 +17,8 @@
   },
   "dependencies": {
     "@walletconnect/logger": "2.1.2",
-    "@web3modal/common": "workspace:*",
-    "@web3modal/polyfills": "workspace:*",
+    "@ridotto-io/w3-common": "workspace:*",
+    "@ridotto-io/w3-polyfills": "workspace:*",
     "zod": "3.22.4"
   },
   "keywords": [

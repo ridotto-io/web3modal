@@ -1,6 +1,6 @@
 import base58 from 'bs58'
 import { PublicKey, Transaction, VersionedTransaction } from '@solana/web3.js'
-import { OptionsController } from '@web3modal/core'
+import { OptionsController } from '@ridotto-io/w3-core'
 
 import { SolStoreUtil } from '../utils/scaffold/index.js'
 import { UniversalProviderFactory } from './universalProvider.js'

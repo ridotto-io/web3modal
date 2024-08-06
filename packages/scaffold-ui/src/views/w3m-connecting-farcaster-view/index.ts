@@ -8,7 +8,7 @@ import {
   SnackController,
   StorageUtil,
   ThemeController
-} from '@web3modal/core'
+} from '@ridotto-io/w3-core'
 import { customElement } from '@ridotto-io/w3-ui'
 import { LitElement, html } from 'lit'
 import { state } from 'lit/decorators.js'

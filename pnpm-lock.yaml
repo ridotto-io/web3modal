@@ -132,7 +132,7 @@ importers:
 
   apps/gallery:
     dependencies:
-      '@web3modal/common':
+      '@ridotto-io/w3-common':
         specifier: workspace:*
         version: link:../../packages/common
       '@ridotto-io/w3-ui':
@@ -211,13 +211,13 @@ importers:
       '@walletconnect/utils':
         specifier: 2.14.0
         version: 2.14.0
-      '@web3modal/ethers':
+      '@ridotto-io/w3-ethers':
         specifier: workspace:*
         version: link:../../packages/ethers
-      '@web3modal/siwe':
+      '@ridotto-io/w3-siwe':
         specifier: workspace:*
         version: link:../../packages/siwe
-      '@web3modal/solana':
+      '@ridotto-io/w3-solana':
         specifier: workspace:*
         version: link:../../packages/solana
       '@ridotto-io/w3-wagmi':
@@ -287,7 +287,7 @@ importers:
 
   examples/html-ethers5:
     dependencies:
-      '@web3modal/ethers5':
+      '@ridotto-io/w3-ethers5':
         specifier: workspace:*
         version: link:../../packages/ethers5
       ethers:
@@ -368,7 +368,7 @@ importers:
 
   examples/react-ethers:
     dependencies:
-      '@web3modal/ethers':
+      '@ridotto-io/w3-ethers':
         specifier: workspace:*
         version: link:../../packages/ethers
       ethers:
@@ -396,7 +396,7 @@ importers:
 
   examples/react-ethers5:
     dependencies:
-      '@web3modal/ethers5':
+      '@ridotto-io/w3-ethers5':
         specifier: workspace:*
         version: link:../../packages/ethers5
       ethers:
@@ -433,7 +433,7 @@ importers:
       '@tanstack/react-query':
         specifier: 5.24.8
         version: 5.24.8(react@18.2.0)
-      '@web3modal/solana':
+      '@ridotto-io/w3-solana':
         specifier: workspace:*
         version: link:../../packages/solana
       react:
@@ -492,7 +492,7 @@ importers:
 
   examples/vue-ethers5:
     dependencies:
-      '@web3modal/ethers5':
+      '@ridotto-io/w3-ethers5':
         specifier: workspace:*
         version: link:../../packages/ethers5
       ethers:
@@ -517,7 +517,7 @@ importers:
       '@solana/wallet-adapter-wallets':
         specifier: 0.19.32
         version: 0.19.32(@babel/core@7.25.2)(@babel/runtime@7.25.0)(@sentry/types@7.92.0)(@solana/web3.js@1.91.7(bufferutil@4.0.8)(utf-8-validate@5.0.10))(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(tslib@2.6.3)(utf-8-validate@5.0.10)
-      '@web3modal/solana':
+      '@ridotto-io/w3-solana':
         specifier: workspace:*
         version: link:../../packages/solana
       vue:
@@ -561,7 +561,7 @@ importers:
       '@wagmi/core':
         specifier: 2.11.6
         version: 2.11.6(@tanstack/query-core@5.24.8)(@types/react@18.2.62)(bufferutil@4.0.8)(react@18.2.0)(typescript@5.3.3)(utf-8-validate@5.0.10)(viem@2.17.8(bufferutil@4.0.8)(typescript@5.3.3)(utf-8-validate@5.0.10)(zod@3.22.4))(zod@3.22.4)
-      '@web3modal/ethers':
+      '@ridotto-io/w3-ethers':
         specifier: workspace:*
         version: link:../ethers
       '@ridotto-io/w3-wagmi':
@@ -592,7 +592,7 @@ importers:
 
   packages/core:
     dependencies:
-      '@web3modal/common':
+      '@ridotto-io/w3-common':
         specifier: workspace:*
         version: link:../common
       '@ridotto-io/w3-wallet':
@@ -620,25 +620,25 @@ importers:
       '@walletconnect/utils':
         specifier: 2.14.0
         version: 2.14.0
-      '@web3modal/common':
+      '@ridotto-io/w3-common':
         specifier: workspace:*
         version: link:../common
-      '@web3modal/polyfills':
+      '@ridotto-io/w3-polyfills':
         specifier: workspace:*
         version: link:../polyfills
-      '@web3modal/scaffold':
+      '@ridotto-io/w3-scaffold':
         specifier: workspace:*
         version: link:../scaffold
-      '@web3modal/scaffold-react':
+      '@ridotto-io/w3-scaffold-react':
         specifier: workspace:*
         version: link:../scaffold-react
-      '@web3modal/scaffold-utils':
+      '@ridotto-io/w3-scaffold-utils':
         specifier: workspace:*
         version: link:../scaffold-utils
-      '@web3modal/scaffold-vue':
+      '@ridotto-io/w3-scaffold-vue':
         specifier: workspace:*
         version: link:../scaffold-vue
-      '@web3modal/siwe':
+      '@ridotto-io/w3-siwe':
         specifier: workspace:*
         version: link:../siwe
       '@ridotto-io/w3-wallet':
@@ -672,25 +672,25 @@ importers:
       '@walletconnect/utils':
         specifier: 2.14.0
         version: 2.14.0
-      '@web3modal/common':
+      '@ridotto-io/w3-common':
         specifier: workspace:*
         version: link:../common
-      '@web3modal/polyfills':
+      '@ridotto-io/w3-polyfills':
         specifier: workspace:*
         version: link:../polyfills
-      '@web3modal/scaffold':
+      '@ridotto-io/w3-scaffold':
         specifier: workspace:*
         version: link:../scaffold
-      '@web3modal/scaffold-react':
+      '@ridotto-io/w3-scaffold-react':
         specifier: workspace:*
         version: link:../scaffold-react
-      '@web3modal/scaffold-utils':
+      '@ridotto-io/w3-scaffold-utils':
         specifier: workspace:*
         version: link:../scaffold-utils
-      '@web3modal/scaffold-vue':
+      '@ridotto-io/w3-scaffold-vue':
         specifier: workspace:*
         version: link:../scaffold-vue
-      '@web3modal/siwe':
+      '@ridotto-io/w3-siwe':
         specifier: workspace:*
         version: link:../siwe
       valtio:
@@ -722,19 +722,19 @@ importers:
 
   packages/scaffold:
     dependencies:
-      '@web3modal/common':
+      '@ridotto-io/w3-common':
         specifier: workspace:*
         version: link:../common
-      '@web3modal/core':
+      '@ridotto-io/w3-core':
         specifier: workspace:*
         version: link:../core
-      '@web3modal/scaffold-ui':
+      '@ridotto-io/w3-scaffold-ui':
         specifier: workspace:*
         version: link:../scaffold-ui
-      '@web3modal/scaffold-utils':
+      '@ridotto-io/w3-scaffold-utils':
         specifier: workspace:*
         version: link:../scaffold-utils
-      '@web3modal/siwe':
+      '@ridotto-io/w3-siwe':
         specifier: workspace:*
         version: link:../siwe
       '@ridotto-io/w3-ui':
@@ -749,7 +749,7 @@ importers:
 
   packages/scaffold-react:
     dependencies:
-      '@web3modal/scaffold':
+      '@ridotto-io/w3-scaffold':
         specifier: workspace:*
         version: link:../scaffold
     devDependencies:
@@ -768,16 +768,16 @@ importers:
 
   packages/scaffold-ui:
     dependencies:
-      '@web3modal/common':
+      '@ridotto-io/w3-common':
         specifier: workspace:*
         version: link:../common
-      '@web3modal/core':
+      '@ridotto-io/w3-core':
         specifier: workspace:*
         version: link:../core
-      '@web3modal/scaffold-utils':
+      '@ridotto-io/w3-scaffold-utils':
         specifier: workspace:*
         version: link:../scaffold-utils
-      '@web3modal/siwe':
+      '@ridotto-io/w3-siwe':
         specifier: workspace:*
         version: link:../siwe
       '@ridotto-io/w3-ui':
@@ -795,10 +795,10 @@ importers:
       '@coinbase/wallet-sdk':
         specifier: 4.0.3
         version: 4.0.3
-      '@web3modal/core':
+      '@ridotto-io/w3-core':
         specifier: workspace:*
         version: link:../core
-      '@web3modal/polyfills':
+      '@ridotto-io/w3-polyfills':
         specifier: workspace:*
         version: link:../polyfills
       '@ridotto-io/w3-wallet':
@@ -810,10 +810,10 @@ importers:
 
   packages/scaffold-vue:
     dependencies:
-      '@web3modal/core':
+      '@ridotto-io/w3-core':
         specifier: workspace:*
         version: link:../core
-      '@web3modal/scaffold':
+      '@ridotto-io/w3-scaffold':
         specifier: workspace:*
         version: link:../scaffold
     devDependencies:
@@ -829,13 +829,13 @@ importers:
       '@walletconnect/utils':
         specifier: 2.12.0
         version: 2.12.0
-      '@web3modal/common':
+      '@ridotto-io/w3-common':
         specifier: workspace:*
         version: link:../common
-      '@web3modal/core':
+      '@ridotto-io/w3-core':
         specifier: workspace:*
         version: link:../core
-      '@web3modal/scaffold-utils':
+      '@ridotto-io/w3-scaffold-utils':
         specifier: workspace:*
         version: link:../scaffold-utils
       '@ridotto-io/w3-ui':
@@ -883,25 +883,25 @@ importers:
       '@walletconnect/universal-provider':
         specifier: 2.14.0
         version: 2.14.0(bufferutil@4.0.8)(utf-8-validate@5.0.10)
-      '@web3modal/common':
+      '@ridotto-io/w3-common':
         specifier: workspace:*
         version: link:../common
-      '@web3modal/core':
+      '@ridotto-io/w3-core':
         specifier: workspace:*
         version: link:../core
-      '@web3modal/polyfills':
+      '@ridotto-io/w3-polyfills':
         specifier: workspace:*
         version: link:../polyfills
-      '@web3modal/scaffold':
+      '@ridotto-io/w3-scaffold':
         specifier: workspace:*
         version: link:../scaffold
-      '@web3modal/scaffold-react':
+      '@ridotto-io/w3-scaffold-react':
         specifier: workspace:*
         version: link:../scaffold-react
-      '@web3modal/scaffold-utils':
+      '@ridotto-io/w3-scaffold-utils':
         specifier: workspace:*
         version: link:../scaffold-utils
-      '@web3modal/scaffold-vue':
+      '@ridotto-io/w3-scaffold-vue':
         specifier: workspace:*
         version: link:../scaffold-vue
       '@ridotto-io/w3-wallet':
@@ -951,10 +951,10 @@ importers:
       '@types/qrcode':
         specifier: 1.5.5
         version: 1.5.5
-      '@web3modal/common':
+      '@ridotto-io/w3-common':
         specifier: workspace:*
         version: link:../common
-      '@web3modal/core':
+      '@ridotto-io/w3-core':
         specifier: workspace:*
         version: link:../core
       '@ridotto-io/w3-wallet':
@@ -975,25 +975,25 @@ importers:
       '@walletconnect/utils':
         specifier: 2.14.0
         version: 2.14.0
-      '@web3modal/common':
+      '@ridotto-io/w3-common':
         specifier: workspace:*
         version: link:../common
-      '@web3modal/polyfills':
+      '@ridotto-io/w3-polyfills':
         specifier: workspace:*
         version: link:../polyfills
-      '@web3modal/scaffold':
+      '@ridotto-io/w3-scaffold':
         specifier: workspace:*
         version: link:../scaffold
-      '@web3modal/scaffold-react':
+      '@ridotto-io/w3-scaffold-react':
         specifier: workspace:*
         version: link:../scaffold-react
-      '@web3modal/scaffold-utils':
+      '@ridotto-io/w3-scaffold-utils':
         specifier: workspace:*
         version: link:../scaffold-utils
-      '@web3modal/scaffold-vue':
+      '@ridotto-io/w3-scaffold-vue':
         specifier: workspace:*
         version: link:../scaffold-vue
-      '@web3modal/siwe':
+      '@ridotto-io/w3-siwe':
         specifier: workspace:*
         version: link:../siwe
       '@ridotto-io/w3-wallet':
@@ -1027,10 +1027,10 @@ importers:
       '@walletconnect/logger':
         specifier: 2.1.2
         version: 2.1.2
-      '@web3modal/common':
+      '@ridotto-io/w3-common':
         specifier: workspace:*
         version: link:../common
-      '@web3modal/polyfills':
+      '@ridotto-io/w3-polyfills':
         specifier: workspace:*
         version: link:../polyfills
       zod:

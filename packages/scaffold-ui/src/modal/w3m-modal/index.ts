@@ -14,7 +14,7 @@ import { UiHelperUtil, customElement, initializeTheming } from '@ridotto-io/w3-u
 import { LitElement, html } from 'lit'
 import { state } from 'lit/decorators.js'
 import styles from './styles.js'
-import type { CaipAddress } from '@web3modal/core'
+import type { CaipAddress } from '@ridotto-io/w3-core'
 
 // -- Helpers --------------------------------------------- //
 const SCROLL_LOCK = 'scroll-lock'
@@ -176,7 +176,7 @@ export class W3mModal extends LitElement {
     this.caipAddress = caipAddress
 
     if (this.isSiweEnabled) {
-      const { SIWEController } = await import('@web3modal/siwe')
+      const { SIWEController } = await import('@ridotto-io/w3-siwe')
       const session = await SIWEController.getSession()
 
       // If the address has changed and signOnAccountChange is enabled, sign out

@@ -1,7 +1,7 @@
 import { beforeAll, describe, expect, it, vi } from 'vitest'
 import type { ConnectionControllerClient, ConnectorType } from '../../index.js'
 import { ChainController, ConnectionController, ConstantsUtil, StorageUtil } from '../../index.js'
-import { ConstantsUtil as CommonConstantsUtil } from '@web3modal/common'
+import { ConstantsUtil as CommonConstantsUtil } from '@ridotto-io/w3-common'
 
 // -- Setup --------------------------------------------------------------------
 const walletConnectUri = 'wc://uri?=123'

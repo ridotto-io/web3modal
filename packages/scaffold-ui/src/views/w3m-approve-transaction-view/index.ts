@@ -7,8 +7,8 @@ import {
   ConnectorController,
   ThemeController,
   RouterController
-} from '@web3modal/core'
-import { getW3mThemeVariables } from '@web3modal/common'
+} from '@ridotto-io/w3-core'
+import { getW3mThemeVariables } from '@ridotto-io/w3-common'
 
 // -- Variables ------------------------------------------- //
 const PAGE_HEIGHT = 400

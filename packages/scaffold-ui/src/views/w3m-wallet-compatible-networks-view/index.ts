@@ -1,4 +1,9 @@
-import { AccountController, AssetUtil, CoreHelperUtil, NetworkController } from '@web3modal/core'
+import {
+  AccountController,
+  AssetUtil,
+  CoreHelperUtil,
+  NetworkController
+} from '@ridotto-io/w3-core'
 import { customElement } from '@ridotto-io/w3-ui'
 import { LitElement, html } from 'lit'
 import { ifDefined } from 'lit/directives/if-defined.js'

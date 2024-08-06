@@ -1,4 +1,4 @@
-import { AccountController, EventsController, RouterController } from '@web3modal/core'
+import { AccountController, EventsController, RouterController } from '@ridotto-io/w3-core'
 import { customElement } from '@ridotto-io/w3-ui'
 import { LitElement, html } from 'lit'
 import styles from './styles.js'

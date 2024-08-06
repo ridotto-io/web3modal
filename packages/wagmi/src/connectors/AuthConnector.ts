@@ -2,8 +2,8 @@ import { createConnector, type CreateConfigParameters } from '@wagmi/core'
 import { W3mFrameProvider } from '@ridotto-io/w3-wallet'
 import { SwitchChainError, getAddress } from 'viem'
 import type { Address } from 'viem'
-import { ConstantsUtil } from '@web3modal/scaffold-utils'
-import type { SocialProvider } from '@web3modal/scaffold-utils'
+import { ConstantsUtil } from '@ridotto-io/w3-scaffold-utils'
+import type { SocialProvider } from '@ridotto-io/w3-scaffold-utils'
 // -- Types ----------------------------------------------------------------------------------------
 interface W3mFrameProviderOptions {
   projectId: string

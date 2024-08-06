@@ -6,7 +6,7 @@ import {
   NetworkController,
   RouterController,
   SwapController
-} from '@web3modal/core'
+} from '@ridotto-io/w3-core'
 import { state } from 'lit/decorators.js'
 
 @customElement('w3m-swap-preview-view')

@@ -8,7 +8,7 @@ import {
   NetworkController
 } from '../../index.js'
 import { W3mFrameProvider } from '@ridotto-io/w3-wallet'
-import { ConstantsUtil } from '@web3modal/common'
+import { ConstantsUtil } from '@ridotto-io/w3-common'
 // -- Setup --------------------------------------------------------------------
 const TEST_NAME = {
   name: 'test',

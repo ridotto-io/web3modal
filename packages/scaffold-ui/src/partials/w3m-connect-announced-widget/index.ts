@@ -1,11 +1,11 @@
-import type { Connector } from '@web3modal/core'
+import type { Connector } from '@ridotto-io/w3-core'
 import {
   ApiController,
   AssetUtil,
   ConnectorController,
   CoreHelperUtil,
   RouterController
-} from '@web3modal/core'
+} from '@ridotto-io/w3-core'
 import { customElement } from '@ridotto-io/w3-ui'
 import { LitElement, html } from 'lit'
 import { state } from 'lit/decorators.js'

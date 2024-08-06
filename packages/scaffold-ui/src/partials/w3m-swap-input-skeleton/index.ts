@@ -1,6 +1,6 @@
 import { html, LitElement } from 'lit'
 import { property } from 'lit/decorators.js'
-import { type SwapInputTarget } from '@web3modal/core'
+import { type SwapInputTarget } from '@ridotto-io/w3-core'
 import { customElement } from '@ridotto-io/w3-ui'
 import styles from './styles.js'
 

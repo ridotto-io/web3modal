@@ -1,7 +1,7 @@
 import { onUnmounted, ref } from 'vue'
 
-import { ConstantsUtil } from '@web3modal/scaffold-utils'
-import { getWeb3Modal } from '@web3modal/scaffold-vue'
+import { ConstantsUtil } from '@ridotto-io/w3-scaffold-utils'
+import { getWeb3Modal } from '@ridotto-io/w3-scaffold-vue'
 
 import type { Web3ModalOptions } from '../src/client.js'
 import type { CaipNetwork } from 'packages/core/dist/types/index.js'
@@ -124,7 +124,7 @@ export {
   useWeb3Modal,
   useWeb3ModalState,
   useWeb3ModalEvents
-} from '@web3modal/scaffold-vue'
+} from '@ridotto-io/w3-scaffold-vue'
 
 // -- Universal Exports -------------------------------------------------------
 export { defaultSolanaConfig } from '../src/utils/defaultConfig.js'

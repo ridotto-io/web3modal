@@ -1,5 +1,5 @@
-import type { RouterControllerState } from '@web3modal/core'
-import { RouterController, TooltipController } from '@web3modal/core'
+import type { RouterControllerState } from '@ridotto-io/w3-core'
+import { RouterController, TooltipController } from '@ridotto-io/w3-core'
 import { customElement } from '@ridotto-io/w3-ui'
 import { LitElement, html } from 'lit'
 import { state } from 'lit/decorators.js'

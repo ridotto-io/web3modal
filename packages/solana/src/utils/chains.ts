@@ -1,4 +1,4 @@
-import { ConstantsUtil } from '@web3modal/common'
+import { ConstantsUtil } from '@ridotto-io/w3-common'
 
 export const solana = {
   chainId: '5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp',

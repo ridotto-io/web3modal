@@ -1,5 +1,5 @@
-import type  Balance } from '@web3modal/common'
-import { ConstantsUtil as CommonConstants } from '@web3modal/common'
+import type  Balance } from '@ridotto-io/w3-common'
+import { ConstantsUtil as CommonConstants } from '@ridotto-io/w3-common'
 import { ConstantsUtil } from './ConstantsUtil.js'
 import type { CaipAddress, LinkingRecord, CaipNetwork } from './TypeUtil.js'
 

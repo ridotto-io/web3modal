@@ -1,5 +1,5 @@
 import { onUnmounted, reactive, ref } from 'vue'
-import type { Event } from '@web3modal/core'
+import type { Event } from '@ridotto-io/w3-core'
 import type {
   W3mAccountButton,
   W3mButton,

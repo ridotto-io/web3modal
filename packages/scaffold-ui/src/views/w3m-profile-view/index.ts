@@ -6,7 +6,7 @@ import {
   RouterController,
   SnackController,
   type AccountType
-} from '@web3modal/core'
+} from '@ridotto-io/w3-core'
 
 import { UiHelperUtil, customElement } from '@ridotto-io/w3-ui'
 import { LitElement, html } from 'lit'
