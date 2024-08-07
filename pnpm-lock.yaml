@@ -66,7 +66,7 @@ importers:
         specifier: 5.24.8
         version: 5.24.8(react@18.2.0)
       '@ridotto-io/w3-wagmi':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../../packages/wagmi
       clsx:
         specifier: 2.1.0
@@ -133,10 +133,10 @@ importers:
   apps/gallery:
     dependencies:
       '@ridotto-io/w3-common':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../../packages/common
       '@ridotto-io/w3-ui':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../../packages/ui
       lit:
         specifier: 3.1.0
@@ -212,16 +212,16 @@ importers:
         specifier: 2.14.0
         version: 2.14.0
       '@ridotto-io/w3-ethers':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../../packages/ethers
       '@ridotto-io/w3-siwe':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../../packages/siwe
       '@ridotto-io/w3-solana':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../../packages/solana
       '@ridotto-io/w3-wagmi':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../../packages/wagmi
       bs58:
         specifier: 6.0.0
@@ -288,7 +288,7 @@ importers:
   examples/html-ethers5:
     dependencies:
       '@ridotto-io/w3-ethers5':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../../packages/ethers5
       ethers:
         specifier: 5.7.2
@@ -307,7 +307,7 @@ importers:
         specifier: 2.11.6
         version: 2.11.6(@tanstack/query-core@5.24.8)(@types/react@18.2.62)(bufferutil@4.0.8)(react@18.2.0)(typescript@5.3.3)(utf-8-validate@5.0.10)(viem@2.17.8(bufferutil@4.0.8)(typescript@5.3.3)(utf-8-validate@5.0.10)(zod@3.22.4))(zod@3.22.4)
       '@ridotto-io/w3-wagmi':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../../packages/wagmi
       react:
         specifier: 18.2.0
@@ -326,7 +326,7 @@ importers:
         specifier: 5.24.8
         version: 5.24.8(react@18.2.0)
       '@ridotto-io/w3-wagmi':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../../packages/wagmi
       next:
         specifier: 14.2.3
@@ -369,7 +369,7 @@ importers:
   examples/react-ethers:
     dependencies:
       '@ridotto-io/w3-ethers':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../../packages/ethers
       ethers:
         specifier: 6.9.0
@@ -397,7 +397,7 @@ importers:
   examples/react-ethers5:
     dependencies:
       '@ridotto-io/w3-ethers5':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../../packages/ethers5
       ethers:
         specifier: 5.7.2
@@ -434,7 +434,7 @@ importers:
         specifier: 5.24.8
         version: 5.24.8(react@18.2.0)
       '@ridotto-io/w3-solana':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../../packages/solana
       react:
         specifier: 18.2.0
@@ -462,7 +462,7 @@ importers:
         specifier: 5.24.8
         version: 5.24.8(react@18.2.0)
       '@ridotto-io/w3-wagmi':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../../packages/wagmi
       react:
         specifier: 18.2.0
@@ -493,7 +493,7 @@ importers:
   examples/vue-ethers5:
     dependencies:
       '@ridotto-io/w3-ethers5':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../../packages/ethers5
       ethers:
         specifier: 5.7.2
@@ -518,7 +518,7 @@ importers:
         specifier: 0.19.32
         version: 0.19.32(@babel/core@7.25.2)(@babel/runtime@7.25.0)(@sentry/types@7.92.0)(@solana/web3.js@1.91.7(bufferutil@4.0.8)(utf-8-validate@5.0.10))(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(tslib@2.6.3)(utf-8-validate@5.0.10)
       '@ridotto-io/w3-solana':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../../packages/solana
       vue:
         specifier: 3.4.3
@@ -540,7 +540,7 @@ importers:
         specifier: 2.11.6
         version: 2.11.6(@tanstack/query-core@5.24.8)(@types/react@18.2.62)(bufferutil@4.0.8)(react@18.2.0)(typescript@5.3.3)(utf-8-validate@5.0.10)(viem@2.17.8(bufferutil@4.0.8)(typescript@5.3.3)(utf-8-validate@5.0.10)(zod@3.22.4))(zod@3.22.4)
       '@ridotto-io/w3-wagmi':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../../packages/wagmi
       vue:
         specifier: 3.4.3
@@ -562,10 +562,10 @@ importers:
         specifier: 2.11.6
         version: 2.11.6(@tanstack/query-core@5.24.8)(@types/react@18.2.62)(bufferutil@4.0.8)(react@18.2.0)(typescript@5.3.3)(utf-8-validate@5.0.10)(viem@2.17.8(bufferutil@4.0.8)(typescript@5.3.3)(utf-8-validate@5.0.10)(zod@3.22.4))(zod@3.22.4)
       '@ridotto-io/w3-ethers':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../ethers
       '@ridotto-io/w3-wagmi':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../wagmi
       viem:
         specifier: 2.17.8
@@ -593,10 +593,10 @@ importers:
   packages/core:
     dependencies:
       '@ridotto-io/w3-common':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../common
       '@ridotto-io/w3-wallet':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../wallet
       valtio:
         specifier: 1.11.2
@@ -621,28 +621,28 @@ importers:
         specifier: 2.14.0
         version: 2.14.0
       '@ridotto-io/w3-common':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../common
       '@ridotto-io/w3-polyfills':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../polyfills
       '@ridotto-io/w3-scaffold':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../scaffold
       '@ridotto-io/w3-scaffold-react':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../scaffold-react
       '@ridotto-io/w3-scaffold-utils':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../scaffold-utils
       '@ridotto-io/w3-scaffold-vue':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../scaffold-vue
       '@ridotto-io/w3-siwe':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../siwe
       '@ridotto-io/w3-wallet':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../wallet
       ethers:
         specifier: '>=6.0.0'
@@ -673,25 +673,25 @@ importers:
         specifier: 2.14.0
         version: 2.14.0
       '@ridotto-io/w3-common':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../common
       '@ridotto-io/w3-polyfills':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../polyfills
       '@ridotto-io/w3-scaffold':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../scaffold
       '@ridotto-io/w3-scaffold-react':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../scaffold-react
       '@ridotto-io/w3-scaffold-utils':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../scaffold-utils
       '@ridotto-io/w3-scaffold-vue':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../scaffold-vue
       '@ridotto-io/w3-siwe':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../siwe
       valtio:
         specifier: 1.11.2
@@ -723,25 +723,25 @@ importers:
   packages/scaffold:
     dependencies:
       '@ridotto-io/w3-common':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../common
       '@ridotto-io/w3-core':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../core
       '@ridotto-io/w3-scaffold-ui':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../scaffold-ui
       '@ridotto-io/w3-scaffold-utils':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../scaffold-utils
       '@ridotto-io/w3-siwe':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../siwe
       '@ridotto-io/w3-ui':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../ui
       '@ridotto-io/w3-wallet':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../wallet
       lit:
         specifier: 3.1.0
@@ -750,7 +750,7 @@ importers:
   packages/scaffold-react:
     dependencies:
       '@ridotto-io/w3-scaffold':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../scaffold
     devDependencies:
       '@types/react':
@@ -769,22 +769,22 @@ importers:
   packages/scaffold-ui:
     dependencies:
       '@ridotto-io/w3-common':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../common
       '@ridotto-io/w3-core':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../core
       '@ridotto-io/w3-scaffold-utils':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../scaffold-utils
       '@ridotto-io/w3-siwe':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../siwe
       '@ridotto-io/w3-ui':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../ui
       '@ridotto-io/w3-wallet':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../wallet
       lit:
         specifier: 3.1.0
@@ -796,13 +796,13 @@ importers:
         specifier: 4.0.3
         version: 4.0.3
       '@ridotto-io/w3-core':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../core
       '@ridotto-io/w3-polyfills':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../polyfills
       '@ridotto-io/w3-wallet':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../wallet
       valtio:
         specifier: 1.11.2
@@ -811,10 +811,10 @@ importers:
   packages/scaffold-vue:
     dependencies:
       '@ridotto-io/w3-core':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../core
       '@ridotto-io/w3-scaffold':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../scaffold
     devDependencies:
       '@vue/runtime-core':
@@ -830,19 +830,19 @@ importers:
         specifier: 2.12.0
         version: 2.12.0
       '@ridotto-io/w3-common':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../common
       '@ridotto-io/w3-core':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../core
       '@ridotto-io/w3-scaffold-utils':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../scaffold-utils
       '@ridotto-io/w3-ui':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../ui
       '@ridotto-io/w3-wallet':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../wallet
       lit:
         specifier: 3.1.0
@@ -884,28 +884,28 @@ importers:
         specifier: 2.14.0
         version: 2.14.0(bufferutil@4.0.8)(utf-8-validate@5.0.10)
       '@ridotto-io/w3-common':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../common
       '@ridotto-io/w3-core':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../core
       '@ridotto-io/w3-polyfills':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../polyfills
       '@ridotto-io/w3-scaffold':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../scaffold
       '@ridotto-io/w3-scaffold-react':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../scaffold-react
       '@ridotto-io/w3-scaffold-utils':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../scaffold-utils
       '@ridotto-io/w3-scaffold-vue':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../scaffold-vue
       '@ridotto-io/w3-wallet':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../wallet
       bn.js:
         specifier: 5.2.1
@@ -952,13 +952,13 @@ importers:
         specifier: 1.5.5
         version: 1.5.5
       '@ridotto-io/w3-common':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../common
       '@ridotto-io/w3-core':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../core
       '@ridotto-io/w3-wallet':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../wallet
       eslint-plugin-lit:
         specifier: 1.11.0
@@ -976,28 +976,28 @@ importers:
         specifier: 2.14.0
         version: 2.14.0
       '@ridotto-io/w3-common':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../common
       '@ridotto-io/w3-polyfills':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../polyfills
       '@ridotto-io/w3-scaffold':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../scaffold
       '@ridotto-io/w3-scaffold-react':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../scaffold-react
       '@ridotto-io/w3-scaffold-utils':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../scaffold-utils
       '@ridotto-io/w3-scaffold-vue':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../scaffold-vue
       '@ridotto-io/w3-siwe':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../siwe
       '@ridotto-io/w3-wallet':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../wallet
     devDependencies:
       '@wagmi/connectors':
@@ -1028,10 +1028,10 @@ importers:
         specifier: 2.1.2
         version: 2.1.2
       '@ridotto-io/w3-common':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../common
       '@ridotto-io/w3-polyfills':
-        specifier: workspace:*
+        specifier: 5.0.11
         version: link:../polyfills
       zod:
         specifier: 3.22.4

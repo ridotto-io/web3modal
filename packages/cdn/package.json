@@ -28,8 +28,8 @@
   "dependencies": {
     "@wagmi/connectors": "5.0.21",
     "@wagmi/core": "2.11.6",
-    "@ridotto-io/w3-wagmi": "workspace:*",
-    "@ridotto-io/w3-ethers": "workspace:*",
+    "@ridotto-io/w3-wagmi": "5.0.11",
+    "@ridotto-io/w3-ethers": "5.0.11",
     "viem": "2.17.8",
     "vite": "5.2.11"
   }

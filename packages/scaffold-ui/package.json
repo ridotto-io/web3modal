@@ -28,13 +28,13 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
-    "@ridotto-io/w3-common": "workspace:*",
-    "@ridotto-io/w3-scaffold-utils": "workspace:*",
-    "@ridotto-io/w3-core": "workspace:*",
-    "@ridotto-io/w3-ui": "workspace:*",
+    "@ridotto-io/w3-common": "5.0.11",
+    "@ridotto-io/w3-scaffold-utils": "5.0.11",
+    "@ridotto-io/w3-core": "5.0.11",
+    "@ridotto-io/w3-ui": "5.0.11",
     "lit": "3.1.0",
-    "@ridotto-io/w3-siwe": "workspace:*",
-    "@ridotto-io/w3-wallet": "workspace:*"
+    "@ridotto-io/w3-siwe": "5.0.11",
+    "@ridotto-io/w3-wallet": "5.0.11"
   },
   "keywords": [
     "web3",

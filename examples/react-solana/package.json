@@ -7,7 +7,7 @@
     "build": "vite build"
   },
   "dependencies": {
-    "@ridotto-io/w3-solana": "workspace:*",
+    "@ridotto-io/w3-solana": "5.0.11",
     "@tanstack/react-query": "5.24.8",
     "react": "18.2.0",
     "react-dom": "18.2.0",

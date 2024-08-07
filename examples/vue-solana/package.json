@@ -9,7 +9,7 @@
   "dependencies": {
     "@solana/wallet-adapter-backpack": "0.1.14",
     "@solana/wallet-adapter-wallets": "0.19.32",
-    "@ridotto-io/w3-solana": "workspace:*",
+    "@ridotto-io/w3-solana": "5.0.11",
     "vue": "3.4.3"
   },
   "devDependencies": {
