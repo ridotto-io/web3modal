@@ -13,7 +13,7 @@ type StateKey = keyof SolStoreUtilState
 
 export interface SolStoreUtilState {
   provider?: Provider | CombinedProvider | UniversalProvider
-  providerType?: 'walletConnect' | `injected_${string}`
+  providerType?: 'walletConnect' | `injected_${string}` | `announced_${string}`
   address?: string
   chainId?: string
   caipChainId?: string
@@ -61,7 +61,7 @@ export const SolStoreUtil = {
   },
 
   setConnection(connection: Connection) {
-    state.connection = connection
+    state.connection = ref(connection)
   },
 
   setCaipChainId(caipChainId: SolStoreUtilState['caipChainId']) {

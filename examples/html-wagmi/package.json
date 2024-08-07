@@ -1,19 +1,19 @@
 {
   "name": "@examples/html-wagmi",
   "private": true,
-  "version": "4.1.10",
+  "version": "5.0.11",
   "scripts": {
-    "dev:example": "vite --port 3001",
-    "build:examples": "vite build"
+    "dev": "vite --port 3001",
+    "build": "vite build"
   },
   "dependencies": {
-    "@ridotto-io/w3-wagmi": "4.1.10",
-    "@wagmi/connectors": "4.1.14",
-    "@wagmi/core": "2.6.5",
+    "@ridotto-io/w3-wagmi": "5.0.11",
+    "@wagmi/connectors": "5.0.21",
+    "@wagmi/core": "2.11.6",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "vite": "5.0.12"
+    "vite": "5.2.11"
   }
 }

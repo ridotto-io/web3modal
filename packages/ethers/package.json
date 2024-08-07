@@ -1,6 +1,6 @@
 {
   "name": "@ridotto-io/w3-ethers",
-  "version": "4.1.10",
+  "version": "5.0.11",
   "type": "module",
   "main": "./dist/esm/exports/index.js",
   "types": "./dist/types/exports/index.d.ts",
@@ -43,14 +43,17 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
-    "@coinbase/wallet-sdk": "3.9.1",
-    "@ridotto-io/w3-polyfills": "4.1.10",
-    "@ridotto-io/w3-scaffold": "4.1.10",
-    "@ridotto-io/w3-scaffold-react": "4.1.10",
-    "@ridotto-io/w3-scaffold-utils": "4.1.10",
-    "@ridotto-io/w3-scaffold-vue": "4.1.10",
-    "@ridotto-io/w3-siwe": "4.1.10",
-    "@walletconnect/ethereum-provider": "2.11.0",
+    "@coinbase/wallet-sdk": "4.0.3",
+    "@ridotto-io/w3-polyfills": "5.0.11",
+    "@ridotto-io/w3-scaffold": "5.0.11",
+    "@ridotto-io/w3-scaffold-react": "5.0.11",
+    "@ridotto-io/w3-scaffold-utils": "5.0.11",
+    "@ridotto-io/w3-scaffold-vue": "5.0.11",
+    "@ridotto-io/w3-siwe": "5.0.11",
+    "@ridotto-io/w3-common": "5.0.11",
+    "@ridotto-io/w3-wallet": "5.0.11",
+    "@walletconnect/ethereum-provider": "2.14.0",
+    "@walletconnect/utils": "2.14.0",
     "valtio": "1.11.2"
   },
   "peerDependencies": {

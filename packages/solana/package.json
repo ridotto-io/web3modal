@@ -1,6 +1,6 @@
 {
   "name": "@ridotto-io/w3-solana",
-  "version": "4.1.10",
+  "version": "5.0.11",
   "type": "module",
   "main": "./dist/esm/exports/index.js",
   "types": "./dist/types/exports/index.d.ts",
@@ -19,6 +19,11 @@
       "import": "./dist/esm/exports/react.js",
       "default": "./dist/esm/exports/react.js"
     },
+    "./vue": {
+      "types": "./dist/types/exports/vue.d.ts",
+      "import": "./dist/esm/exports/vue.js",
+      "default": "./dist/esm/exports/vue.js"
+    },
     "./chains": {
       "types": "./dist/types/exports/chains.d.ts",
       "import": "./dist/esm/exports/chains.js",
@@ -29,6 +34,9 @@
     "*": {
       "react": [
         "./dist/types/exports/react.d.ts"
+      ],
+      "vue": [
+        "./dist/types/exports/vue.d.ts"
       ],
       "chains": [
         "./dist/types/exports/chains.d.ts"
@@ -44,24 +52,32 @@
   },
   "dependencies": {
     "@ethersproject/sha2": "5.7.0",
-    "@ridotto-io/w3-polyfills": "4.1.10",
-    "@ridotto-io/w3-scaffold": "4.1.10",
-    "@ridotto-io/w3-scaffold-react": "4.1.10",
-    "@ridotto-io/w3-scaffold-utils": "4.1.10",
-    "@ridotto-io/w3-scaffold-vue": "4.1.10",
-    "@solana/wallet-adapter-backpack": "0.1.14",
     "@solana/wallet-adapter-base": "0.9.23",
-    "@solana/wallet-adapter-phantom": "0.9.24",
-    "@solana/wallet-adapter-solflare": "0.6.28",
-    "@solana/wallet-adapter-trust": "0.1.13",
-    "@solana/wallet-adapter-walletconnect": "0.1.16",
-    "@solana/web3.js": "1.91.1",
-    "@walletconnect/universal-provider": "2.11.2",
+    "@solana/wallet-standard-features": "1.2.0",
+    "@solana/wallet-standard-util": "1.1.1",
+    "@solana/web3.js": "1.91.7",
+    "@wallet-standard/app": "1.0.1",
+    "@wallet-standard/base": "1.0.1",
+    "@wallet-standard/features": "1.0.3",
+    "@wallet-standard/wallet": "1.0.1",
+    "@walletconnect/universal-provider": "2.14.0",
+    "@ridotto-io/w3-core": "5.0.11",
+    "@ridotto-io/w3-common": "5.0.11",
+    "@ridotto-io/w3-polyfills": "5.0.11",
+    "@ridotto-io/w3-scaffold": "5.0.11",
+    "@ridotto-io/w3-scaffold-react": "5.0.11",
+    "@ridotto-io/w3-scaffold-utils": "5.0.11",
+    "@ridotto-io/w3-scaffold-vue": "5.0.11",
+    "@ridotto-io/w3-wallet": "5.0.11",
     "bn.js": "5.2.1",
-    "bs58": "5.0.0"
+    "bs58": "5.0.0",
+    "borsh": "0.7.0",
+    "buffer": "6.0.3",
+    "valtio": "1.11.2"
   },
   "devDependencies": {
-    "@types/bn.js": "5.1.5"
+    "@types/bn.js": "5.1.5",
+    "@walletconnect/types": "2.14.0"
   },
   "peerDependencies": {
     "react": ">=17",

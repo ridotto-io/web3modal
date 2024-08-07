@@ -1,13 +1,16 @@
-import { PresetsUtil } from '@ridotto-io/w3-scaffold-utils'
+import { PresetsUtil, ConstantsUtil } from '@ridotto-io/w3-scaffold-utils'
+import { ConstantsUtil as CommonConstantsUtil } from '@ridotto-io/w3-common'
 
 import { SolConstantsUtil } from './SolanaConstantsUtil.js'
 
 import type { CaipNetwork } from '@ridotto-io/w3-core'
 import type { Chain, Provider } from './SolanaTypesUtil.js'
+import type { ExtendedBaseWalletAdapter } from '../../client.js'
+import type { SolStoreUtilState } from './SolanaStoreUtil.js'
 
 export const SolHelpersUtil = {
   detectRpcUrl(chain: Chain, projectId: string) {
-    if (chain.rpcUrl.includes('rpc.walletconnect.com/')) {
+    if (chain.rpcUrl.includes(new URL(CommonConstantsUtil.BLOCKCHAIN_API_RPC_URL).hostname)) {
       return `${chain.rpcUrl}?chainId=solana:${chain.chainId}&projectId=${projectId}`
     }
 
@@ -33,14 +36,16 @@ export const SolHelpersUtil = {
       return {
         ...selectedChain,
         id: `solana:${chainId}`,
-        imageId: PresetsUtil.EIP155NetworkImageIds[chainId]
+        imageId: PresetsUtil.EIP155NetworkImageIds[chainId],
+        chain: CommonConstantsUtil.CHAIN.SOLANA
       }
     }
 
     return {
       ...SolConstantsUtil.DEFAULT_CHAIN,
       id: `solana:${chainId}`,
-      imageId: PresetsUtil.EIP155NetworkImageIds[chainId]
+      imageId: PresetsUtil.EIP155NetworkImageIds[chainId],
+      chain: CommonConstantsUtil.CHAIN.SOLANA
     }
   },
 
@@ -87,5 +92,13 @@ export const SolHelpersUtil = {
         }
       ]
     })
-  }
+  },
+
+  getStorageInjectedId: (adapter: ExtendedBaseWalletAdapter) =>
+    (adapter.isAnnounced
+      ? `${ConstantsUtil.WALLET_STANDARD_CONNECTOR_ID}_${adapter.name}`
+      : `${ConstantsUtil.INJECTED_CONNECTOR_ID}_${adapter.name}`) as unknown as Exclude<
+      SolStoreUtilState['providerType'],
+      undefined
+    >
 }

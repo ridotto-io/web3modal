@@ -1,4 +1,4 @@
-import type { CaipNetworkId } from '@ridotto-io/w3-core'
+import type { CaipNetworkId } from './TypeUtil.js'
 
 export const NetworkUtil = {
   caipNetworkIdToNumber(caipnetworkId?: CaipNetworkId) {

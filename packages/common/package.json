@@ -1,6 +1,6 @@
 {
   "name": "@ridotto-io/w3-common",
-  "version": "4.1.10",
+  "version": "5.0.11",
   "type": "module",
   "main": "./dist/esm/index.js",
   "types": "./dist/types/index.d.ts",
@@ -10,10 +10,10 @@
   ],
   "scripts": {
     "build:clean": "rm -rf dist",
-    "build:common": "tsc --build",
+    "build": "tsc --build",
     "watch": "tsc --watch",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run --dir tests --coverage.enabled --reporter=junit --coverage.reporter=json-summary --coverage.reporter=html",
+    "test": "vitest run --dir tests --coverage.enabled=true --coverage.reporter=json --coverage.reporter=json-summary --coverage.reportOnFailure=true",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {

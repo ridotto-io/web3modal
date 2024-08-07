@@ -1,6 +1,6 @@
 {
   "name": "@ridotto-io/w3-siwe",
-  "version": "4.1.10",
+  "version": "5.0.11",
   "type": "module",
   "main": "./dist/esm/exports/index.js",
   "types": "./dist/types/exports/index.d.ts",
@@ -10,16 +10,19 @@
   ],
   "scripts": {
     "build:clean": "rm -rf dist",
-    "build:siwe": "tsc --build",
+    "build": "tsc --build",
     "watch": "tsc --watch",
     "typecheck": "tsc --noEmit",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
-    "@ridotto-io/w3-core": "4.1.10",
-    "@ridotto-io/w3-scaffold-utils": "4.1.10",
-    "lit": "3.1.0",
-    "valtio": "1.11.2"
+    "@ridotto-io/w3-core": "5.0.11",
+    "@ridotto-io/w3-ui": "5.0.11",
+    "@ridotto-io/w3-common": "5.0.11",
+    "@ridotto-io/w3-wallet": "5.0.11",
+    "@ridotto-io/w3-scaffold-utils": "5.0.11",
+    "valtio": "1.11.2",
+    "lit": "3.1.0"
   },
   "keywords": [
     "web3",

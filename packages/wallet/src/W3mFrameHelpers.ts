@@ -1,36 +1,15 @@
 import { W3mFrameStorage } from './W3mFrameStorage.js'
-import { W3mFrameConstants, W3mFrameRpcConstants } from './W3mFrameConstants.js'
+import {
+  W3mFrameConstants,
+  W3mFrameRpcConstants,
+  type W3mFrameConstantValue
+} from './W3mFrameConstants.js'
 import type { W3mFrameTypes } from './W3mFrameTypes.js'
-
-const RESTRICTED_TIMEZONES = [
-  'ASIA/SHANGHAI',
-  'ASIA/URUMQI',
-  'ASIA/CHONGQING',
-  'ASIA/HARBIN',
-  'ASIA/KASHGAR',
-  'ASIA/MACAU',
-  'ASIA/HONG_KONG',
-  'ASIA/MACAO',
-  'ASIA/BEIJING',
-  'ASIA/HARBIN'
-]
+import { RegexUtil } from './RegexUtil.js'
 
 const EMAIL_MINIMUM_TIMEOUT = 30 * 1000
 
 export const W3mFrameHelpers = {
-  getBlockchainApiUrl() {
-    try {
-      const { timeZone } = new Intl.DateTimeFormat().resolvedOptions()
-      const capTimeZone = timeZone.toUpperCase()
-
-      return RESTRICTED_TIMEZONES.includes(capTimeZone)
-        ? 'https://rpc.walletconnect.org'
-        : 'https://rpc.walletconnect.com'
-    } catch {
-      return false
-    }
-  },
-
   checkIfAllowedToTriggerEmail() {
     const lastEmailLoginTime = W3mFrameStorage.get(W3mFrameConstants.LAST_EMAIL_LOGIN_TIME)
     if (lastEmailLoginTime) {
@@ -54,31 +33,39 @@ export const W3mFrameHelpers = {
     return 0
   },
 
-  checkIfRequestExists(request: unknown) {
-    const method = this.getRequestMethod(request)
-
+  checkIfRequestExists(request: W3mFrameTypes.RPCRequest) {
     return (
-      W3mFrameRpcConstants.NOT_SAFE_RPC_METHODS.includes(method) ||
-      W3mFrameRpcConstants.SAFE_RPC_METHODS.includes(method)
+      W3mFrameRpcConstants.NOT_SAFE_RPC_METHODS.includes(request.method) ||
+      W3mFrameRpcConstants.SAFE_RPC_METHODS.includes(request.method)
     )
   },
 
-  getRequestMethod(request: unknown) {
-    return (request as { payload: W3mFrameTypes.RPCRequest })?.payload?.method
+  getResponseType(response: W3mFrameTypes.FrameEvent) {
+    const { type, payload } = response as {
+      type: W3mFrameConstantValue
+      payload: W3mFrameTypes.RPCResponse
+    }
+
+    const isError = type === W3mFrameConstants.FRAME_RPC_REQUEST_ERROR
+
+    if (isError) {
+      return W3mFrameConstants.RPC_RESPONSE_TYPE_ERROR
+    }
+
+    const isPayloadString = typeof payload === 'string'
+    const isTransactionHash =
+      isPayloadString &&
+      (payload.match(RegexUtil.transactionHash) || payload.match(RegexUtil.signedMessage))
+
+    if (isTransactionHash) {
+      return W3mFrameConstants.RPC_RESPONSE_TYPE_TX
+    }
+
+    return W3mFrameConstants.RPC_RESPONSE_TYPE_OBJECT
   },
 
-  checkIfRequestIsAllowed(request: unknown) {
-    const method = this.getRequestMethod(request)
-
-    return W3mFrameRpcConstants.SAFE_RPC_METHODS.includes(method)
-  },
-
-  getPreferredAccountType(): W3mFrameTypes.AccountType {
-    const storedType = W3mFrameStorage.get(
-      W3mFrameConstants.PREFERRED_ACCOUNT_TYPE
-    ) as W3mFrameTypes.AccountType
-
-    return storedType || W3mFrameRpcConstants.ACCOUNT_TYPES.EOA
+  checkIfRequestIsAllowed(request: W3mFrameTypes.RPCRequest) {
+    return W3mFrameRpcConstants.SAFE_RPC_METHODS.includes(request.method)
   },
 
   isClient: typeof window !== 'undefined'

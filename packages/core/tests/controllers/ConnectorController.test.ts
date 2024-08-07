@@ -7,9 +7,10 @@ import {
   type ThemeMode,
   type ThemeVariables
 } from '../../index.js'
+import { ConstantsUtil, getW3mThemeVariables } from '@ridotto-io/w3-common'
 
 // -- Setup --------------------------------------------------------------------
-const emailProvider = {
+const authProvider = {
   syncDappData: (_args: { metadata: Metadata; sdkVersion: SdkVersion; projectId: string }) =>
     Promise.resolve(),
   syncTheme: (_args: { themeMode: ThemeMode; themeVariables: ThemeVariables }) => Promise.resolve()
@@ -18,18 +19,29 @@ const emailProvider = {
 const walletConnectConnector = {
   id: 'walletConnect',
   explorerId: 'walletConnectId',
-  type: 'WALLET_CONNECT'
+  type: 'WALLET_CONNECT',
+  chain: ConstantsUtil.CHAIN.EVM
 } as const
-const externalConnector = { id: 'external', type: 'EXTERNAL' } as const
-const emailConnector = { id: 'w3mEmail', type: 'EMAIL', provider: emailProvider } as const
+const externalConnector = {
+  id: 'external',
+  type: 'EXTERNAL',
+  chain: ConstantsUtil.CHAIN.EVM
+} as const
+const authConnector = {
+  id: 'w3mAuth',
+  type: 'AUTH',
+  provider: authProvider,
+  chain: ConstantsUtil.CHAIN.EVM
+} as const
 const announcedConnector = {
   id: 'announced',
   type: 'ANNOUNCED',
-  info: { rdns: 'announced.io' }
+  info: { rdns: 'announced.io' },
+  chain: ConstantsUtil.CHAIN.EVM
 } as const
 
-const syncDappDataSpy = vi.spyOn(emailProvider, 'syncDappData')
-const syncThemeSpy = vi.spyOn(emailProvider, 'syncTheme')
+const syncDappDataSpy = vi.spyOn(authProvider, 'syncDappData')
+const syncThemeSpy = vi.spyOn(authProvider, 'syncTheme')
 
 const mockDappData = {
   metadata: {
@@ -44,11 +56,13 @@ const mockDappData = {
 const metamaskConnector = {
   id: 'metamask',
   type: 'INJECTED',
-  info: { rdns: 'io.metamask.com' }
+  info: { rdns: 'io.metamask.com' },
+  chain: ConstantsUtil.CHAIN.EVM
 } as const
 const zerionConnector = {
   id: 'ecc4036f814562b41a5268adc86270fba1365471402006302e70169465b7ac18',
-  type: 'INJECTED'
+  type: 'INJECTED',
+  chain: ConstantsUtil.CHAIN.EVM
 } as const
 // -- Tests --------------------------------------------------------------------
 describe('ConnectorController', () => {
@@ -84,30 +98,34 @@ describe('ConnectorController', () => {
     expect(ConnectorController.getConnector('unknown', '')).toBeUndefined()
   })
 
-  it('getEmailConnector() should not throw when email connector is not set', () => {
-    expect(ConnectorController.getEmailConnector()).toEqual(undefined)
+  it('getAuthConnector() should not throw when auth connector is not set', () => {
+    expect(ConnectorController.getAuthConnector()).toEqual(undefined)
   })
 
-  it('should trigger corresponding sync methods when adding email connector', () => {
+  it('should trigger corresponding sync methods when adding auth connector', () => {
     OptionsController.setMetadata(mockDappData.metadata)
     OptionsController.setSdkVersion(mockDappData.sdkVersion)
     OptionsController.setProjectId(mockDappData.projectId)
 
-    ConnectorController.addConnector(emailConnector)
+    ConnectorController.addConnector(authConnector)
     expect(ConnectorController.state.connectors).toEqual([
       walletConnectConnector,
       externalConnector,
       metamaskConnector,
       zerionConnector,
-      emailConnector
+      authConnector
     ])
 
     expect(syncDappDataSpy).toHaveBeenCalledWith(mockDappData)
-    expect(syncThemeSpy).toHaveBeenCalledWith({ themeMode: 'dark', themeVariables: {} })
+    expect(syncThemeSpy).toHaveBeenCalledWith({
+      themeMode: 'dark',
+      themeVariables: {},
+      w3mThemeVariables: getW3mThemeVariables({}, 'dark')
+    })
   })
 
-  it('getEmailConnector() should return emailconnector when already added', () => {
-    expect(ConnectorController.getEmailConnector()).toEqual(emailConnector)
+  it('getAuthConnector() should return authconnector when already added', () => {
+    expect(ConnectorController.getAuthConnector()).toEqual(authConnector)
   })
 
   it('getAnnouncedConnectorRdns() should not throw when no announced connector is not set', () => {
@@ -125,7 +143,7 @@ describe('ConnectorController', () => {
       externalConnector,
       metamaskConnector,
       zerionConnector,
-      emailConnector,
+      authConnector,
       announcedConnector
     ])
   })

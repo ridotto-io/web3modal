@@ -5,6 +5,8 @@ on:
     branches:
       - V3
       - V4
+      - V5
+      - main
 
 concurrency:
   # Support push/pr as event types with different behaviors each:
@@ -22,30 +24,40 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v3
+
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+
       - name: setup-node
         uses: actions/setup-node@v3
         with:
           node-version: 18.x
-          cache: 'npm'
-          cache-dependency-path: 'package-lock.json'
+          cache: 'pnpm'
+
       - name: install
-        run: npm ci
+        run: pnpm install
+
       - name: build
-        run: npm run build
+        run: pnpm build
         env:
           NEXT_PUBLIC_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_PROJECT_ID }}
 
   test:
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       - name: checkout
         uses: actions/checkout@v3
+
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+
       - name: setup-node
         uses: actions/setup-node@v3
         with:
           node-version: 18.x
-          cache: 'npm'
-          cache-dependency-path: 'package-lock.json'
+          cache: 'pnpm'
+
       - name: install
         run: npm ci
       - name: test

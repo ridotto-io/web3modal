@@ -32,7 +32,6 @@ export class UniversalProviderFactory {
 
     // Subscribe to session delete
     UniversalProviderFactory.provider.on('session_delete', () => {
-      delete UniversalProviderFactory.provider?.session?.namespaces['solana']
       SolStoreUtil.setAddress('')
     })
   }
@@ -40,9 +39,10 @@ export class UniversalProviderFactory {
   public static async getProvider() {
     if (!UniversalProviderFactory.provider) {
       await UniversalProviderFactory.init()
-    }
-    if (!UniversalProviderFactory.provider) {
-      throw new Error('Failed to initialize universal provider')
+
+      if (!UniversalProviderFactory.provider) {
+        throw new Error('Failed to initialize universal provider')
+      }
     }
 
     return UniversalProviderFactory.provider

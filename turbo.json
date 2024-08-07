@@ -1,6 +1,6 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "pipeline": {
+  "tasks": {
     "build:clean": {
       "outputs": ["dist/**"],
       "cache": false
@@ -74,29 +74,13 @@
       "cache": false
     },
     "watch": {
-      "dependsOn": ["^build"],
       "cache": false,
       "persistent": true
     },
-    "build:gallery": {
-      "outputs": ["out/**"],
+    "build": {
       "dependsOn": ["^build"],
-      "cache": false
-    },
-    "build:laboratory": {
-      "outputs": ["out/**", ".next/**", "!.next/cache/**"],
-      "dependsOn": ["^build"],
-      "cache": false
-    },
-    "build:examples": {
-      "outputs": ["dist/**"],
-      "dependsOn": ["^build"],
-      "cache": false
-    },
-    "build:demo": {
-      "outputs": ["out/**", ".next/**", "!.next/cache/**"],
-      "dependsOn": ["^build"],
-      "cache": false
+      "cache": false,
+      "outputs": ["dist/**"]
     },
     "typecheck": {
       "cache": false
@@ -107,19 +91,7 @@
     "lint": {
       "cache": false
     },
-    "prettier": {
-      "cache": false
-    },
-    "dev:laboratory": {
-      "cache": false
-    },
-    "dev:gallery": {
-      "cache": false
-    },
-    "dev:demo": {
-      "cache": false
-    },
-    "dev:example": {
+    "dev": {
       "cache": false
     }
   }
