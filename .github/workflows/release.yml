@@ -22,7 +22,7 @@ jobs:
           scope: '@ridotto-io'
       - name: PRE Publish
         run: |
-          npm i
+          npm ci
           npm run build:clean
           npm run build
       - name: Publish
